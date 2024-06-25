@@ -1,0 +1,224 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Submit a client registration – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% from "govuk/components/input/macro.njk" import govukInput %}
+{% from "govuk/components/date-input/macro.njk" import govukDateInput %}
+{% from "govuk/components/button/macro.njk" import govukButton %}
+{% from "govuk/components/select/macro.njk" import govukSelect %}
+{% from "govuk/components/details/macro.njk" import govukDetails %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-l">Submit a client registration</h1>
+
+      <form action="/registration-successful" method="post" novalidate>
+
+        {{ govukInput({
+          label: {
+            text: "Full name",
+            classes: "govuk-label--m"
+          },
+          classes: "govuk-input--width-20",
+          id: "full-name",
+          name: "fullName",
+          autocomplete: "name",
+          spellcheck: false
+        }) }}
+
+        {{ govukDetails({
+          summaryText: "Tell me more",
+          text: "We need to know your nationality so we can work out which elections you’re entitled to vote in. If you cannot provide your nationality, you’ll have to send copies of identity documents through the post."
+        }) }}
+
+        {{ govukInput({
+          label: {
+            text: "Email address",
+            classes: "govuk-label--m"
+          },
+          classes: "govuk-input--width-20",
+          id: "email-address",
+          name: "emailAddress",
+          autocomplete: "email",
+          spellcheck: false
+        }) }}
+
+        {{ govukDetails({
+          summaryText: "Tell me more",
+          text: "We need to know your nationality so we can work out which elections you’re entitled to vote in. If you cannot provide your nationality, you’ll have to send copies of identity documents through the post."
+        }) }}
+
+        {{ govukInput({
+          label: {
+            text: "Shared or team email address",
+            classes: "govuk-label--m"
+          },
+          classes: "govuk-input--width-20",
+          id: "share-team-address",
+          name: "shareteamemailAddress",
+          spellcheck: false
+        }) }}
+
+        {{ govukDetails({
+          summaryText: "Tell me more",
+          text: "We need to know your nationality so we can work out which elections you’re entitled to vote in. If you cannot provide your nationality, you’ll have to send copies of identity documents through the post."
+        }) }}
+
+{{ govukInput({
+  label: {
+    text: "Line manager email address",
+    classes: "govuk-label--m"
+  },
+  classes: "govuk-input--width-20",
+  id: "manager-email-address",
+  name: "manageremailAddress",
+  spellcheck: false
+}) }}
+
+{{ govukInput({
+  label: {
+    text: "DWP service name",
+    classes: "govuk-label--m"
+  },
+  hint: {
+            text: "For example, Access to Work"
+          },
+  classes: "govuk-input--width-20",
+  id: "service-name",
+  name: "serviceName",
+  spellcheck: false
+}) }}
+
+{{ govukInput({
+  label: {
+    text: "Client ID",
+    classes: "govuk-label--m"
+  },
+  hint: {
+            text: "For example, 234567 - WEB"
+          },
+  classes: "govuk-input--width-10",
+  id: "service-name",
+  name: "serviceName",
+  spellcheck: false
+}) }}
+
+{{ govukInput({
+  label: {
+    text: "Client secret",
+    classes: "govuk-label--m"
+  },
+  hint: {
+            text: "Enter client secret answer"
+          },
+  classes: "govuk-input--width-10",
+  id: "client-secret",
+  name: "clientSecret",
+  spellcheck: false
+}) }}
+
+{{ govukDateInput({
+id: "expiry-time",
+namePrefix: "expiry-time",
+fieldset: {
+legend: {
+text: "Client secret expiry time",
+isPageHeading: true,
+classes: "govuk-fieldset__legend--m"
+}
+},
+hint: {
+text: "For example, 10 6 2025"
+}
+}) }}
+
+{{ govukInput({
+  label: {
+    text: "Redirect URL",
+    classes: "govuk-label--m"
+  },
+  hint: {
+            text: "For example, http://client-service.dwp.gov.uk/context"
+          },
+  classes: "govuk-input--width-20",
+  id: "client-secret",
+  name: "clientSecret",
+  spellcheck: false
+}) }}
+
+{% from "govuk/components/select/macro.njk" import govukSelect %}
+
+{{ govukSelect({
+  id: "location",
+  name: "location",
+  label: {
+    text: "ID token signature algorithum",
+    classes: "govuk-label--m"
+  },
+  items: [
+    {
+      value: "choose",
+      text: "Choose ID token",
+      selected: true
+    },
+    {
+      value: "ES256",
+      text: "ES256"
+    },
+    {
+      value: "HS256",
+      text: "HS256"
+    },
+    {
+      value: "RS256",
+      text: "RS256"
+    }
+  ]
+}) }}
+
+{{ govukInput({
+  label: {
+    text: "Scopes",
+    classes: "govuk-label--m"
+  },
+  hint: {
+            text: "For example, 'openid', 'guid'"
+          },
+  classes: "govuk-input--width-20",
+  id: "scopes",
+  name: "scopes",
+  spellcheck: false
+}) }}
+
+{{ govukInput({
+  label: {
+    text: "Claims",
+    classes: "govuk-label--m"
+  },
+  hint: {
+            text: "For example, 'guid', 'email', 'phone', 'vot'"
+          },
+  classes: "govuk-input--width-20",
+  id: "Claims",
+  name: "Claims",
+  spellcheck: false
+}) }}
+
+<div class="govuk-button-group">
+  {{ govukButton({
+    text: "Submit registration"
+  }) }}
+
+  {{ govukButton({
+    text: "Clear",
+    classes: "govuk-button--secondary"
+  }) }}
+</div>
+
+      </form>
+    </div>
+  </div>
+{% endblock %}

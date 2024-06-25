@@ -1,5 +1,4 @@
 {% extends "layouts/main.html" %}
-{% set phaseBanner = 'true' %}
 
 {% block pageTitle %}
   Submit a client registration – {{ serviceName }} – GOV.UK Prototype Kit
@@ -12,7 +11,6 @@
 {% from "govuk/components/details/macro.njk" import govukDetails %}
 
 {% block content %}
-
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
       <h1 class="govuk-heading-l">Edit a client registration</h1>
@@ -86,6 +84,11 @@
           id: "share-team-address",
           name: "shareteamemailAddress",
           spellcheck: false
+        }) }}
+
+        {{ govukDetails({
+          summaryText: "Tell me more",
+          text: "We need to know your nationality so we can work out which elections you’re entitled to vote in. If you cannot provide your nationality, you’ll have to send copies of identity documents through the post."
         }) }}
 
 {{ govukInput({

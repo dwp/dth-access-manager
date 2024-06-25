@@ -1,30 +1,24 @@
-{% extends "layouts/main_agent_approvals.html" %}
-{% set phaseBanner = 'true' %}
+{% extends "layouts/main.html" %}
 
 {% block pageTitle %}
-  Welcome to DWP Access Manager Approvals – {{ serviceName }} – GOV.UK Prototype Kit
+  Approval choice – {{ serviceName }} – GOV.UK Prototype Kit
 {% endblock %}
+
+{% from "govuk/components/back-link/macro.njk" import govukBackLink %}
+{% from "govuk/components/radios/macro.njk" import govukRadios %}
+{% from "govuk/components/button/macro.njk" import govukButton %}
 
 {% block content %}
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
       <h1 class="govuk-heading-l">
-        Welcome to DWP Access Manager Approvals
-      </h1>
-
-      <h1 class="govuk-heading-m">
-        What this service is for
+        Welcome to Access Manager Registrations
       </h1>
 
       <p class="govuk-body">
-        This service will allow you to view and make a decision on DWP or OL approval requests submitted by service lines. Please note a request can only be declined by stating your decision in detail.
+        Some content can go in here to describe this page and the choice below.
       </p>
-
-      {{ govukDetails({
-        summaryText: "Learn more about using DWP Access Manager",
-        text: "If there is an update then the status of the registration will show 'pending-update' until its been approved by additional employee by OTP - so ITSM cannot approve alone. Once OTP is approved the status is updated further"
-      }) }}
 
       <form class="form" action="/choice-answer" method="post">
 
@@ -33,18 +27,15 @@
   value: data['choice'],
   fieldset: {
     legend: {
-      text: "What do you want to do?",
+      text: "What do you want to do",
       isPageHeading: true,
       classes: "govuk-fieldset__legend--m"
     }
   },
-  hint: {
-    text: "Please select one of the options below."
-  },
   items: [
             {
               value: "dth",
-              text: "Approve DWP Access Manager registrations"
+              text: "Approve DTH Access Manager Registrations"
             },
             {
               value: "onelogin",

@@ -1,359 +1,44 @@
-{% extends "layouts/main_agent.html" %}
-{% set phaseBanner = 'true' %}
+{% extends "layouts/main.html" %}
 
-{% set pageName="DWP Access Manager Prototype" %}
+{% set pageName="Home" %}
 
 {% block content %}
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
 
-{% set html %}
-  <h3 class="govuk-notification-banner__heading">
-    This is a working prototype.
-  </h3>
-  <p class="govuk-body">This prototype is still in its early stages and is being constantly updated. Much of the content is still static and is only there to represent the typical layout.</p>
-{% endset %}
-
-{{ govukNotificationBanner({
-  html: html
-}) }}
-
     <h1 class="govuk-heading-xl">
       {{ serviceName }}
     </h1>
 
-    <h2 class="govuk-heading-m">
-      Service documentation
-    </h2>
-
-    <p class="govuk-body">
-      <a class="govuk-link" href="https://dwpdigital.atlassian.net/wiki/spaces/IDNT/pages/133360255654/Strategic+Reference+Architecture+DTH+Access+Manager+-+SRA+DAM" target="_blank">Strategic Reference Architecture DTH Access Manager - SRA DAM</a>
-    </p>
-
-    <h2 class="govuk-heading-m">
-      Process maps and user journeys
-    </h2>
-
-    <p class="govuk-body">
-      <a class="govuk-link" href="https://app.mural.co/t/dwpdigital7412/m/dwpdigital7412/1715681260232/8e3145e170bee3cdae740f926f5815a229b24ab3?sender=u54daaff0b609e58548e71250" target="_blank">See Mural page here</a>
-    </p>
-
-    <h2 class="govuk-heading-m">
-      UCD Design Log
-    </h2>
-
-    <p class="govuk-body">
-      <a class="govuk-link" href="https://dwpdigital.atlassian.net/wiki/spaces/IDNT/pages/133751013874/Design+log+for+Access+Manager" target="_blank">Design log for Access manager</a>
-    </p>
-
-    <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
-
-    <h2 class="govuk-heading-l">
-          Latest journey iterations
-        </h2>
-
-    <h2 class="govuk-heading-m">
-        DWP Access Manager Registration - Flow 3 (Dynamic)
-    </h2>
-
-    <p class="govuk-body">
-      <strong>Last update:</strong> 10th October 2024
-    </p>
-
-    <p class="govuk-body">
-      On this iteration we have given some thought to simplifying the check answers page. Instead of offering a change link for every user input the link is now only present on the section heading. We felt this made sense as all the questions in that section would be presented to a user updating.
-    </p>
-
-    <p class="govuk-body">
-      Please fill in all the input fields on this flow with relevant sample data.
-    </p>
-
-    {{ govukButton({
-      text: "Start registration prototype",
-      href: "/registration/flow3/registration-request-for-one-login.html"
-    }) }}
-
-    <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
-
-
-    <h2 class="govuk-heading-m">
-      DWP Access Manager Registration - Flow 2
-    </h2>
-
-    <p class="govuk-body">
-          <strong>Last update:</strong> 8th October 2024
-    </p>
-
-    <p class="govuk-body">
-            We recently took the Access Manager prototype to a design clinic for critique. We had a number of recommendations which I am implementing on both the registration and management side.
-    </p>
-
-    <h2 class="govuk-heading-s">
-      Main changes
-    </h2>
-
-    <ul class="govuk-list govuk-list--bullet">
-      <li>More hint text used as alternate to drop downs</li>
-      <li>Question page now split over two pages</li>
-      <li>Check answer page now re-inserted into journey</li>
-    </ul>
-
-    <h2 class="govuk-heading-s">
-      Quick page links
-    </h2>
-
     <p class="govuk-body">
       <ul class="govuk-list govuk-list--bullet">
         <li>
-          <a class="govuk-link" href="/registration/flow2/registration-request-for-one-login.html">Service start page (registration only)</a>
+          <a class="govuk-link" href="/start.html">Service start page</a>
         </li>
         <li>
-          <a class="govuk-link" href="/registration/flow2/submit-a-registration-personal.html">Personal details (Question Page 1)</a>
+          <a class="govuk-link" href="/registration.html">Client registration page</a>
         </li>
         <li>
-          <a class="govuk-link" href="/registration/flow2/submit-a-registration-technical.html">Technical details (Question Page 2)</a>
+          <a class="govuk-link" href="/registration-successful.html">Registration successful</a>
         </li>
         <li>
-          <a class="govuk-link" href="/registration/flow2/submit-a-registration-secret-or-key.html">Client Secret or Public Key (Descoped for MVP)</a>
+          <a class="govuk-link" href="/switch-info.html">Info switch page (internal only)</a>
         </li>
         <li>
-          <a class="govuk-link" href="/registration/flow2/check-your-answers.html">Check your answers</a>
+          <a class="govuk-link" href="/approve-choice.html">Approval selection</a>
         </li>
         <li>
-          <a class="govuk-link" href="/registration/flow2/submitted-your-request.html">Submitted your request confirmation</a>
-        </li>
-      </ul>
-    </p>
-
-    {{ govukButton({
-      text: "Start registration prototype",
-      href: "/registration/flow2/registration-request-for-one-login.html"
-    }) }}
-
-    <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
-
-    <h2 class="govuk-heading-m">
-      DWP Access Manager Approvals - New flow
-    </h2>
-
-    <p class="govuk-body">
-      <strong>Last update:</strong> 19th September 2024
-    </p>
-
-    <h2 class="govuk-heading-s">
-      Main changes
-    </h2>
-
-    <ul class="govuk-list govuk-list--bullet">
-      <li>Combine decision pages into one from the previous two</li>
-      <li>Have dedicated decision outcomes pages instead of a notification banner</li>
-      <li>Some improvements to page and page title content</li>
-    </ul>
-
-    <h2 class="govuk-heading-s">
-      Quick page links
-    </h2>
-
-    <p class="govuk-body">
-      <ul class="govuk-list govuk-list--bullet">
-        <li>
-          <a class="govuk-link" href="/approvals-dwp/flow2/approve-choice.html">Welcome to DWP Access Manager Approvals</a>
+          <a class="govuk-link" href="/request-list.html">DTH Registration list</a>
         </li>
         <li>
-          <a class="govuk-link" href="/approvals-dwp/flow2/request-list.html">DWP Registration record list</a>
+          <a class="govuk-link" href="">One Login Registration list</a>
         </li>
         <li>
-          <a class="govuk-link" href="/approvals-ol/flow2/request-list-ol.html">One Login Approvals record list</a>
+          <a class="govuk-link" href="edit-answers">Edit registration record page</a>
         </li>
         <li>
-          <a class="govuk-link" href="/approvals-dwp/flow2/make-decision.html">Make a decision on this request</a>
-        </li>
-        <li>
-          <a class="govuk-link" href="/approvals-dwp/flow2/request-approved.html">Request approved confirmed (DWP)</a>
-        </li>
-        <li>
-          <a class="govuk-link" href="request-declined">Request declined confirmed (DWP)</a>
-        </li>
-        <li>
-          <a class="govuk-link" href="/approvals-ol/flow2/one-login-declined">Request declined confirmed (OL)</a>
-        </li>
-        <li>
-          <a class="govuk-link" href="/approvals-dwp/flow2/view-request-declined">View previously declined request (DWP)</a>
-        </li>
-      </ul>
-    </p>
-
-    {{ govukButton({
-      text: "Start management prototype",
-      href: "/approvals-dwp/flow2/approve-choice.html"
-    }) }}
-
-      <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
-
-      <h2 class="govuk-heading-l">
-        Previous journey iterations
-      </h2>
-
-    <h2 class="govuk-heading-m">
-      DWP Access Manager Registration pages
-    </h2>
-
-    <p class="govuk-body">
-      <strong>Last update:</strong> August 2024
-    </p>
-
-    <p class="govuk-body">
-      <ul class="govuk-list govuk-list--bullet">
-        <li>
-          <a class="govuk-link" href="/register-your-service-for-one-login.html">Service start page</a>
-        </li>
-        <li>
-          <a class="govuk-link" href="/submit-a-registration-request.html">Submit a registration request</a>
-        </li>
-        <li>
-          <a class="govuk-link" href="/descoped/check-answers.html">Check answers before confirming request (descoped)</a>
-        </li>
-        <li>
-          <a class="govuk-link" href="/descoped/edit-full-name">Edit field example (descoped for MVP)</a>
-        </li>
-        <li>
-          <a class="govuk-link" href="/access-request-submitted.html">Access request submitted</a>
-        </li>
-        <li>
-          <a class="govuk-link" href="/switch-info.html">Info switch page (internal testing only)</a>
-        </li>
-      </ul>
-    </p>
-
-    {{ govukButton({
-      text: "Start registration prototype",
-      href: "register-your-service-for-one-login"
-    }) }}
-
-    <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
-
-    <h2 class="govuk-heading-m">
-      DWP Access Manager Approvals pages
-    </h2>
-
-    <p class="govuk-body">
-      <strong>Last update:</strong> August 2024
-    </p>
-
-    <p class="govuk-body">
-      <ul class="govuk-list govuk-list--bullet">
-        <li>
-          <a class="govuk-link" href="/approve-choice.html">Welcome to DWP Access Manager Approvals</a>
-        </li>
-        <li>
-          <a class="govuk-link" href="/request-list.html">DWP Registration record list</a>
-        </li>
-        <li>
-          <a class="govuk-link" href="request-list-updated">DWP Registration record list with notification banner</a>
-        </li>
-        <li>
-          <a class="govuk-link" href="request-list-ol">One Login Approvals list</a>
-        </li>
-        <li>
-          <a class="govuk-link" href="edit-answers">View client registration request</a>
-        </li>
-<!--    <li>
-          <a class="govuk-link" href="edit-answers-approved">View client registration request (approved)</a>
-        </li>
-        <li>
-          <a class="govuk-link" href="edit-answers-declined">View client registration request (declined)</a>
-        </li>
-        -->
-        <li>
-          <a class="govuk-link" href="make-decision">Make a decision on this request</a>
-        </li>
-      </ul>
-    </p>
-
-    {{ govukButton({
-      text: "Start management prototype",
-      href: "approve-choice"
-    }) }}
-
-    <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
-
-    <h2 class="govuk-heading-m">
-      Alternate pages for consideration
-    </h2>
-
-    <p class="govuk-body">
-      <strong>Last update:</strong> 30th September 2024
-    </p>
-
-    <p class="govuk-body">
-      <ul class="govuk-list govuk-list--bullet">
-        <li>
-          <a class="govuk-link" href="/approvals-dwp/flow2/make-decision-test">Make decision page with no blue key details banner</a>
-        </li>
-      </ul>
-      </p>
-
-      <p class="govuk-body">
-        <strong>Last update:</strong> 1st September 2024
-      </p>
-
-      <p class="govuk-body">
-        <ul class="govuk-list govuk-list--bullet">
-          <li>
-          <a class="govuk-link" href="make-decision-alternate">Make decision pages combined alternate</a>
-        </li>
-        <li>
-          <a class="govuk-link" href="request-approved">Request approved confirmation page instead of notification banner</a>
-        </li>
-        <li>
-          <a class="govuk-link" href="request-declined">Request declined confirmation page instead of notification banner</a>
-        </li>
-        <li>
-          <a class="govuk-link" href="view-request-declined">View a declined request</a>
-        </li>
-      </ul>
-    </p>
-
-    <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
-
-    <h2 class="govuk-heading-m">
-      Footer link pages
-    </h2>
-
-    <p class="govuk-body">
-      <ul class="govuk-list govuk-list--bullet">
-        <li>
-          <a class="govuk-link" href="#">Accessibility Statement (no page as yet)</a>
-        </li>
-        <li>
-          <a class="govuk-link" href="contact-dwp-support">Contact the DWP Support Management Team</a>
-        </li>
-      </ul>
-    </p>
-
-    <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
-
-    <h2 class="govuk-heading-m">
-      System pages
-    </h2>
-
-    <p class="govuk-body">
-      <ul class="govuk-list govuk-list--bullet">
-        <li>
-          <a class="govuk-link" href="#">Service Timeout - Registration (no page as yet)</a>
-        </li>
-        <li>
-          <a class="govuk-link" href="#">Service Timeout - Access Manager (no page as yet)</a>
-        </li>
-        <li>
-          <a class="govuk-link" href="">Page not available (no page as yet)</a>
-        </li>
-        <li>
-          <a class="govuk-link" href="">Service maintanence (no page as yet)</a>
-        </li>
-        <li>
-          <a class="govuk-link" href="#">Back button error (no page as yet)</a>
+          <a class="govuk-link" href="registration-edit">Edit registration record (same as original form page)</a>
         </li>
       </ul>
     </p>
