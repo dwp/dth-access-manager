@@ -1,0 +1,595 @@
+{% extends "/layouts/_base.html" %}
+{% set phaseBanner = 'true' %}
+
+{% set pageName="Home" %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+
+    {% from "govuk/components/details/macro.njk" import govukDetails %}
+
+    <h2 class="govuk-heading-l">
+      Customise DWP KBV questions
+    </h2>
+
+    <p>Please choose 3 questions from <strong>one</strong> of the following areas for your user research participant.</p>
+
+    {% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
+
+    {{ govukCheckboxes({
+      name: "CIS questions",
+      fieldset: {
+        legend: {
+          text: "CIS - Customer Information Service",
+          isPageHeading: true,
+          classes: "govuk-fieldset__legend--m"
+        }
+      },
+      hint: {
+        text: "Choose 3 options"
+      },
+
+      items: [
+        {
+          value: "carcasses",
+          text: "What is your landline telephone number?"
+        },
+        {
+          value: "mines",
+          text: "What is your mobile telephone number?"
+        },
+        {
+          value: "farm",
+          text: "What is your eldest child's full name?"
+        },
+        {
+          value: "4",
+          text: "What is your partner's date of birth?"
+        },
+        {
+          value: "5",
+          text: "What is your partner's national insurance number?"
+        }
+      ]
+    }) }}
+
+    {{ govukCheckboxes({
+      name: "PIP questions",
+      fieldset: {
+        legend: {
+          text: "ESA - Employment Support Allowance",
+          isPageHeading: true,
+          classes: "govuk-fieldset__legend--m"
+        }
+      },
+      hint: {
+        text: "Choose 3 options"
+      },
+
+      items: [
+        {
+          value: "carcasses",
+          text: "Waste from animal carcasses"
+        },
+        {
+          value: "mines",
+          text: "Waste from mines or quarries"
+        },
+        {
+          value: "farm",
+          text: "Farm or agricultural waste"
+        },
+        {
+          value: "4",
+          text: "Farm or agricultural waste"
+        },
+        {
+          value: "5",
+          text: "Farm or agricultural waste"
+        }
+      ]
+    }) }}
+
+    {{ govukCheckboxes({
+      name: "PIP questions",
+      fieldset: {
+        legend: {
+          text: "PIP - Personal Idenpendence Payment",
+          isPageHeading: true,
+          classes: "govuk-fieldset__legend--m"
+        }
+      },
+      hint: {
+        text: "Choose 3 options"
+      },
+
+      items: [
+        {
+          value: "carcasses",
+          text: "Waste from animal carcasses"
+        },
+        {
+          value: "mines",
+          text: "Waste from mines or quarries"
+        },
+        {
+          value: "farm",
+          text: "Farm or agricultural waste"
+        },
+        {
+          value: "4",
+          text: "Farm or agricultural waste"
+        },
+        {
+          value: "5",
+          text: "Farm or agricultural waste"
+        }
+      ]
+    }) }}
+
+    <h2 class="govuk-heading-l">
+      Your generated URLs
+    </h2>
+
+    <p>Flow here</p>
+
+    {% from "govuk/components/button/macro.njk" import govukButton %}
+
+    <div class="govuk-button-group">
+      {{ govukButton({
+        text: "Generate a web address"
+      }) }}
+
+      {{ govukButton({
+        text: "Clear the form",
+        classes: "govuk-button--secondary"
+      }) }}
+    </div>
+
+    <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
+
+    <h2 class="govuk-heading-l">
+      All question pages
+    </h2>
+
+    <p class="govuk-body">
+      <ul class="govuk-list govuk-list--bullet">
+        <li>
+          <a class="govuk-link" href="/cis-questions/index.html">CIS Questions</a>
+        </li>
+        <li>
+          <a class="govuk-link" href="/esa-questions/index.html">ESA Questions</a>
+        </li>
+        <li>
+          <a class="govuk-link" href="/pip-questions/index.html">PIP Questions</a>
+        </li>
+      </ul>
+    </p>
+
+    <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
+
+    <h2 class="govuk-heading-l">
+      Dev ready pages
+    </h2>
+
+    <ul class="govuk-list govuk-list--bullet">
+      <li>
+        <a class="govuk-link" href="">Page link here</a>
+      </li>
+    </ul>
+
+    <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
+
+    <h2 class="govuk-heading-l">
+      Experiments
+    </h2>
+
+    <ul class="govuk-list govuk-list--bullet">
+      <li>
+        <p class="govuk-body">
+          Content here
+        </p>
+      </li>
+    </ul>
+
+  </div>
+
+  <div class="govuk-grid-column-full">
+
+  <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
+
+  <h2 class="govuk-heading-l">
+    Iterations – previous UR
+  </h2>
+
+  <p class="govuk-body">
+    <ul class="govuk-list govuk-list--bullet">
+      <li>
+        <a class="govuk-link" href="">Round 1</a>
+      </li>
+      <li>
+        <a class="govuk-link" href="">Round 2</a>
+      </li>
+      <li>
+        <a class="govuk-link" href="">Round 3</a>
+      </li>
+    </ul>
+  </p>
+
+  {% from "govuk/components/table/macro.njk" import govukTable %}
+
+{{ govukTable({
+  caption: "Month you apply",
+  captionClasses: "govuk-table__caption--m",
+  firstCellIsHeader: true,
+  head: [
+    {
+      text: "Date",
+      classes: "app-custom-class"
+    },
+    {
+      text: "Rate for vehicles",
+      classes: "app-custom-class"
+    },
+    {
+      text: "Rate for bicycles",
+      classes: "app-custom-class"
+    },
+    {
+      text: "new column data",
+      classes: "app-custom-class"
+    }
+  ],
+  rows: [
+    [
+      {
+        text: "First 6 weeks"
+      },
+      {
+        text: "£109.80 per week"
+      },
+      {
+        text: "£59.10 per week"
+      },
+      {
+        text: "£59.10 per week"
+      }
+    ],
+    [
+      {
+        text: "Next 33 weeks"
+      },
+      {
+        text: "£159.80 per week"
+      },
+      {
+        text: "£89.10 per week"
+      }
+    ],
+    [
+      {
+        text: "Total estimated pay"
+      },
+      {
+        text: "£4,282.20"
+      },
+      {
+        text: "£2,182.20"
+      }
+    ]
+  ]
+}) }}
+
+{% from "govuk/components/summary-list/macro.njk" import govukSummaryList %}
+
+{{ govukSummaryList({
+  rows: [
+    {
+      key: {
+        text: "Name"
+      },
+      value: {
+        text: "Sarah Philips"
+      },
+      actions: {
+        items: [
+          {
+            href: "#",
+            text: "Change",
+            visuallyHiddenText: "name"
+          }
+        ]
+      }
+    },
+    {
+      key: {
+        text: "Date of birth"
+      },
+      value: {
+        text: "5 January 1978"
+      },
+      actions: {
+        items: [
+          {
+            href: "#",
+            text: "Change",
+            visuallyHiddenText: "date of birth"
+          }
+        ]
+      }
+    },
+    {
+      key: {
+        text: "Address"
+      },
+      value: {
+        html: "72 Guild Street<br>London<br>SE23 6FH"
+      },
+      actions: {
+        items: [
+          {
+            href: "#",
+            text: "Change",
+            visuallyHiddenText: "address"
+          }
+        ]
+      }
+    },
+    {
+      key: {
+        text: "Contact details"
+      },
+      value: {
+        html: '<p class="govuk-body">07700 900457</p><p class="govuk-body">sarah.phillips@example.com</p>'
+      },
+      actions: {
+        items: [
+          {
+            href: "#",
+            text: "Add",
+            visuallyHiddenText: "contact details"
+          },
+          {
+            href: "#",
+            text: "Change",
+            visuallyHiddenText: "contact details"
+          }
+        ]
+      }
+    }
+  ]
+}) }}
+
+{% from "govuk/components/radios/macro.njk" import govukRadios %}
+
+{{ govukRadios({
+  name: "titl",
+  fieldset: {
+    legend: {
+      text: ""
+    }
+  },
+  items: [
+    {
+      value: "england",
+      text: "England"
+    }
+  ]
+}) }}
+
+<table class="govuk-table">
+   <caption class="govuk-table__caption govuk-table__caption--l">DTH Approvals</caption>   
+            <thead class="govuk-table__head">
+              <tr class="govuk-table__row">
+                <th scope="col" class="govuk-table__header">Client ID</th>
+                <th scope="col" class="govuk-table__header">Service name</th>
+                <th scope="col" class="govuk-table__header">Status</th>
+                <th scope="col" class="govuk-table__header ">Notes</th>
+                <th scope="col" class="govuk-table__header govuk-table__header--numeric">Action</th>
+              </tr>
+            </thead>
+            <tbody class="govuk-table__body">
+              <tr class="govuk-table__row">
+                <td class="govuk-table__cell">CA-WEB</td>
+                <td class="govuk-table__cell">Carers Allowance</td>
+                <td class="govuk-table__cell"><strong class="govuk-tag">Pending-new</strong></td>
+                <td class="govuk-table__cell">---</td>
+                <td class="govuk-table__cell govuk-table__cell--numeric"><a href="contact-history-viewDetails/viewDetail-01-May.html" class="govuk-link">Edit record</a></td>
+              </tr>
+              <tr class="govuk-table__row">
+                <td class="govuk-table__cell">UC1-WEB</td>
+                <td class="govuk-table__cell">Universal Credit once</td>
+                <td class="govuk-table__cell"><strong class="govuk-tag">Pending-new</strong></td>
+                <td class="govuk-table__cell">---</td>
+                <td class="govuk-table__cell govuk-table__cell--numeric"><a href="contact-history-viewDetails/viewDetail-01-May.html" class="govuk-link">Edit record</a></td>
+              </tr>
+              <tr class="govuk-table__row">
+                <td class="govuk-table__cell">ATW-WEB</td>
+                <td class="govuk-table__cell">Access to Work</td>
+                <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--red">Declined</strong></td>
+                <td class="govuk-table__cell">Decline summary</td>
+                <td class="govuk-table__cell govuk-table__cell--numeric"><a href="contact-history-viewDetails/viewDetail-01-May.html" class="govuk-link">Edit record</a></td>
+              </tr>
+              <tr class="govuk-table__row">
+                <td class="govuk-table__cell">BB-WEB</td>
+                <td class="govuk-table__cell">Bereavement Benefit</td>
+                <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--yellow">Pending-update</strong></td>
+                <td class="govuk-table__cell">Helpful notes about service</td>
+                <td class="govuk-table__cell govuk-table__cell--numeric"><a href="contact-history-viewDetails/viewDetail-01-May.html" class="govuk-link">Edit record</a></td>
+              </tr>
+              <tr class="govuk-table__row">
+                <td class="govuk-table__cell">RMD-WEB</td>
+                <td class="govuk-table__cell">RAMBYO</td>
+                <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--yellow">Pending-update</strong></td>
+                <td class="govuk-table__cell">Important notes here</td>
+                <td class="govuk-table__cell govuk-table__cell--numeric"><a href="contact-history-viewDetails/viewDetail-01-May.html" class="govuk-link">Edit record</a></td>
+              </tr>
+              <tr class="govuk-table__row">
+                <td class="govuk-table__cell">PCOC</td>
+                <td class="govuk-table__cell">Pensions Change of Circs</td>
+                <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--red">Declined</strong></td>
+                <td class="govuk-table__cell">Decline summary</td>
+                <td class="govuk-table__cell govuk-table__cell--numeric"><a href="contact-history-viewDetails/viewDetail-01-May.html" class="govuk-link">Edit record</a></td>
+              </tr>
+              <tr class="govuk-table__row">
+                <td class="govuk-table__cell">CA-WEB</td>
+                <td class="govuk-table__cell">Carers Allowance</td>
+                <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--green">Approved</strong></td>
+                <td class="govuk-table__cell">Some helpful notes</td>
+                <td class="govuk-table__cell govuk-table__cell--numeric"><a href="contact-history-viewDetails/viewDetail-01-May.html" class="govuk-link">Edit record</a></td>
+              </tr>
+              <tr class="govuk-table__row">
+                <td class="govuk-table__cell">PIP-WEB</td>
+                <td class="govuk-table__cell">PIP</td>
+                <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--green">Approved</strong></td>
+                <td class="govuk-table__cell">Some helpful notes here</td>
+                <td class="govuk-table__cell govuk-table__cell--numeric"><a href="contact-history-viewDetails/viewDetail-01-May.html" class="govuk-link">Edit record</a></td>
+              </tr>
+              <tr class="govuk-table__row">
+                <td class="govuk-table__cell">CV-WEB</td>
+                <td class="govuk-table__cell">Customer View</td>
+                <td class="govuk-table__cell"><strong class="govuk-tag">Pending-new</strong></td>
+                <td class="govuk-table__cell">---</td>
+                <td class="govuk-table__cell govuk-table__cell--numeric"><a href="contact-history-viewDetails/viewDetail-01-May.html" class="govuk-link">Edit record</a></td>
+              </tr>
+              <tr class="govuk-table__row">
+                <td class="govuk-table__cell">MOT-WEB</td>
+                <td class="govuk-table__cell">MOT Your Vehicle</td>
+                <td class="govuk-table__cell"><strong class="govuk-tag">Pending-new</strong></td>
+                <td class="govuk-table__cell">Some helpful notes</td>
+                <td class="govuk-table__cell govuk-table__cell--numeric"><a href="contact-history-viewDetails/viewDetail-01-May.html" class="govuk-link">Edit record</a></td>
+              </tr>
+            </tbody>
+          </table>
+
+          {% from "govuk/components/pagination/macro.njk" import govukPagination %}
+
+{{ govukPagination({
+  previous: {
+    href: "#"
+  },
+  next: {
+    href: "#"
+  },
+  items: [
+    {
+      number: 1,
+      current: true,
+      href: "#"
+    },
+    {
+      number: 2,
+      href: "#"
+    },
+    {
+      number: 3,
+      href: "#"
+    }
+  ]
+}) }}
+
+  <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
+
+  <table class="govuk-table">
+              <thead class="govuk-table__head">
+                <tr class="govuk-table__row">
+                  <th scope="col" class="govuk-table__header">Client ID</th>
+                  <th scope="col" class="govuk-table__header">Service name</th>
+                  <th scope="col" class="govuk-table__header ">Enquriy Status</th>
+                  <th scope="col" class="govuk-table__header">Approved?</th>
+                  <th scope="col" class="govuk-table__header">Status</th>
+                  <th scope="col" class="govuk-table__header govuk-table__header--numeric">Action</th>
+                </tr>
+              </thead>
+              <tbody class="govuk-table__body">
+                <tr class="govuk-table__row">
+                  <td class="govuk-table__cell">CA-WEB</td>
+                  <td class="govuk-table__cell">Carers Allowance</td>
+                  <td class="govuk-table__cell">Pending-new</td>
+                  <td class="govuk-table__cell">YES</td>
+                  <td class="govuk-table__cell"><strong class="govuk-tag">Approved</strong></td>
+                  <td class="govuk-table__cell govuk-table__cell--numeric"><a href="contact-history-viewDetails/viewDetail-01-May.html" class="govuk-link">View record</a></td>
+                </tr>
+                <tr class="govuk-table__row">
+                  <td class="govuk-table__cell">Mon 7 Aug 2023, 13:00</td>
+                  <td class="govuk-table__cell">A different type of contact</td>
+                  <td class="govuk-table__cell">Personal Independence Payment</td>
+                  <td class="govuk-table__cell">Next payment amount</td>
+                  <td class="govuk-table__cell">No status added</td>
+                  <td class="govuk-table__cell govuk-table__cell--numeric"><a href="contact-history-viewDetails/viewDetail-non-telephony" class="govuk-link">View details</a></td>
+                </tr>
+                <tr class="govuk-table__row">
+                  <td class="govuk-table__cell">Mon 7 Aug 2023, 13:00</td>
+                  <td class="govuk-table__cell">A different type of contact</td>
+                  <td class="govuk-table__cell">Employment and Support Allowance</td>
+                  <td class="govuk-table__cell">Next payment amount</td>
+                  <td class="govuk-table__cell">No status added</td>
+                  <td class="govuk-table__cell govuk-table__cell--numeric"><a href="contact-history-viewDetails/viewDetail-non-telephony" class="govuk-link">View details</a></td>
+                </tr>
+                <tr class="govuk-table__row">
+                  <td class="govuk-table__cell">Wed 09 Aug 2023, 09:03</td>
+                  <td class="govuk-table__cell">A different type of contact</td>
+                  <td class="govuk-table__cell">No benefit added</td>
+                  <td class="govuk-table__cell">No enquiry type added</td>
+                  <td class="govuk-table__cell">No status added</td>
+                  <td class="govuk-table__cell govuk-table__cell--numeric"><a href="contact-history-viewDetails/viewDetail-non-telephony-2.html" class="govuk-link">View details</a></td>
+                </tr>
+                <tr class="govuk-table__row">
+                  <td class="govuk-table__cell">Tue 8 Aug 2023, 09:20</td>
+                  <td class="govuk-table__cell">Telephone call</td>
+                  <td class="govuk-table__cell">Carer's Allowance</td>
+                  <td class="govuk-table__cell">Next payment date</td>
+                  <td class="govuk-table__cell"><strong class="govuk-tag">Resolved</strong></td>
+                  <td class="govuk-table__cell govuk-table__cell--numeric"><a href="contact-history-viewDetails/viewDetail-08-august.html" class="govuk-link">View details</a></td>
+                </tr>
+                <tr class="govuk-table__row">
+                  <td class="govuk-table__cell">Fri 28 Jul 2023, 11:00</td>
+                  <td class="govuk-table__cell">Telephone call</td>
+                  <td class="govuk-table__cell">Personal Independence Payment</td>
+                  <td class="govuk-table__cell">Next payment amount</td>
+                  <td class="govuk-table__cell"><strong class="govuk-tag">Resolved</strong></td>
+                  <td class="govuk-table__cell govuk-table__cell--numeric"><a href="contact-history-viewDetails/viewDetail-01-May.html" class="govuk-link">View details</a></td>
+                </tr>
+                <tr class="govuk-table__row">
+                  <td class="govuk-table__cell">Fri 22 Jul 2023, 08:30</td>
+                  <td class="govuk-table__cell">Telephone call</td>
+                  <td class="govuk-table__cell">Carer's Allowance</td>
+                  <td class="govuk-table__cell">Next payment amount</td>
+                  <td class="govuk-table__cell"><strong class="govuk-tag">Resolved</strong></td>
+                  <td class="govuk-table__cell govuk-table__cell--numeric"><a href="contact-history-viewDetails/viewDetail-01-May.html" class="govuk-link">View details</a></td>
+                </tr>
+                <tr class="govuk-table__row">
+                  <td class="govuk-table__cell">Thu 29 Jun 2023, 09:03</td>
+                  <td class="govuk-table__cell">Telephone call</td>
+                  <td class="govuk-table__cell">Employment and Support Allowance</td>
+                  <td class="govuk-table__cell">Next payment amount</td>
+                  <td class="govuk-table__cell"><strong class="govuk-tag">Resolved</strong></td>
+                  <td class="govuk-table__cell govuk-table__cell--numeric"><a href="contact-history-viewDetails/viewDetail-01-May.html" class="govuk-link">View details</a></td>
+                </tr>
+                <tr class="govuk-table__row">
+                  <td class="govuk-table__cell">Wed 28 Jun 2023, 12:15</td>
+                  <td class="govuk-table__cell">Telephone call</td>
+                  <td class="govuk-table__cell">Carer's Allowance</td>
+                  <td class="govuk-table__cell">Next payment date</td>
+                  <td class="govuk-table__cell"><strong class="govuk-tag">Resolved</strong></td>
+                  <td class="govuk-table__cell govuk-table__cell--numeric"><a href="contact-history-viewDetails/viewDetail-01-May.html" class="govuk-link">View details</a></td>
+                </tr>
+                <tr class="govuk-table__row">
+                  <td class="govuk-table__cell">Wed 28 Jun 2023, 12:00</td>
+                  <td class="govuk-table__cell">Telephone call</td>
+                  <td class="govuk-table__cell">Carer's Allowance</td>
+                  <td class="govuk-table__cell">Something else</td>
+                  <td class="govuk-table__cell"><strong class="govuk-tag">Resolved</strong></td>
+                  <td class="govuk-table__cell govuk-table__cell--numeric"><a href="contact-history-viewDetails/viewDetail-01-May.html" class="govuk-link">View details</a></td>
+                </tr>
+              </tbody>
+            </table>
+
+
+
+  </div>
+</div>
+
+{% endblock %}

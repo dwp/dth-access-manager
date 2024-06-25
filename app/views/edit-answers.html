@@ -1,0 +1,207 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Edit registration record – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+        <h1 class="govuk-heading-l">Edit registration record</h1>
+
+        <p>
+          You can use this page to make any changes to the client record. After you have made the changes please confim these by clicking the 'update and return' button at the bottom of the page.
+        </p>
+
+        <h2 class="govuk-heading-m">Registration Status</h2>
+
+        <dl class="govuk-summary-list govuk-!-margin-bottom-3">
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Current status
+            </dt>
+            <div class="govuk-form-group">
+            <select class="govuk-select" id="sort" name="sort">
+              <option value="published">Pending</option>
+              <option value="updated" selected>Pending-new</option>
+              <option value="views">Pending-update</option>
+              <option value="comments">Approved</option>
+              <option value="comments">Declined</option>
+            </select>
+          </div>
+          </div>
+        </dl>
+
+        <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Notes
+            </dt>
+            <div class="govuk-form-group">
+  <label class="govuk-label" for="more-detail">
+    Record notes
+  </label>
+  <textarea class="govuk-textarea" id="more-detail" name="moreDetail" rows="5">Helpful notes about this record can be edited here.</textarea>
+</div>
+          </div>
+        </dl>
+
+        <h2 class="govuk-heading-m">Personal details</h2>
+
+        <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Full Name
+            </dt>
+            <dd class="govuk-summary-list__value">
+              Sarah Philips
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> name</span></a>
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Email address
+            </dt>
+            <dd class="govuk-summary-list__value">
+              sarah@testdwp.gov.uk
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> date of birth</span></a>
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Line manager email address
+            </dt>
+            <dd class="govuk-summary-list__value">
+              manager@tmail.gov.uk
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> customer reference</span></a>
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              DWP service name
+            </dt>
+            <dd class="govuk-summary-list__value">
+              Carers Allowance
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> previous application number</span></a>
+            </dd>
+          </div>
+        </dl>
+        <h2 class="govuk-heading-m">Technical details</h2>
+        <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Client ID
+            </dt>
+            <dd class="govuk-summary-list__value">
+              CA-WEB
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> previous application number</span></a>
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Client secret
+            </dt>
+            <dd class="govuk-summary-list__value">
+              answer here
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> licence type</span></a>
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Client secret expiry time
+            </dt>
+            <dd class="govuk-summary-list__value">
+              27-5-2025
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> home address</span></a>
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Redirect URL
+            </dt>
+            <dd class="govuk-summary-list__value">
+              http://carers-allowance-test.gov.uk
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> licence period</span></a>
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              ID token signature algorithum
+            </dt>
+            <dd class="govuk-summary-list__value">
+              ES256
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> licence period</span></a>
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Scopes
+            </dt>
+            <dd class="govuk-summary-list__value">
+              openID
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> licence period</span></a>
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Claims
+            </dt>
+            <dd class="govuk-summary-list__value">
+              phone
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> licence period</span></a>
+            </dd>
+          </div>
+        </dl>
+
+        <h2 class="govuk-heading-m">
+          Make sure the new information is correct
+        </h2>
+
+        <p>
+          By updating this record you are confirming that, to the best of your knowledge, the details you are providing are correct.
+        </p>
+
+        {% from "govuk/components/button/macro.njk" import govukButton %}
+
+        <div class="govuk-button-group">
+          {{ govukButton({
+            text: "Update and return"
+          }) }}
+
+          {{ govukButton({
+            text: "Reset changes",
+            classes: "govuk-button--secondary"
+          }) }}
+        </div>
+
+      </div>
+
+</main>
+</div>
+
+{% endblock %}

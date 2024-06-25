@@ -1,0 +1,51 @@
+{% extends "layouts/main.html" %}
+
+{% set pageName="Home" %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <h1 class="govuk-heading-xl">
+      {{ serviceName }}
+    </h1>
+
+    <p class="govuk-body">
+      <ul class="govuk-list govuk-list--bullet">
+        <li>
+          <a class="govuk-link" href="/start.html">Service start page</a>
+        </li>
+        <li>
+          <a class="govuk-link" href="/registration.html">Client registration page</a>
+        </li>
+        <li>
+          <a class="govuk-link" href="/registration-successful.html">Registration successful</a>
+        </li>
+        <li>
+          <a class="govuk-link" href="/switch-info.html">Info switch page (internal only)</a>
+        </li>
+        <li>
+          <a class="govuk-link" href="/approve-choice.html">Approval selection</a>
+        </li>
+        <li>
+          <a class="govuk-link" href="/request-list.html">DTH Registration list</a>
+        </li>
+        <li>
+          <a class="govuk-link" href="">One Login Registration list</a>
+        </li>
+        <li>
+          <a class="govuk-link" href="edit-answers">Edit registration record page</a>
+        </li>
+        <li>
+          <a class="govuk-link" href="registration-edit">Edit registration record (same as original form page)</a>
+        </li>
+      </ul>
+    </p>
+
+{% include "govuk-prototype-kit/includes/homepage-top.njk" %}
+
+  </div>
+</div>
+
+{% endblock %}

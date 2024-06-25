@@ -1,0 +1,53 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Approval choice – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% from "govuk/components/back-link/macro.njk" import govukBackLink %}
+{% from "govuk/components/radios/macro.njk" import govukRadios %}
+{% from "govuk/components/button/macro.njk" import govukButton %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-l">
+        Welcome to Access Manager Registrations
+      </h1>
+
+      <p class="govuk-body">
+        Some content can go in here to describe this page and the choice below.
+      </p>
+
+      <form class="form" action="/choice-answer" method="post">
+
+{{ govukRadios({
+  name: "choice",
+  value: data['choice'],
+  fieldset: {
+    legend: {
+      text: "What do you want to do",
+      isPageHeading: true,
+      classes: "govuk-fieldset__legend--m"
+    }
+  },
+  items: [
+            {
+              value: "dth",
+              text: "Approve DTH Access Manager Registrations"
+            },
+            {
+              value: "onelogin",
+              text: "Approve GOV.UK One Login"
+            }
+          ]
+        }) }}
+
+        {{ govukButton({
+          text: "Continue"
+        }) }}
+      </form>
+    </div>
+  </div>
+{% endblock %}
