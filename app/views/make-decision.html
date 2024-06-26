@@ -1,0 +1,199 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Make decision – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% from "govuk/components/back-link/macro.njk" import govukBackLink %}
+{% from "govuk/components/radios/macro.njk" import govukRadios %}
+{% from "govuk/components/button/macro.njk" import govukButton %}
+{% from "govuk/components/details/macro.njk" import govukDetails %}
+
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <span class="govuk-caption-xl">Sarah Phillips</span>
+<h1 class="govuk-heading-l">Make a decision on this client</h1>
+
+
+
+{{ govukDetails({
+  summaryText: "Review application details",
+  html: '<h2 class="govuk-heading-l">Application</h2>
+
+  <h2 class="govuk-heading-m">Personal details</h2>
+
+  <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key">
+        Full Name
+      </dt>
+      <dd class="govuk-summary-list__value">
+        Sarah Philips
+      </dd>
+      <dd class="govuk-summary-list__actions">
+        <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> name</span></a>
+      </dd>
+    </div>
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key">
+        Email address
+      </dt>
+      <dd class="govuk-summary-list__value">
+        sarah@testdwp.gov.uk
+      </dd>
+      <dd class="govuk-summary-list__actions">
+        <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> date of birth</span></a>
+      </dd>
+    </div>
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key">
+        Line manager email address
+      </dt>
+      <dd class="govuk-summary-list__value">
+        manager@tmail.gov.uk
+      </dd>
+      <dd class="govuk-summary-list__actions">
+        <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> customer reference</span></a>
+      </dd>
+    </div>
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key">
+        DWP service name
+      </dt>
+      <dd class="govuk-summary-list__value">
+        Carers Allowance
+      </dd>
+      <dd class="govuk-summary-list__actions">
+        <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> previous application number</span></a>
+      </dd>
+    </div>
+  </dl>
+  <h2 class="govuk-heading-m">Technical details</h2>
+  <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key">
+        Client ID
+      </dt>
+      <dd class="govuk-summary-list__value">
+        CA-WEB
+      </dd>
+      <dd class="govuk-summary-list__actions">
+        <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> previous application number</span></a>
+      </dd>
+    </div>
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key">
+        Client secret
+      </dt>
+      <dd class="govuk-summary-list__value">
+        answer here
+      </dd>
+      <dd class="govuk-summary-list__actions">
+        <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> licence type</span></a>
+      </dd>
+    </div>
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key">
+        Client secret expiry time
+      </dt>
+      <dd class="govuk-summary-list__value">
+        27-5-2025
+      </dd>
+      <dd class="govuk-summary-list__actions">
+        <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> home address</span></a>
+      </dd>
+    </div>
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key">
+        Redirect URL
+      </dt>
+      <dd class="govuk-summary-list__value">
+        http://carers-allowance-test.gov.uk
+      </dd>
+      <dd class="govuk-summary-list__actions">
+        <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> licence period</span></a>
+      </dd>
+    </div>
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key">
+        ID token signature algorithum
+      </dt>
+      <dd class="govuk-summary-list__value">
+        ES256
+      </dd>
+      <dd class="govuk-summary-list__actions">
+        <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> licence period</span></a>
+      </dd>
+    </div>
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key">
+        Scopes
+      </dt>
+      <dd class="govuk-summary-list__value">
+        openID
+      </dd>
+      <dd class="govuk-summary-list__actions">
+        <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> licence period</span></a>
+      </dd>
+    </div>
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key">
+        Claims
+      </dt>
+      <dd class="govuk-summary-list__value">
+        phone
+      </dd>
+      <dd class="govuk-summary-list__actions">
+        <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> licence period</span></a>
+      </dd>
+    </div>
+  </dl>'
+}) }}
+
+
+      {{ govukRadios({
+        name: "choice",
+        value: data['choice'],
+        fieldset: {
+          legend: {
+            text: "Decision",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--m"
+          }
+        },
+        items: [
+                  {
+                    value: "dth",
+                    text: "Approve this client"
+                  },
+                  {
+                    value: "onelogin",
+                    text: "Decline this client"
+                  }
+                ]
+              }) }}
+
+              {{ govukButton({
+                text: "Continue",
+                href: "request-list"
+              }) }}
+
+              <p>
+                <a href="edit-answers">
+                  Cancel
+                </a>
+              </p>
+
+
+
+{% endblock %}
