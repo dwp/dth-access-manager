@@ -30,7 +30,7 @@
         }) }}
 
         {{ govukDetails({
-          summaryText: "Tell me more",
+          summaryText: "Tell me more about full name",
           text: "We need to know your nationality so we can work out which elections you’re entitled to vote in. If you cannot provide your nationality, you’ll have to send copies of identity documents through the post."
         }) }}
 
@@ -47,7 +47,7 @@
         }) }}
 
         {{ govukDetails({
-          summaryText: "Tell me more",
+          summaryText: "Tell me more about email",
           text: "We need to know your nationality so we can work out which elections you’re entitled to vote in. If you cannot provide your nationality, you’ll have to send copies of identity documents through the post."
         }) }}
 
@@ -63,7 +63,7 @@
         }) }}
 
         {{ govukDetails({
-          summaryText: "Tell me more",
+          summaryText: "Tell me more about shared and team email",
           text: "We need to know your nationality so we can work out which elections you’re entitled to vote in. If you cannot provide your nationality, you’ll have to send copies of identity documents through the post."
         }) }}
 
@@ -98,12 +98,17 @@
     classes: "govuk-label--m"
   },
   hint: {
-            text: "For example, 234567 - WEB"
+            text: "For example, CA-WEB"
           },
   classes: "govuk-input--width-10",
   id: "service-name",
   name: "serviceName",
   spellcheck: false
+}) }}
+
+{{ govukDetails({
+  summaryText: "Tell me more about Client ID",
+  text: "Please insert an abbreviated name of your service for connectivity. It is restructed to 10 letters - WEB will be the suffix. For example, Access to Work service is ATW-WEB, and the PIP Apply service is PIPAPPLY-WEB."
 }) }}
 
 {{ govukInput({
@@ -118,6 +123,11 @@
   id: "client-secret",
   name: "clientSecret",
   spellcheck: false
+}) }}
+
+{{ govukDetails({
+  summaryText: "Tell me more about Client secret",
+  text: "You need to insert your client secret here. A client secret is a secret string that the application uses to prove its identity when requesting a token. This can also be referred to as an application password."
 }) }}
 
 {{ govukDateInput({
@@ -147,6 +157,11 @@ text: "For example, 10 6 2025"
   id: "client-secret",
   name: "clientSecret",
   spellcheck: false
+}) }}
+
+{{ govukDetails({
+  summaryText: "Tell me more about Redirect URL",
+  text: "This is the URL that you wish the service to redirect users or DWP services back to after they have been authorised through DTH AM. Usually the DWP service page or the first screen of your service."
 }) }}
 
 {% from "govuk/components/select/macro.njk" import govukSelect %}

@@ -24,11 +24,33 @@
       <span class="govuk-caption-xl">Sarah Phillips</span>
 <h1 class="govuk-heading-l">Make a decision on this client</h1>
 
+<div class="govuk-inset-text govuk-!-margin-top-0">
 
+    <h2 class="govuk-heading-m govuk-!-margin-bottom-3">Action needed</h2>
+
+    <p>This application was received 42 days ago, you should aim to make a decision on this claim within 30 days.</p>
+
+    </div>
 
 {{ govukDetails({
   summaryText: "Review application details",
   html: '<h2 class="govuk-heading-l">Application</h2>
+
+  <h2 class="govuk-heading-m">Record notes</h2>
+
+  <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Notes
+    </dt>
+    <dd class="govuk-summary-list__value">
+      We need to chase up details regarding the redirect URL.
+    </dd>
+    <dd class="govuk-summary-list__actions">
+      <a class="govuk-link" href="edit-full-name">Edit notes<span class="govuk-visually-hidden"> name</span></a>
+    </dd>
+  </div>
+  </dl>
 
   <h2 class="govuk-heading-m">Personal details</h2>
 
@@ -41,7 +63,7 @@
         Sarah Philips
       </dd>
       <dd class="govuk-summary-list__actions">
-        <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> name</span></a>
+        <a class="govuk-link" href="edit-full-name">Change<span class="govuk-visually-hidden"> name</span></a>
       </dd>
     </div>
     <div class="govuk-summary-list__row">
@@ -75,6 +97,14 @@
       </dd>
       <dd class="govuk-summary-list__actions">
         <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> previous application number</span></a>
+      </dd>
+    </div>
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key">
+        Application received
+      </dt>
+      <dd class="govuk-summary-list__value">
+        25-4-2024
       </dd>
     </div>
   </dl>
@@ -184,16 +214,16 @@
               }) }}
 
               {{ govukButton({
-                text: "Continue",
-                href: "request-list"
-              }) }}
+              text: "Update record",
+              href: "request-list"
+            }) }}
 
               <p>
                 <a href="edit-answers">
                   Cancel
                 </a>
               </p>
-
+</div>
 
 
 {% endblock %}
