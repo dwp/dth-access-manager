@@ -6,6 +6,13 @@
 
 {% from "govuk/components/details/macro.njk" import govukDetails %}
 
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
 {% block content %}
 
 <div class="govuk-grid-row">
@@ -23,29 +30,41 @@
 
       <h2 class="govuk-heading-m govuk-!-margin-bottom-3">Action needed</h2>
 
-      <p>This application was received 42 days ago. You should try and respond to the client within 30 days.</p>
+      <p>This application was received 42 days ago, you should aim to make a decision on this claim within 30 days.</p>
 
 <a href="make-decision" role="button" draggable="false" class="govuk-button govuk-!-margin-bottom-0 govuk-!-margin-right-2" data-module="govuk-button">
   Make decision
 </a>
 
 <a href="" role="button" draggable="false" class="govuk-button govuk-!-margin-bottom-0 govuk-button--secondary" data-module="govuk-button">
-  Add or edit notes
+  Send client enquiry
 </a>
 
 </div>
 
-<p>
-  You can use this page to make any changes to the client record and quickly make an approval decision. By updating this record you are confirming that, to the best of your knowledge, the details you are providing are correct.
-</p>
-
-<p> You can also
-  <a href="request-list">
-    return to DTH Client registrations
-  </a>
-</p>
+{{ govukDetails({
+  summaryText: "Learn more about this client record page",
+  text: "You can use this page to make any changes to the client record and quickly make an approval decision. By updating this record you are confirming that, to the best of your knowledge, the details you are providing are correct."
+}) }}
 
 <h2 class="govuk-heading-l">Application</h2>
+
+<h2 class="govuk-heading-m">Record notes</h2>
+
+<dl class="govuk-summary-list govuk-!-margin-bottom-9">
+<div class="govuk-summary-list__row">
+  <dt class="govuk-summary-list__key">
+    Notes
+  </dt>
+  <dd class="govuk-summary-list__value">
+    We need to chase up details regarding the redirect URL.
+  </dd>
+  <dd class="govuk-summary-list__actions">
+    <a class="govuk-link" href="edit-full-name">Edit notes<span class="govuk-visually-hidden"> name</span></a>
+  </dd>
+</div>
+</dl>
+
 
 <h2 class="govuk-heading-m">Personal details</h2>
 
@@ -58,7 +77,7 @@
       Sarah Philips
     </dd>
     <dd class="govuk-summary-list__actions">
-      <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> name</span></a>
+      <a class="govuk-link" href="edit-full-name">Change<span class="govuk-visually-hidden"> name</span></a>
     </dd>
   </div>
   <div class="govuk-summary-list__row">

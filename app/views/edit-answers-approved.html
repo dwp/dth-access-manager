@@ -6,6 +6,13 @@
 
 {% from "govuk/components/details/macro.njk" import govukDetails %}
 
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
 {% block content %}
 
 <div class="govuk-grid-row">
@@ -23,25 +30,37 @@
 
       <h2 class="govuk-heading-m govuk-!-margin-bottom-3">Decision approved</h2>
 
-      <p>This application was approved 12 days ago.</p>
+      <p>We made a decision on this request 12 days ago.</p>
 
 <a href="" role="button" draggable="false" class="govuk-button govuk-!-margin-bottom-0 govuk-button--secondary" data-module="govuk-button">
-  Add or edit notes
+  Send client enquiry
 </a>
 
 </div>
 
-<p>
-  You can use this page to make any changes to the client record and quickly make an approval decision. By updating this record you are confirming that, to the best of your knowledge, the details you are providing are correct.
-</p>
-
-<p> You can also
-  <a href="request-list">
-    return to DTH Client registrations
-  </a>
-</p>
+{{ govukDetails({
+  summaryText: "Learn more about this client record page",
+  text: "You can use this page to make any changes to the client record and quickly make an approval decision. By updating this record you are confirming that, to the best of your knowledge, the details you are providing are correct."
+}) }}
 
 <h2 class="govuk-heading-l">Application</h2>
+
+<h2 class="govuk-heading-m">Record notes</h2>
+
+<dl class="govuk-summary-list govuk-!-margin-bottom-9">
+<div class="govuk-summary-list__row">
+  <dt class="govuk-summary-list__key">
+    Notes
+  </dt>
+  <dd class="govuk-summary-list__value">
+    No notes added.
+  </dd>
+  <dd class="govuk-summary-list__actions">
+    <a class="govuk-link" href="edit-full-name">Add notes<span class="govuk-visually-hidden"> name</span></a>
+  </dd>
+</div>
+</dl>
+
 
 <h2 class="govuk-heading-m">Personal details</h2>
 

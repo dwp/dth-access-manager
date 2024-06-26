@@ -1,0 +1,51 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Make decision – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% from "govuk/components/back-link/macro.njk" import govukBackLink %}
+{% from "govuk/components/radios/macro.njk" import govukRadios %}
+{% from "govuk/components/button/macro.njk" import govukButton %}
+{% from "govuk/components/details/macro.njk" import govukDetails %}
+
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <span class="govuk-caption-xl">Sarah Phillips</span>
+<h1 class="govuk-heading-l">Edit client full name</h1>
+
+
+{{ govukInput({
+label: {
+text: "Full name",
+classes: "govuk-label--m",
+isPageHeading: true
+},
+id: "event-name",
+name: "eventName",
+classes: "govuk-input--width-20",
+value: "Sarah Phillips"
+}) }}
+
+              {{ govukButton({
+                text: "Update and return",
+                href: "edit-answers"
+              }) }}
+
+              <p>
+                <a class="govuk-link" href="edit-answers">Cancel</a>
+              </p>
+
+
+
+{% endblock %}
