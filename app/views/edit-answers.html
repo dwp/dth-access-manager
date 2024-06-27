@@ -5,13 +5,7 @@
 {% endblock %}
 
 {% from "govuk/components/details/macro.njk" import govukDetails %}
-
-{% block beforeContent %}
-  {{ govukBackLink({
-  text: "Back",
-  href: "javascript:window.history.back()"
-}) }}
-{% endblock %}
+{% from "govuk/components/button/macro.njk" import govukButton %}
 
 {% block content %}
 
@@ -203,9 +197,18 @@
   </div>
 </dl>
 
-<a href="" role="button" draggable="false" class="govuk-button govuk-!-margin-bottom-0 govuk-button govuk-button--warning" data-module="govuk-button">
-  Delete record
-</a>
+<div class="govuk-button-group">
+  {{ govukButton({
+    text: "Return to DTH registrations",
+    classes: "govuk-button--secondary",
+    href: "request-list"
+  }) }}
+
+  {{ govukButton({
+    text: "Delete record",
+    classes: "govuk-button--warning"
+  }) }}
+</div>
 
         </div>
       </div>
