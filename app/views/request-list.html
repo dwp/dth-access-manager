@@ -17,6 +17,9 @@
     <option value="views">Client ID (A-Z)</option>
     <option value="updated">Service name</option>
     <option value="published" selected>Status</option>
+    <option value="published" selected>Approved</option>
+    <option value="published" selected>Declined</option>
+    <option value="published" selected>Pending</option>
     <option value="published" selected>Date received</option>
 
   </select>
@@ -29,7 +32,7 @@
                       <th scope="col" class="govuk-table__header">Client ID</th>
                       <th scope="col" class="govuk-table__header">Service name</th>
                       <th scope="col" class="govuk-table__header">Status</th>
-                      <th scope="col" class="govuk-table__header govuk-!-width-one-quarter">Notes</th>
+                      <th scope="col" class="govuk-table__header govuk-!-width-one-quarter">Comments</th>
                       <th scope="col" class="govuk-table__header ">Date Received</th>
                       <th scope="col" class="govuk-table__header govuk-table__header--numeric">Action</th>
                     </tr>
@@ -39,7 +42,7 @@
                       <td class="govuk-table__cell">CA-WEB</td>
                       <td class="govuk-table__cell">Carers Allowance</td>
                       <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--yellow">Pending-update</strong></td>
-                      <td class="govuk-table__cell">We need to chase up details regarding the redirect URL.</td>
+                      <td class="govuk-table__cell">---</td>
                       <td class="govuk-table__cell">25-4-24</td>
                       <td class="govuk-table__cell govuk-table__cell--numeric"><a href="edit-answers.html" class="govuk-link">View</a></td>
                     </tr>
@@ -55,15 +58,15 @@
                       <td class="govuk-table__cell">ATW-WEB</td>
                       <td class="govuk-table__cell">Access to Work</td>
                       <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--red">Declined</strong></td>
-                      <td class="govuk-table__cell">Decline summary</td>
+                      <td class="govuk-table__cell">We declined this client request because of xyz.</td>
                       <td class="govuk-table__cell">25-3-24</td>
-                      <td class="govuk-table__cell govuk-table__cell--numeric"><a href="" class="govuk-link">View</a></td>
+                      <td class="govuk-table__cell govuk-table__cell--numeric"><a href="edit-answers-declined" class="govuk-link">View</a></td>
                     </tr>
                     <tr class="govuk-table__row">
                       <td class="govuk-table__cell">BB-WEB</td>
                       <td class="govuk-table__cell">Bereavement Benefit</td>
                       <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--yellow">Pending-update</strong></td>
-                      <td class="govuk-table__cell">Helpful notes about service</td>
+                      <td class="govuk-table__cell">---</td>
                       <td class="govuk-table__cell">25-3-24</td>
                       <td class="govuk-table__cell govuk-table__cell--numeric"><a href="" class="govuk-link">View</a></td>
                     </tr>
@@ -71,7 +74,7 @@
                       <td class="govuk-table__cell">RMD-WEB</td>
                       <td class="govuk-table__cell">RAMBYO</td>
                       <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--yellow">Pending-update</strong></td>
-                      <td class="govuk-table__cell">Important notes here</td>
+                      <td class="govuk-table__cell">---</td>
                       <td class="govuk-table__cell">25-3-24</td>
                       <td class="govuk-table__cell govuk-table__cell--numeric"><a href="" class="govuk-link">View</a></td>
                     </tr>
@@ -87,7 +90,7 @@
                       <td class="govuk-table__cell">CA-WEB</td>
                       <td class="govuk-table__cell">Carers Allowance</td>
                       <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--green">Approved</strong></td>
-                      <td class="govuk-table__cell">Some helpful notes</td>
+                      <td class="govuk-table__cell">Approval comments here</td>
                       <td class="govuk-table__cell">25-3-24</td>
                       <td class="govuk-table__cell govuk-table__cell--numeric">
                         <a href="" class="govuk-link">View</a></td>
@@ -96,7 +99,7 @@
                       <td class="govuk-table__cell">PIP-WEB</td>
                       <td class="govuk-table__cell">PIP</td>
                       <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--green">Approved</strong></td>
-                      <td class="govuk-table__cell">---</td>
+                      <td class="govuk-table__cell">Approval comments here</td>
                       <td class="govuk-table__cell">25-3-24</td>
                       <td class="govuk-table__cell govuk-table__cell--numeric">
                         <a href="edit-answers-approved" class="govuk-link">View</a></td>
@@ -114,7 +117,7 @@
                       <td class="govuk-table__cell">MOT-WEB</td>
                       <td class="govuk-table__cell">MOT Your Vehicle</td>
                       <td class="govuk-table__cell"><strong class="govuk-tag">Pending-new</strong></td>
-                      <td class="govuk-table__cell">Some helpful notes</td>
+                      <td class="govuk-table__cell">---</td>
                       <td class="govuk-table__cell">25-3-24</td>
                       <td class="govuk-table__cell govuk-table__cell--numeric">
                       <a href="" class="govuk-link">View</a></td>
@@ -147,6 +150,10 @@
     }
   ]
 }) }}
+
+<p>
+  <a class="govuk-link" href="">Go to One Login Approvals</a>
+</p>
 
     </div>
   </div>

@@ -8,7 +8,7 @@
 {% from "govuk/components/radios/macro.njk" import govukRadios %}
 {% from "govuk/components/button/macro.njk" import govukButton %}
 {% from "govuk/components/details/macro.njk" import govukDetails %}
-
+{% from "govuk/components/textarea/macro.njk" import govukTextarea %}
 
 {% block beforeContent %}
   {{ govukBackLink({
@@ -35,22 +35,6 @@
 {{ govukDetails({
   summaryText: "Review application details",
   html: '<h2 class="govuk-heading-l">Application</h2>
-
-  <h2 class="govuk-heading-m">Record notes</h2>
-
-  <dl class="govuk-summary-list govuk-!-margin-bottom-9">
-  <div class="govuk-summary-list__row">
-    <dt class="govuk-summary-list__key">
-      Notes
-    </dt>
-    <dd class="govuk-summary-list__value">
-      We need to chase up details regarding the redirect URL.
-    </dd>
-    <dd class="govuk-summary-list__actions">
-      <a class="govuk-link" href="edit-full-name">Edit notes<span class="govuk-visually-hidden"> name</span></a>
-    </dd>
-  </div>
-  </dl>
 
   <h2 class="govuk-heading-m">Personal details</h2>
 
@@ -190,6 +174,7 @@
   </dl>'
 }) }}
 
+<form class="form" action="request-list" method="post">
 
       {{ govukRadios({
         name: "choice",
@@ -213,10 +198,27 @@
                 ]
               }) }}
 
-              {{ govukButton({
-              text: "Update record",
-              href: "request-list"
+            {{ govukTextarea({
+              name: "moreDetail",
+              id: "more-detail",
+              rows: "4",
+              label: {
+                text: "Reason for decision?",
+                classes: "govuk-label--m",
+                isPageHeading: true
+              },
+  hint: {
+    text: "You cannot confirm a decision without stating your reasons."
+  }
             }) }}
+
+
+                          {{ govukButton({
+                          text: "Confirm decision",
+                          href: "request-list"
+                        }) }}
+
+                        </form>
 
               <p>
                 <a href="edit-answers">
