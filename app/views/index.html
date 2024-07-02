@@ -1,4 +1,5 @@
-{% extends "layouts/main.html" %}
+{% extends "layouts/main-no-menu-links.html" %}
+{% set phaseBanner = 'true' %}
 
 {% set pageName="Home" %}
 
@@ -11,22 +12,38 @@
       {{ serviceName }}
     </h1>
 
+    <h2 class="govuk-heading-m">
+      DWP Access Manager Registrations
+    </h2>
+
     <p class="govuk-body">
       <ul class="govuk-list govuk-list--bullet">
         <li>
           <a class="govuk-link" href="/start.html">Service start page</a>
         </li>
         <li>
-          <a class="govuk-link" href="/registration.html">Client registration page</a>
+          <a class="govuk-link" href="/registration.html">Submit a registration request</a>
         </li>
         <li>
-          <a class="govuk-link" href="/registration-successful.html">Registration successful</a>
+          <a class="govuk-link" href="/check-answers.html">Check answers before confirming request</a>
         </li>
         <li>
-          <a class="govuk-link" href="/switch-info.html">Info switch page (internal only)</a>
+          <a class="govuk-link" href="/registration-successful.html">Access request submitted</a>
         </li>
         <li>
-          <a class="govuk-link" href="/approve-choice.html">Welcome to Access Manager Registrations (approval selection)</a>
+          <a class="govuk-link" href="/switch-info.html">Info switch page (internal testing only)</a>
+        </li>
+      </ul>
+    </p>
+
+    <h2 class="govuk-heading-m">
+      DWP Access Manager Approvals
+    </h2>
+
+    <p class="govuk-body">
+      <ul class="govuk-list govuk-list--bullet">
+        <li>
+          <a class="govuk-link" href="/approve-choice.html">Welcome to DWP Access Manager Approvals</a>
         </li>
         <li>
           <a class="govuk-link" href="/request-list.html">DTH Registration record list</a>
@@ -35,13 +52,31 @@
           <a class="govuk-link" href="">One Login Registration list (no page at present)</a>
         </li>
         <li>
-          <a class="govuk-link" href="edit-answers">View client registration record</a>
+          <a class="govuk-link" href="edit-answers">View client registration request</a>
         </li>
         <li>
-          <a class="govuk-link" href="make-decision">Make a decision on this client</a>
+          <a class="govuk-link" href="make-decision">Make a decision on this request</a>
         </li>
         <li>
           <a class="govuk-link" href="edit-full-name">Edit full name (example of changing record data)</a>
+        </li>
+        <li>
+          <a class="govuk-link" href="contact-dth-support">Contact the DTH Support Management Team</a>
+        </li>
+      </ul>
+    </p>
+
+    <h2 class="govuk-heading-m">
+      Footer links
+    </h2>
+
+    <p class="govuk-body">
+      <ul class="govuk-list govuk-list--bullet">
+        <li>
+          <a class="govuk-link" href="edit-full-name">Accessibility Statement (no page as yet)</a>
+        </li>
+        <li>
+          <a class="govuk-link" href="contact-dth-support">Contact the DTH Support Management Team</a>
         </li>
       </ul>
     </p>

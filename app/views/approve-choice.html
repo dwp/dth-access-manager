@@ -1,7 +1,8 @@
 {% extends "layouts/main-no-menu-links.html" %}
+{% set phaseBanner = 'true' %}
 
 {% block pageTitle %}
-  Approval choice – {{ serviceName }} – GOV.UK Prototype Kit
+  DWP Access Manager Approvals – {{ serviceName }} – GOV.UK Prototype Kit
 {% endblock %}
 
 {% from "govuk/components/back-link/macro.njk" import govukBackLink %}
@@ -13,14 +14,12 @@
     <div class="govuk-grid-column-two-thirds">
 
       <h1 class="govuk-heading-l">
-        Welcome to Access Manager Registrations
+        Welcome to DWP Access Manager Approvals
       </h1>
 
       <p class="govuk-body">
         Some content can go in here to describe this page and the choice below.
       </p>
-
-
 
       <form class="form" action="/choice-answer" method="post">
 

@@ -1,21 +1,17 @@
 {% extends "layouts/main-no-menu-links.html" %}
+{% set phaseBanner = 'true' %}
 
 {% block pageTitle %}
-  Submit a client registration – {{ serviceName }} – GOV.UK Prototype Kit
+  Submit a registration request – {{ serviceName }} – GOV.UK Prototype Kit
 {% endblock %}
 
-{% from "govuk/components/input/macro.njk" import govukInput %}
-{% from "govuk/components/date-input/macro.njk" import govukDateInput %}
-{% from "govuk/components/button/macro.njk" import govukButton %}
-{% from "govuk/components/select/macro.njk" import govukSelect %}
-{% from "govuk/components/details/macro.njk" import govukDetails %}
-
 {% block content %}
+
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-      <h1 class="govuk-heading-l">Submit a client registration</h1>
+      <h1 class="govuk-heading-l">Submit a registration request</h1>
 
-      <form action="/registration-successful" method="post" novalidate>
+      <form action="/check-answers" method="post" novalidate>
 
         {{ govukInput({
           label: {
@@ -29,11 +25,6 @@
           spellcheck: false
         }) }}
 
-        {{ govukDetails({
-          summaryText: "Tell me more about full name",
-          text: "We need to know your nationality so we can work out which elections you’re entitled to vote in. If you cannot provide your nationality, you’ll have to send copies of identity documents through the post."
-        }) }}
-
         {{ govukInput({
           label: {
             text: "Email address",
@@ -44,11 +35,6 @@
           name: "emailAddress",
           autocomplete: "email",
           spellcheck: false
-        }) }}
-
-        {{ govukDetails({
-          summaryText: "Tell me more about email",
-          text: "We need to know your nationality so we can work out which elections you’re entitled to vote in. If you cannot provide your nationality, you’ll have to send copies of identity documents through the post."
         }) }}
 
         {{ govukInput({
@@ -64,7 +50,7 @@
 
         {{ govukDetails({
           summaryText: "Tell me more about shared and team email",
-          text: "We need to know your nationality so we can work out which elections you’re entitled to vote in. If you cannot provide your nationality, you’ll have to send copies of identity documents through the post."
+          text: "If you use one, tell us what your team email address is. This is so someone else can pick up messages about your registration to the Dynamic Trust Hub Access Manager if you are away."
         }) }}
 
 {{ govukInput({
@@ -80,6 +66,22 @@
 
 {{ govukInput({
   label: {
+    text: "Your teams' Slack channel URL",
+    classes: "govuk-label--m"
+  },
+  classes: "govuk-input--width-20",
+  id: "team-slack-url",
+  name: "slackUrl",
+  spellcheck: false
+}) }}
+
+{{ govukDetails({
+  summaryText: "Tell me more about Slack channels",
+  text: "Enter the hashtag (#) or URL for your teams’ slack channel so it can get updates about your registration application."
+}) }}
+
+{{ govukInput({
+  label: {
     text: "DWP service name",
     classes: "govuk-label--m"
   },
@@ -90,6 +92,11 @@
   id: "service-name",
   name: "serviceName",
   spellcheck: false
+}) }}
+
+{{ govukDetails({
+  summaryText: "Tell me more about the service name",
+  text: "This is the name of your service that you wish to onboard with Dynamic Trust Hub Access Manager service (DTH AM)."
 }) }}
 
 {{ govukInput({
@@ -127,7 +134,7 @@
 
 {{ govukDetails({
   summaryText: "Tell me more about Client secret",
-  text: "You need to insert your client secret here. A client secret is a secret string that the application uses to prove its identity when requesting a token. This can also be referred to as an application password."
+  text: "A client secret is a secret string that the application uses to prove its identity when requesting a token, this can also can be referred to as an application password."
 }) }}
 
 {{ govukDateInput({
@@ -208,6 +215,11 @@ text: "For example, 10 6 2025"
   spellcheck: false
 }) }}
 
+{{ govukDetails({
+  summaryText: "Tell me more about Scopes",
+  text: "This should be reflected as an array. For example (insert example)."
+}) }}
+
 {{ govukInput({
   label: {
     text: "Claims",
@@ -222,9 +234,14 @@ text: "For example, 10 6 2025"
   spellcheck: false
 }) }}
 
+{{ govukDetails({
+  summaryText: "Tell me more about Claims",
+  text: "This should be reflected as an (example) For example (insert example)."
+}) }}
+
 <div class="govuk-button-group">
   {{ govukButton({
-    text: "Submit registration"
+    text: "Continue"
   }) }}
 
   {{ govukButton({

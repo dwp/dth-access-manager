@@ -1,7 +1,8 @@
 {% extends "layouts/main-no-menu-links.html" %}
+{% set phaseBanner = 'true' %}
 
 {% block pageTitle %}
-  Confirmation page template – {{ serviceName }} – GOV.UK Prototype Kit
+  Access request submitted – {{ serviceName }} – GOV.UK Prototype Kit
 {% endblock %}
 
 {% block content %}
@@ -10,7 +11,7 @@
     <div class="govuk-grid-column-two-thirds">
 
       {{ govukPanel({
-        titleText: "Registration complete",
+        titleText: "Access request submitted",
         html: "Your reference number<br><strong>HDJ2123F</strong>"
       }) }}
 
@@ -29,14 +30,14 @@
       <p>
         Once this has been approved it will be passed to the GOV.UK One Login Team to establish connectivity. Once the One Login approvals have taken place you will receive another email and be contacted by the ID&T Service Management Team.
       </p>
+
       <p>
-        <a href="registration">
-          Do you want to submit another registration?
-        </a>
+        <a class="govuk-link" href="">You may now exit this service</a>
       </p>
+
       <p>
         <a href="switch-info">
-          Continue with the prototype
+          Continue with the prototype (link only for internal testing)
         </a>
       </p>
 
