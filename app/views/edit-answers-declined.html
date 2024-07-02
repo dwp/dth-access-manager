@@ -1,10 +1,9 @@
 {% extends "layouts/main.html" %}
+{% set phaseBanner = 'true' %}
 
 {% block pageTitle %}
   Edit registration record – {{ serviceName }} – GOV.UK Prototype Kit
 {% endblock %}
-
-{% from "govuk/components/details/macro.njk" import govukDetails %}
 
 {% block content %}
 
@@ -12,7 +11,7 @@
   <div class="govuk-grid-column-two-thirds">
     <span class="govuk-caption-xl">ATW-WEB</span>
       <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">
-        Martin Wells
+        Access to Work
         <span class="govuk-visually-hidden">Application</span>
         <strong class="govuk-tag govuk-tag--red">
   Declined
@@ -21,7 +20,7 @@
 
   <div class="govuk-inset-text govuk-!-margin-top-0">
 
-      <h2 class="govuk-heading-m govuk-!-margin-bottom-3">Declined comments</h2>
+      <h2 class="govuk-heading-m govuk-!-margin-bottom-3">Reason for decline</h2>
 
       <p>We declined this client request because of xyz. We made a decision on this request 5 days ago.</p>
 

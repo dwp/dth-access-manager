@@ -1,41 +1,15 @@
-{% extends "layouts/main.html" %}
+{% extends "layouts/main-no-menu-links.html" %}
 {% set phaseBanner = 'true' %}
 
 {% block pageTitle %}
-  Edit registration record – {{ serviceName }} – GOV.UK Prototype Kit
+  Check answers – {{ serviceName }} – GOV.UK Prototype Kit
 {% endblock %}
 
 {% block content %}
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-    <span class="govuk-caption-xl">PIP-WEB</span>
-      <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">
-        Personal Independence Allowance
-        <span class="govuk-visually-hidden">Application</span>
-        <strong class="govuk-tag govuk-tag--green">
-  Approved
-</strong>
-  </h1>
-
-  <div class="govuk-inset-text govuk-!-margin-top-0">
-
-      <h2 class="govuk-heading-m govuk-!-margin-bottom-3">Approval comments</h2>
-
-      <p>Any comments and notes shown here. We made a decision on this request 12 days ago.</p>
-
-<a href="" role="button" draggable="false" class="govuk-button govuk-!-margin-bottom-0 govuk-button--secondary" data-module="govuk-button">
-  Send client enquiry
-</a>
-
-</div>
-
-{{ govukDetails({
-  summaryText: "Learn more about this client record page",
-  text: "You can use this page to make any changes to the client record and quickly make an approval decision. By updating this record you are confirming that, to the best of your knowledge, the details you are providing are correct."
-}) }}
-
-<h2 class="govuk-heading-l">Application</h2>
+    <h1 class="govuk-heading-l">Check your answers before sending your request</h1>
 
 <h2 class="govuk-heading-m">Personal details</h2>
 
@@ -45,10 +19,10 @@
       Full Name
     </dt>
     <dd class="govuk-summary-list__value">
-      John Smith
+      Sarah Philips
     </dd>
     <dd class="govuk-summary-list__actions">
-      <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> name</span></a>
+      <a class="govuk-link" href="edit-full-name">Change<span class="govuk-visually-hidden"> name</span></a>
     </dd>
   </div>
   <div class="govuk-summary-list__row">
@@ -78,18 +52,10 @@
       DWP service name
     </dt>
     <dd class="govuk-summary-list__value">
-      Personal Independence Allowance (PIP)
+      Carers Allowance
     </dd>
     <dd class="govuk-summary-list__actions">
       <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> previous application number</span></a>
-    </dd>
-  </div>
-  <div class="govuk-summary-list__row">
-    <dt class="govuk-summary-list__key">
-      Application received
-    </dt>
-    <dd class="govuk-summary-list__value">
-      25-4-2024
     </dd>
   </div>
 </dl>
@@ -100,7 +66,7 @@
       Client ID
     </dt>
     <dd class="govuk-summary-list__value">
-      PIP-WEB
+      CA-WEB
     </dd>
     <dd class="govuk-summary-list__actions">
       <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> previous application number</span></a>
@@ -133,7 +99,7 @@
       Redirect URL
     </dt>
     <dd class="govuk-summary-list__value">
-      http://pip-test.gov.uk
+      http://carers-allowance-test.gov.uk
     </dd>
     <dd class="govuk-summary-list__actions">
       <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> licence period</span></a>
@@ -174,18 +140,21 @@
   </div>
 </dl>
 
-<div class="govuk-button-group">
-  {{ govukButton({
-    text: "Return to DTH registrations",
-    classes: "govuk-button--secondary",
-    href: "request-list"
-  }) }}
+<h2 class="govuk-heading-m">Now send your request</h2>
 
-  {{ govukButton({
-    text: "Delete record",
-    classes: "govuk-button--warning"
-  }) }}
-</div>
+        <p class="govuk-body">By submitting this application you are confirming that, to the best of your knowledge, the details you are providing are correct.</p>
+
+        <div class="govuk-button-group">
+          {{ govukButton({
+            text: "Confirm and submit",
+            href: "registration-successful"
+          }) }}
+
+          {{ govukButton({
+            text: "Save and return later",
+            classes: "govuk-button--secondary"
+          }) }}
+        </div>
 
         </div>
       </div>

@@ -1,28 +1,17 @@
 {% extends "layouts/main.html" %}
+{% set phaseBanner = 'true' %}
+{% set backLink = 'false' %}
 
 {% block pageTitle %}
   Make decision – {{ serviceName }} – GOV.UK Prototype Kit
-{% endblock %}
-
-{% from "govuk/components/back-link/macro.njk" import govukBackLink %}
-{% from "govuk/components/radios/macro.njk" import govukRadios %}
-{% from "govuk/components/button/macro.njk" import govukButton %}
-{% from "govuk/components/details/macro.njk" import govukDetails %}
-{% from "govuk/components/textarea/macro.njk" import govukTextarea %}
-
-{% block beforeContent %}
-  {{ govukBackLink({
-  text: "Back",
-  href: "javascript:window.history.back()"
-}) }}
 {% endblock %}
 
 {% block content %}
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      <span class="govuk-caption-xl">Sarah Phillips</span>
-<h1 class="govuk-heading-l">Make a decision on this client</h1>
+      <span class="govuk-caption-xl">	Carers Allowance</span>
+<h1 class="govuk-heading-l">Make a decision on this request</h1>
 
 <div class="govuk-inset-text govuk-!-margin-top-0">
 
@@ -188,12 +177,12 @@
         },
         items: [
                   {
-                    value: "dth",
-                    text: "Approve this client"
+                    value: "approve",
+                    text: "Approve this request"
                   },
                   {
-                    value: "onelogin",
-                    text: "Decline this client"
+                    value: "decline",
+                    text: "Decline this request"
                   }
                 ]
               }) }}
@@ -203,7 +192,7 @@
               id: "more-detail",
               rows: "4",
               label: {
-                text: "Can you give more details about the decision",
+                text: "State reasons for decision",
                 classes: "govuk-label--m",
                 isPageHeading: true
               },

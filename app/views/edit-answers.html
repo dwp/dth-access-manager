@@ -1,11 +1,9 @@
 {% extends "layouts/main.html" %}
+{% set phaseBanner = 'true' %}
 
 {% block pageTitle %}
   Edit registration record – {{ serviceName }} – GOV.UK Prototype Kit
 {% endblock %}
-
-{% from "govuk/components/details/macro.njk" import govukDetails %}
-{% from "govuk/components/button/macro.njk" import govukButton %}
 
 {% block content %}
 
@@ -13,7 +11,7 @@
   <div class="govuk-grid-column-two-thirds">
     <span class="govuk-caption-xl">CA-WEB</span>
       <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">
-        Sarah Phillips
+        Carers Allowance
         <span class="govuk-visually-hidden">Application</span>
         <strong class="govuk-tag govuk-tag--blue">
   Pending-new
