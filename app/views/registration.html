@@ -53,202 +53,202 @@
           text: "If you use one, tell us what your team email address is. This is so someone else can pick up messages about your registration to the Dynamic Trust Hub Access Manager if you are away."
         }) }}
 
-{{ govukInput({
-  label: {
-    text: "Line manager email address",
-    classes: "govuk-label--m"
-  },
-  classes: "govuk-input--width-20",
-  id: "manager-email-address",
-  name: "manageremailAddress",
-  spellcheck: false
-}) }}
-
-{{ govukInput({
-  label: {
-    text: "Your teams' Slack channel URL",
-    classes: "govuk-label--m"
-  },
-  classes: "govuk-input--width-20",
-  id: "team-slack-url",
-  name: "slackUrl",
-  spellcheck: false
-}) }}
-
-{{ govukDetails({
-  summaryText: "Tell me more about Slack channels",
-  text: "Enter the hashtag (#) or URL for your teams’ slack channel so it can get updates about your registration application."
-}) }}
-
-{{ govukInput({
-  label: {
-    text: "DWP service name",
-    classes: "govuk-label--m"
-  },
-  hint: {
-            text: "For example, Access to Work"
+        {{ govukInput({
+          label: {
+            text: "Line manager email address",
+            classes: "govuk-label--m"
           },
-  classes: "govuk-input--width-20",
-  id: "service-name",
-  name: "serviceName",
-  spellcheck: false
-}) }}
+          classes: "govuk-input--width-20",
+          id: "manager-email-address",
+          name: "manageremailAddress",
+          spellcheck: false
+        }) }}
 
-{{ govukDetails({
-  summaryText: "Tell me more about the service name",
-  text: "This is the name of your service that you wish to onboard with Dynamic Trust Hub Access Manager service (DTH AM)."
-}) }}
-
-{{ govukInput({
-  label: {
-    text: "Client ID",
-    classes: "govuk-label--m"
-  },
-  hint: {
-            text: "For example, CA-WEB"
+        {{ govukInput({
+          label: {
+            text: "Your teams' Slack channel URL",
+            classes: "govuk-label--m"
           },
-  classes: "govuk-input--width-10",
-  id: "service-name",
-  name: "serviceName",
-  spellcheck: false
-}) }}
+          classes: "govuk-input--width-20",
+          id: "team-slack-url",
+          name: "slackUrl",
+          spellcheck: false
+        }) }}
 
-{{ govukDetails({
-  summaryText: "Tell me more about Client ID",
-  text: "Please insert an abbreviated name of your service for connectivity. It is restructed to 10 letters - WEB will be the suffix. For example, Access to Work service is ATW-WEB, and the PIP Apply service is PIPAPPLY-WEB."
-}) }}
+        {{ govukDetails({
+          summaryText: "Tell me more about Slack channels",
+          text: "Enter the hashtag (#) or URL for your teams’ slack channel so it can get updates about your registration application."
+        }) }}
 
-{{ govukInput({
-  label: {
-    text: "Client secret",
-    classes: "govuk-label--m"
-  },
-  hint: {
-            text: "Enter client secret answer"
+        {{ govukInput({
+          label: {
+            text: "DWP service name",
+            classes: "govuk-label--m"
           },
-  classes: "govuk-input--width-10",
-  id: "client-secret",
-  name: "clientSecret",
-  spellcheck: false
-}) }}
+          hint: {
+                    text: "For example, Access to Work"
+                  },
+          classes: "govuk-input--width-20",
+          id: "service-name",
+          name: "serviceName",
+          spellcheck: false
+        }) }}
 
-{{ govukDetails({
-  summaryText: "Tell me more about Client secret",
-  text: "A client secret is a secret string that the application uses to prove its identity when requesting a token, this can also can be referred to as an application password."
-}) }}
+        {{ govukDetails({
+          summaryText: "Tell me more about the service name",
+          text: "This is the name of your service that you wish to onboard with Dynamic Trust Hub Access Manager service (DTH AM)."
+        }) }}
 
-{{ govukDateInput({
-id: "expiry-time",
-namePrefix: "expiry-time",
-fieldset: {
-legend: {
-text: "Client secret expiry time",
-isPageHeading: true,
-classes: "govuk-fieldset__legend--m"
-}
-},
-hint: {
-text: "For example, 10 6 2025"
-}
-}) }}
-
-{{ govukInput({
-  label: {
-    text: "Redirect URL",
-    classes: "govuk-label--m"
-  },
-  hint: {
-            text: "For example, http://client-service.dwp.gov.uk/context"
+        {{ govukInput({
+          label: {
+            text: "Client ID",
+            classes: "govuk-label--m"
           },
-  classes: "govuk-input--width-20",
-  id: "client-secret",
-  name: "clientSecret",
-  spellcheck: false
-}) }}
+          hint: {
+                    text: "For example, CA-WEB"
+                  },
+          classes: "govuk-input--width-10",
+          id: "service-name",
+          name: "serviceName",
+          spellcheck: false
+        }) }}
 
-{{ govukDetails({
-  summaryText: "Tell me more about Redirect URL",
-  text: "This is the URL that you wish the service to redirect users or DWP services back to after they have been authorised through DTH AM. Usually the DWP service page or the first screen of your service."
-}) }}
+        {{ govukDetails({
+          summaryText: "Tell me more about Client ID",
+          text: "Please insert an abbreviated name of your service for connectivity. It is restructed to 10 letters - WEB will be the suffix. For example, Access to Work service is ATW-WEB, and the PIP Apply service is PIPAPPLY-WEB."
+        }) }}
 
-{% from "govuk/components/select/macro.njk" import govukSelect %}
-
-{{ govukSelect({
-  id: "location",
-  name: "location",
-  label: {
-    text: "ID token signature algorithum",
-    classes: "govuk-label--m"
-  },
-  items: [
-    {
-      value: "choose",
-      text: "Choose ID token",
-      selected: true
-    },
-    {
-      value: "ES256",
-      text: "ES256"
-    },
-    {
-      value: "HS256",
-      text: "HS256"
-    },
-    {
-      value: "RS256",
-      text: "RS256"
-    }
-  ]
-}) }}
-
-{{ govukInput({
-  label: {
-    text: "Scopes",
-    classes: "govuk-label--m"
-  },
-  hint: {
-            text: "For example, 'openid', 'guid'"
+        {{ govukInput({
+          label: {
+            text: "Client secret",
+            classes: "govuk-label--m"
           },
-  classes: "govuk-input--width-20",
-  id: "scopes",
-  name: "scopes",
-  spellcheck: false
-}) }}
+          hint: {
+                    text: "Enter client secret answer"
+                  },
+          classes: "govuk-input--width-10",
+          id: "client-secret",
+          name: "clientSecret",
+          spellcheck: false
+        }) }}
 
-{{ govukDetails({
-  summaryText: "Tell me more about Scopes",
-  text: "This should be reflected as an array. For example (insert example)."
-}) }}
+        {{ govukDetails({
+          summaryText: "Tell me more about Client secret",
+          text: "A client secret is a secret string that the application uses to prove its identity when requesting a token, this can also can be referred to as an application password."
+        }) }}
 
-{{ govukInput({
-  label: {
-    text: "Claims",
-    classes: "govuk-label--m"
-  },
-  hint: {
-            text: "For example, 'guid', 'email', 'phone', 'vot'"
+        {{ govukDateInput({
+        id: "expiry-time",
+        namePrefix: "expiry-time",
+        fieldset: {
+        legend: {
+        text: "Client secret expiry time",
+        isPageHeading: true,
+        classes: "govuk-fieldset__legend--m"
+        }
+        },
+        hint: {
+        text: "For example, 10 6 2025"
+        }
+        }) }}
+
+        {{ govukInput({
+          label: {
+            text: "Redirect URL",
+            classes: "govuk-label--m"
           },
-  classes: "govuk-input--width-20",
-  id: "Claims",
-  name: "Claims",
-  spellcheck: false
-}) }}
+          hint: {
+                    text: "For example, http://client-service.dwp.gov.uk/context"
+                  },
+          classes: "govuk-input--width-20",
+          id: "client-secret",
+          name: "clientSecret",
+          spellcheck: false
+        }) }}
 
-{{ govukDetails({
-  summaryText: "Tell me more about Claims",
-  text: "This should be reflected as an (example) For example (insert example)."
-}) }}
+        {{ govukDetails({
+          summaryText: "Tell me more about Redirect URL",
+          text: "This is the URL that you wish the service to redirect users or DWP services back to after they have been authorised through DTH AM. Usually the DWP service page or the first screen of your service."
+        }) }}
 
-<div class="govuk-button-group">
-  {{ govukButton({
-    text: "Continue"
-  }) }}
+        {% from "govuk/components/select/macro.njk" import govukSelect %}
 
-  {{ govukButton({
-    text: "Clear",
-    classes: "govuk-button--secondary"
-  }) }}
-</div>
+        {{ govukSelect({
+          id: "location",
+          name: "location",
+          label: {
+            text: "ID token signature algorithum",
+            classes: "govuk-label--m"
+          },
+          items: [
+            {
+              value: "choose",
+              text: "Choose ID token",
+              selected: true
+            },
+            {
+              value: "ES256",
+              text: "ES256"
+            },
+            {
+              value: "HS256",
+              text: "HS256"
+            },
+            {
+              value: "RS256",
+              text: "RS256"
+            }
+          ]
+        }) }}
+
+        {{ govukInput({
+          label: {
+            text: "Scopes",
+            classes: "govuk-label--m"
+          },
+          hint: {
+                    text: "For example, 'openid', 'guid'"
+                  },
+          classes: "govuk-input--width-20",
+          id: "scopes",
+          name: "scopes",
+          spellcheck: false
+        }) }}
+
+        {{ govukDetails({
+          summaryText: "Tell me more about Scopes",
+          text: "This should be reflected as an array. For example (insert example)."
+        }) }}
+
+        {{ govukInput({
+          label: {
+            text: "Claims",
+            classes: "govuk-label--m"
+          },
+          hint: {
+                    text: "For example, 'guid', 'email', 'phone', 'vot'"
+                  },
+          classes: "govuk-input--width-20",
+          id: "Claims",
+          name: "Claims",
+          spellcheck: false
+        }) }}
+
+        {{ govukDetails({
+          summaryText: "Tell me more about Claims",
+          text: "This should be reflected as an (example) For example (insert example)."
+        }) }}
+
+        <div class="govuk-button-group">
+          {{ govukButton({
+            text: "Continue"
+          }) }}
+
+          {{ govukButton({
+            text: "Clear",
+            classes: "govuk-button--secondary"
+          }) }}
+        </div>
 
       </form>
     </div>
