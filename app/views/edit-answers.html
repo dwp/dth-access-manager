@@ -25,7 +25,7 @@
 </a>
 
 <a href="" role="button" draggable="false" class="govuk-button govuk-!-margin-bottom-0 govuk-button--secondary" data-module="govuk-button">
-  Send client enquiry
+  Spare button
 </a>
 
 </div>
@@ -48,7 +48,6 @@
       Sarah Philips
     </dd>
     <dd class="govuk-summary-list__actions">
-      <a class="govuk-link" href="edit-full-name">Change<span class="govuk-visually-hidden"> name</span></a>
     </dd>
   </div>
   <div class="govuk-summary-list__row">
@@ -59,7 +58,6 @@
       sarah@testdwp.gov.uk
     </dd>
     <dd class="govuk-summary-list__actions">
-      <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> date of birth</span></a>
     </dd>
   </div>
   <div class="govuk-summary-list__row">
@@ -70,7 +68,6 @@
       manager@tmail.gov.uk
     </dd>
     <dd class="govuk-summary-list__actions">
-      <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> customer reference</span></a>
     </dd>
   </div>
   <div class="govuk-summary-list__row">
@@ -81,7 +78,6 @@
       Carers Allowance
     </dd>
     <dd class="govuk-summary-list__actions">
-      <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> previous application number</span></a>
     </dd>
   </div>
   <div class="govuk-summary-list__row">
@@ -97,24 +93,12 @@
 <dl class="govuk-summary-list govuk-!-margin-bottom-9">
   <div class="govuk-summary-list__row">
     <dt class="govuk-summary-list__key">
-      Client ID
-    </dt>
-    <dd class="govuk-summary-list__value">
-      CA-WEB
-    </dd>
-    <dd class="govuk-summary-list__actions">
-      <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> previous application number</span></a>
-    </dd>
-  </div>
-  <div class="govuk-summary-list__row">
-    <dt class="govuk-summary-list__key">
       Client secret
     </dt>
     <dd class="govuk-summary-list__value">
       answer here
     </dd>
     <dd class="govuk-summary-list__actions">
-      <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> licence type</span></a>
     </dd>
   </div>
   <div class="govuk-summary-list__row">
@@ -125,7 +109,6 @@
       27-5-2025
     </dd>
     <dd class="govuk-summary-list__actions">
-      <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> home address</span></a>
     </dd>
   </div>
   <div class="govuk-summary-list__row">
@@ -133,10 +116,19 @@
       Redirect URL
     </dt>
     <dd class="govuk-summary-list__value">
-      http://carers-allowance-test.gov.uk
+      http://carers-allowance-test.gov.uk/redirect
     </dd>
     <dd class="govuk-summary-list__actions">
-      <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> licence period</span></a>
+    </dd>
+  </div>
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Logout URL
+    </dt>
+    <dd class="govuk-summary-list__value">
+      http://carers-allowance-test.gov.uk/logout
+    </dd>
+    <dd class="govuk-summary-list__actions">
     </dd>
   </div>
   <div class="govuk-summary-list__row">
@@ -147,7 +139,6 @@
       ES256
     </dd>
     <dd class="govuk-summary-list__actions">
-      <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> licence period</span></a>
     </dd>
   </div>
   <div class="govuk-summary-list__row">
@@ -158,7 +149,6 @@
       openID
     </dd>
     <dd class="govuk-summary-list__actions">
-      <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> licence period</span></a>
     </dd>
   </div>
   <div class="govuk-summary-list__row">
@@ -169,7 +159,6 @@
       phone
     </dd>
     <dd class="govuk-summary-list__actions">
-      <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> licence period</span></a>
     </dd>
   </div>
 </dl>
@@ -179,11 +168,6 @@
     text: "Return to DTH registrations",
     classes: "govuk-button--secondary",
     href: "request-list"
-  }) }}
-
-  {{ govukButton({
-    text: "Delete record",
-    classes: "govuk-button--warning"
   }) }}
 </div>
 
