@@ -99,23 +99,22 @@
           text: "This is the name of your service that you wish to onboard with Dynamic Trust Hub Access Manager service (DTH AM)."
         }) }}
 
-        {{ govukInput({
-          label: {
-            text: "Client ID",
-            classes: "govuk-label--m"
-          },
-          hint: {
-                    text: "For example, CA-WEB"
-                  },
-          classes: "govuk-input--width-10",
-          id: "service-name",
-          name: "serviceName",
-          spellcheck: false
-        }) }}
+        {% from "govuk/components/select/macro.njk" import govukSelect %}
+
+        <div class="govuk-form-group">
+          <label class="govuk-label govuk-label--m" for="location">
+            Choose environment type
+          </label>
+          <select class="govuk-select" id="location" name="location" aria-describedby="location-hint">
+            <option value="choose" selected>Choose environment</option>
+            <option value="eastmidlands">Test</option>
+            <option value="eastofengland">Production</option>
+          </select>
+        </div>
 
         {{ govukDetails({
-          summaryText: "Tell me more about Client ID",
-          text: "Please insert an abbreviated name of your service for connectivity. It is restructed to 10 letters - WEB will be the suffix. For example, Access to Work service is ATW-WEB, and the PIP Apply service is PIPAPPLY-WEB."
+          summaryText: "Tell me more about environment type",
+          text: "Filler text in here for now, awaiting content."
         }) }}
 
         {{ govukInput({
@@ -161,14 +160,33 @@
                     text: "For example, http://client-service.dwp.gov.uk/context"
                   },
           classes: "govuk-input--width-20",
-          id: "client-secret",
-          name: "clientSecret",
+          id: "redirect-url",
+          name: "redirectUrl",
           spellcheck: false
         }) }}
 
         {{ govukDetails({
           summaryText: "Tell me more about Redirect URL",
           text: "This is the URL that you wish the service to redirect users or DWP services back to after they have been authorised through DTH AM. Usually the DWP service page or the first screen of your service."
+        }) }}
+
+        {{ govukInput({
+          label: {
+            text: "Logout URL",
+            classes: "govuk-label--m"
+          },
+          hint: {
+                    text: "For example, http://client-service.dwp.gov.uk/logout"
+                  },
+          classes: "govuk-input--width-20",
+          id: "logout-url",
+          name: "logoutUrl",
+          spellcheck: false
+        }) }}
+
+        {{ govukDetails({
+          summaryText: "Tell me more about Logout URL",
+          text: "Content to go here."
         }) }}
 
         {% from "govuk/components/select/macro.njk" import govukSelect %}

@@ -63,17 +63,6 @@
 <dl class="govuk-summary-list govuk-!-margin-bottom-9">
   <div class="govuk-summary-list__row">
     <dt class="govuk-summary-list__key">
-      Client ID
-    </dt>
-    <dd class="govuk-summary-list__value">
-      CA-WEB
-    </dd>
-    <dd class="govuk-summary-list__actions">
-      <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> previous application number</span></a>
-    </dd>
-  </div>
-  <div class="govuk-summary-list__row">
-    <dt class="govuk-summary-list__key">
       Client secret
     </dt>
     <dd class="govuk-summary-list__value">
@@ -99,10 +88,21 @@
       Redirect URL
     </dt>
     <dd class="govuk-summary-list__value">
-      http://carers-allowance-test.gov.uk
+      http://carers-allowance-test.gov.uk/redirect
     </dd>
     <dd class="govuk-summary-list__actions">
-      <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> licence period</span></a>
+      <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> redirect url</span></a>
+    </dd>
+  </div>
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Logout URL
+    </dt>
+    <dd class="govuk-summary-list__value">
+      http://carers-allowance-test.gov.uk/logout
+    </dd>
+    <dd class="govuk-summary-list__actions">
+      <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> logout url</span></a>
     </dd>
   </div>
   <div class="govuk-summary-list__row">
@@ -148,11 +148,6 @@
           {{ govukButton({
             text: "Confirm and submit",
             href: "registration-successful"
-          }) }}
-
-          {{ govukButton({
-            text: "Save and return later",
-            classes: "govuk-button--secondary"
           }) }}
         </div>
 
