@@ -24,7 +24,7 @@
       <p>We declined this client request because of xyz. We made a decision on this request 5 days ago.</p>
 
 <a href="" role="button" draggable="false" class="govuk-button govuk-!-margin-bottom-0 govuk-button--secondary" data-module="govuk-button">
-  Send client enquiry
+  Spare button
 </a>
 
 </div>
@@ -44,10 +44,10 @@
       Full Name
     </dt>
     <dd class="govuk-summary-list__value">
-      Martin Wells
+      Sarah Philips
     </dd>
     <dd class="govuk-summary-list__actions">
-      <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> name</span></a>
+      <a class="govuk-link" href="edit-full-name">Change<span class="govuk-visually-hidden"> name</span></a>
     </dd>
   </div>
   <div class="govuk-summary-list__row">
@@ -55,10 +55,21 @@
       Email address
     </dt>
     <dd class="govuk-summary-list__value">
-      martin@testdwp.gov.uk
+      sarah@testdwp.gov.uk
     </dd>
     <dd class="govuk-summary-list__actions">
-      <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> date of birth</span></a>
+      <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> email address</span></a>
+    </dd>
+  </div>
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Shared or team email address
+    </dt>
+    <dd class="govuk-summary-list__value">
+      team@mail.gov.uk
+    </dd>
+    <dd class="govuk-summary-list__actions">
+      <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> team email</span></a>
     </dd>
   </div>
   <div class="govuk-summary-list__row">
@@ -69,7 +80,18 @@
       manager@tmail.gov.uk
     </dd>
     <dd class="govuk-summary-list__actions">
-      <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> customer reference</span></a>
+      <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> line manager email</span></a>
+    </dd>
+  </div>
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Your teams' Slack channel URL
+    </dt>
+    <dd class="govuk-summary-list__value">
+      Slack URL
+    </dd>
+    <dd class="govuk-summary-list__actions">
+      <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> slack URL</span></a>
     </dd>
   </div>
   <div class="govuk-summary-list__row">
@@ -77,18 +99,10 @@
       DWP service name
     </dt>
     <dd class="govuk-summary-list__value">
-      Access to Work
+      Carers Allowance
     </dd>
     <dd class="govuk-summary-list__actions">
       <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> previous application number</span></a>
-    </dd>
-  </div>
-  <div class="govuk-summary-list__row">
-    <dt class="govuk-summary-list__key">
-      Application received
-    </dt>
-    <dd class="govuk-summary-list__value">
-      25-4-2024
     </dd>
   </div>
 </dl>
@@ -96,13 +110,13 @@
 <dl class="govuk-summary-list govuk-!-margin-bottom-9">
   <div class="govuk-summary-list__row">
     <dt class="govuk-summary-list__key">
-      Client ID
+      Environment type
     </dt>
     <dd class="govuk-summary-list__value">
-      ATW-WEB
+      Test
     </dd>
     <dd class="govuk-summary-list__actions">
-      <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> previous application number</span></a>
+      <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> licence type</span></a>
     </dd>
   </div>
   <div class="govuk-summary-list__row">
@@ -113,7 +127,7 @@
       answer here
     </dd>
     <dd class="govuk-summary-list__actions">
-      <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> licence type</span></a>
+      <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> client secret</span></a>
     </dd>
   </div>
   <div class="govuk-summary-list__row">
@@ -132,10 +146,21 @@
       Redirect URL
     </dt>
     <dd class="govuk-summary-list__value">
-      http://atw-test.gov.uk
+      http://carers-allowance-test.gov.uk/redirect
     </dd>
     <dd class="govuk-summary-list__actions">
-      <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> licence period</span></a>
+      <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> redirect url</span></a>
+    </dd>
+  </div>
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Logout URL
+    </dt>
+    <dd class="govuk-summary-list__value">
+      http://carers-allowance-test.gov.uk/logout
+    </dd>
+    <dd class="govuk-summary-list__actions">
+      <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> logout url</span></a>
     </dd>
   </div>
   <div class="govuk-summary-list__row">
@@ -180,10 +205,6 @@
     href: "request-list"
   }) }}
 
-  {{ govukButton({
-    text: "Delete record",
-    classes: "govuk-button--warning"
-  }) }}
 </div>
 
         </div>

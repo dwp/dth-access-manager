@@ -10,28 +10,30 @@
     <div class="govuk-grid-column-two-thirds">
 
       <span class="govuk-caption-xl">Sarah Phillips</span>
-<h1 class="govuk-heading-l">Edit client full name</h1>
+      <h1 class="govuk-heading-l">Edit client full name</h1>
 
+        <form class="form" action="check-answers" method="post">
 
-{{ govukInput({
-label: {
-text: "Full name",
-classes: "govuk-label--m",
-isPageHeading: true
-},
-id: "event-name",
-name: "eventName",
-classes: "govuk-input--width-20",
-value: "Sarah Phillips"
-}) }}
-
-              {{ govukButton({
-                text: "Update and return",
-                href: "edit-answers"
+              {{ govukInput({
+              label: {
+              text: "Full name",
+              classes: "govuk-label--m",
+              isPageHeading: true
+              },
+              id: "event-name",
+              name: "eventName",
+              classes: "govuk-input--width-20",
+              value: "Sarah Phillips"
               }) }}
 
+              {{ govukButton({
+                text: "Update and return"
+              }) }}
+
+        </form>
+
               <p>
-                <a class="govuk-link" href="edit-answers">Cancel</a>
+                <a class="govuk-link" href="check-answers">Cancel</a>
               </p>
 
 

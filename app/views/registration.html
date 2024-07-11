@@ -13,10 +13,12 @@
 
       <form action="/check-answers" method="post" novalidate>
 
+        <h2 class="govuk-heading-m">Personal details</h2>
+
         {{ govukInput({
           label: {
             text: "Full name",
-            classes: "govuk-label--m"
+            classes: "govuk-label"
           },
           classes: "govuk-input--width-20",
           id: "full-name",
@@ -28,7 +30,7 @@
         {{ govukInput({
           label: {
             text: "Email address",
-            classes: "govuk-label--m"
+            classes: "govuk-label"
           },
           classes: "govuk-input--width-20",
           id: "email-address",
@@ -40,7 +42,7 @@
         {{ govukInput({
           label: {
             text: "Shared or team email address",
-            classes: "govuk-label--m"
+            classes: "govuk-label"
           },
           classes: "govuk-input--width-20",
           id: "share-team-address",
@@ -56,7 +58,7 @@
         {{ govukInput({
           label: {
             text: "Line manager email address",
-            classes: "govuk-label--m"
+            classes: "govuk-label"
           },
           classes: "govuk-input--width-20",
           id: "manager-email-address",
@@ -67,7 +69,7 @@
         {{ govukInput({
           label: {
             text: "Your teams' Slack channel URL",
-            classes: "govuk-label--m"
+            classes: "govuk-label"
           },
           classes: "govuk-input--width-20",
           id: "team-slack-url",
@@ -83,7 +85,7 @@
         {{ govukInput({
           label: {
             text: "DWP service name",
-            classes: "govuk-label--m"
+            classes: "govuk-label"
           },
           hint: {
                     text: "For example, Access to Work"
@@ -99,10 +101,12 @@
           text: "This is the name of your service that you wish to onboard with Dynamic Trust Hub Access Manager service (DTH AM)."
         }) }}
 
+        <h2 class="govuk-heading-m">Technical details</h2>
+
         {% from "govuk/components/select/macro.njk" import govukSelect %}
 
         <div class="govuk-form-group">
-          <label class="govuk-label govuk-label--m" for="location">
+          <label class="govuk-label govuk-label" for="location">
             Choose environment type
           </label>
           <select class="govuk-select" id="location" name="location" aria-describedby="location-hint">
@@ -120,7 +124,7 @@
         {{ govukInput({
           label: {
             text: "Client secret",
-            classes: "govuk-label--m"
+            classes: "govuk-label"
           },
           hint: {
                     text: "Enter client secret answer"
@@ -143,7 +147,7 @@
         legend: {
         text: "Client secret expiry time",
         isPageHeading: true,
-        classes: "govuk-fieldset__legend--m"
+        classes: "govuk-fieldset__legend-"
         }
         },
         hint: {
@@ -154,7 +158,7 @@
         {{ govukInput({
           label: {
             text: "Redirect URL",
-            classes: "govuk-label--m"
+            classes: "govuk-label"
           },
           hint: {
                     text: "For example, http://client-service.dwp.gov.uk/context"
@@ -173,7 +177,7 @@
         {{ govukInput({
           label: {
             text: "Logout URL",
-            classes: "govuk-label--m"
+            classes: "govuk-label"
           },
           hint: {
                     text: "For example, http://client-service.dwp.gov.uk/logout"
@@ -196,7 +200,7 @@
           name: "location",
           label: {
             text: "ID token signature algorithum",
-            classes: "govuk-label--m"
+            classes: "govuk-label"
           },
           items: [
             {
@@ -222,7 +226,7 @@
         {{ govukInput({
           label: {
             text: "Scopes",
-            classes: "govuk-label--m"
+            classes: "govuk-label"
           },
           hint: {
                     text: "For example, 'openid', 'guid'"
@@ -241,7 +245,7 @@
         {{ govukInput({
           label: {
             text: "Claims",
-            classes: "govuk-label--m"
+            classes: "govuk-label"
           },
           hint: {
                     text: "For example, 'guid', 'email', 'phone', 'vot'"
