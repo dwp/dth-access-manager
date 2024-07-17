@@ -1,4 +1,4 @@
-{% extends "layouts/main_agent.html" %}
+{% extends "layouts/main_agent_links.html" %}
 {% set phaseBanner = 'true' %}
 
 {% block pageTitle %}
@@ -9,7 +9,7 @@
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-    <h1 class="govuk-heading-l">Registration Manager</h1>
+    <h1 class="govuk-heading-l">DTH Registrations (21)</h1>
   </div>
   <div class="govuk-grid-column-one-third">
     <div class="govuk-form-group">
@@ -32,7 +32,7 @@
     <!--     <caption class="govuk-table__caption govuk-table__caption--m">Select a record below to view or update</caption> -->
                   <thead class="govuk-table__head">
                     <tr class="govuk-table__row">
-                      <th scope="col" class="govuk-table__header">Component</th>
+                      <th scope="col" class="govuk-table__header">Client ID</th>
                       <th scope="col" class="govuk-table__header">Service name</th>
                       <th scope="col" class="govuk-table__header">Status</th>
                       <th scope="col" class="govuk-table__header ">Date received</th>
@@ -41,14 +41,14 @@
                   </thead>
                   <tbody class="govuk-table__body">
                     <tr class="govuk-table__row">
-                      <td class="govuk-table__cell">DTH</td>
+                      <td class="govuk-table__cell">CA-WEB</td>
                       <td class="govuk-table__cell">Carers Allowance</td>
                       <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--blue">Pending-new</strong></td>
                       <td class="govuk-table__cell">25 April 2024</td>
                       <td class="govuk-table__cell govuk-table__cell--numeric"><a class="govuk-link" href="edit-answers.html">View<span class="govuk-visually-hidden"> update Carers Allowance record</span></a>
                     </tr>
                     <tr class="govuk-table__row">
-                      <td class="govuk-table__cell">DTH</td>
+                      <td class="govuk-table__cell">UC-WEB</td>
                       <td class="govuk-table__cell">Universal Credit</td>
                       <td class="govuk-table__cell"><strong class="govuk-tag">Pending-new</strong></td>
                       <td class="govuk-table__cell">04 July 2024</td>
@@ -56,35 +56,35 @@
                     </tr>
 
                     <tr class="govuk-table__row">
-                      <td class="govuk-table__cell">GOV-OL</td>
+                      <td class="govuk-table__cell">ATW-WEB</td>
                       <td class="govuk-table__cell">Access to Work</td>
                       <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--red">Declined</strong></td>
                       <td class="govuk-table__cell">12 June 2024</td>
                       <td class="govuk-table__cell govuk-table__cell--numeric"><a href="edit-answers-declined" class="govuk-link">View</a></td>
                     </tr>
                     <tr class="govuk-table__row">
-                      <td class="govuk-table__cell">DTH</td>
+                      <td class="govuk-table__cell">BA-WEB</td>
                       <td class="govuk-table__cell">Bereavement Benefit</td>
                       <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--yellow">Pending-update</strong></td>
                       <td class="govuk-table__cell">21 June 2024</td>
                       <td class="govuk-table__cell govuk-table__cell--numeric">disabled</td>
                     </tr>
                     <tr class="govuk-table__row">
-                      <td class="govuk-table__cell">GOV-OL</td>
+                      <td class="govuk-table__cell">RM-WEB</td>
                       <td class="govuk-table__cell">RAMBYO</td>
                       <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--yellow">Pending-update</strong></td>
                       <td class="govuk-table__cell">04 July 2024</td>
                       <td class="govuk-table__cell govuk-table__cell--numeric">disabled</td>
                     </tr>
                     <tr class="govuk-table__row">
-                      <td class="govuk-table__cell">DTH</td>
+                      <td class="govuk-table__cell">PCC-WEB</td>
                       <td class="govuk-table__cell">Pensions Change of Circs</td>
                       <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--red">Declined</strong></td>
                       <td class="govuk-table__cell">04 July 2024</td>
                       <td class="govuk-table__cell govuk-table__cell--numeric"><a href="" class="govuk-link">View</a></td>
                     </tr>
                     <tr class="govuk-table__row">
-                      <td class="govuk-table__cell">DTH</td>
+                      <td class="govuk-table__cell">CA-WEB</td>
                       <td class="govuk-table__cell">Carers Allowance</td>
                       <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--green">Approved</strong></td>
                       <td class="govuk-table__cell">04 July 2024</td>
@@ -92,7 +92,7 @@
                         <a href="" class="govuk-link">View</a></td>
                     </tr>
                     <tr class="govuk-table__row">
-                      <td class="govuk-table__cell">GOV-OL</td>
+                      <td class="govuk-table__cell">GPIP-WEB</td>
                       <td class="govuk-table__cell">PIP</td>
                       <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--green">Approved</strong></td>
                       <td class="govuk-table__cell">04 July 2024</td>
@@ -100,7 +100,7 @@
                         <a href="edit-answers-approved" class="govuk-link">View</a></td>
                     </tr>
                     <tr class="govuk-table__row">
-                      <td class="govuk-table__cell">GOV-OL</td>
+                      <td class="govuk-table__cell">CV-WEB</td>
                       <td class="govuk-table__cell">Customer View</td>
                       <td class="govuk-table__cell"><strong class="govuk-tag">Pending-new</strong></td>
                       <td class="govuk-table__cell">04 July 2024</td>
@@ -108,7 +108,7 @@
                         <a href="" class="govuk-link">View</a></td>
                     </tr>
                     <tr class="govuk-table__row">
-                      <td class="govuk-table__cell">DTH</td>
+                      <td class="govuk-table__cell">MOT-WEB</td>
                       <td class="govuk-table__cell">MOT Your Vehicle</td>
                       <td class="govuk-table__cell"><strong class="govuk-tag">Pending-new</strong></td>
                       <td class="govuk-table__cell">04 July 2024</td>
