@@ -1,4 +1,4 @@
-{% extends "layouts/main-no-menu-links.html" %}
+{% extends "layouts/main_register.html" %}
 {% set phaseBanner = 'true' %}
 
 {% block pageTitle %}
@@ -11,8 +11,8 @@
     <div class="govuk-grid-column-two-thirds">
 
       {{ govukPanel({
-        titleText: "Access request submitted",
-        html: "Your reference number<br><strong>HDJ2123F</strong>"
+        titleText: "Your registration is complete",
+        html: "Your Client ID<br><strong>CA-24248213887-WEB</strong>"
       }) }}
 
       <p>
@@ -32,7 +32,7 @@
       </p>
 
       <p>
-        <a class="govuk-link" href="">You may now exit this service</a>
+        <a href="javascript:close_window();">You may now close this window.</a>
       </p>
 
       <p>

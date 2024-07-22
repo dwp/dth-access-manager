@@ -1,4 +1,4 @@
-{% extends "layouts/main-no-menu-links.html" %}
+{% extends "layouts/main_register.html" %}
 {% set phaseBanner = 'true' %}
 
 {% block pageTitle %}
@@ -13,7 +13,7 @@
 
       <form action="/check-answers" method="post" novalidate>
 
-        <h2 class="govuk-heading-m">Personal details</h2>
+        <h2 class="govuk-heading-m">Enter Personal details</h2>
 
         {{ govukInput({
           label: {
@@ -101,43 +101,17 @@
           text: "This is the name of your service that you wish to onboard with Dynamic Trust Hub Access Manager service (DTH AM)."
         }) }}
 
-        <h2 class="govuk-heading-m">Technical details</h2>
-
-        {% from "govuk/components/select/macro.njk" import govukSelect %}
-
-        <div class="govuk-form-group">
-          <label class="govuk-label govuk-label" for="location">
-            Choose environment type
-          </label>
-          <select class="govuk-select" id="location" name="location" aria-describedby="location-hint">
-            <option value="choose" selected>Choose environment</option>
-            <option value="eastmidlands">Test</option>
-            <option value="eastofengland">Production</option>
-          </select>
-        </div>
-
-        {{ govukDetails({
-          summaryText: "Tell me more about environment type",
-          text: "Filler text in here for now, awaiting content."
-        }) }}
-
+        {% set emailHtml %}
         {{ govukInput({
+          id: "contact-by-email",
+          name: "contactByEmail",
+          type: "email",
+          autocomplete: "email",
+          spellcheck: false,
+          classes: "govuk-!-width-one-third",
           label: {
-            text: "Client secret",
-            classes: "govuk-label"
-          },
-          hint: {
-                    text: "Enter client secret answer"
-                  },
-          classes: "govuk-input--width-10",
-          id: "client-secret",
-          name: "clientSecret",
-          spellcheck: false
-        }) }}
-
-        {{ govukDetails({
-          summaryText: "Tell me more about Client secret",
-          text: "A client secret is a secret string that the application uses to prove its identity when requesting a token, this can also can be referred to as an application password."
+            text: "Client Secret answer"
+          }
         }) }}
 
         {{ govukDateInput({
@@ -153,6 +127,105 @@
         hint: {
         text: "For example, 10 6 2025"
         }
+        }) }}
+        {% endset -%}
+
+        {% set phoneHtml %}
+        {{ govukInput({
+          id: "public-key-answer",
+          name: "publicKeyAnswer",
+          type: "email",
+          autocomplete: "off",
+          spellcheck: false,
+          classes: "govuk-!-width-one-third",
+          label: {
+            text: "Public Key answer"
+          }
+        }) }}
+
+        {{ govukDateInput({
+        id: "expiry-time-public",
+        namePrefix: "expiry-time-public",
+        fieldset: {
+        legend: {
+        text: "Public Key expiry time",
+        isPageHeading: true,
+        classes: "govuk-fieldset__legend-"
+        }
+        },
+        hint: {
+        text: "For example, 10 6 2025"
+        }
+        }) }}
+        {% endset -%}
+
+        {% set textHtml %}
+        {{ govukInput({
+          id: "contact-by-text",
+          name: "contactByText",
+          type: "tel",
+          autocomplete: "tel",
+          classes: "govuk-!-width-one-third",
+          label: {
+            text: "Mobile phone number"
+          }
+        }) }}
+        {% endset -%}
+
+        {{ govukRadios({
+          name: "contact",
+          fieldset: {
+            legend: {
+              text: "Select Client or Public Key",
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--m"
+            }
+          },
+          hint: {
+            text: "You must use either a Client Secret or Public Key"
+          },
+          items: [
+            {
+              value: "email",
+              text: "Client Secret",
+              conditional: {
+                html: emailHtml
+              }
+            },
+            {
+              value: "phone",
+              text: "Public Key",
+              conditional: {
+                html: phoneHtml
+              }
+            }
+          ]
+        }) }}
+
+        {{ govukDetails({
+          summaryText: "Tell me more about Client Secret or Public Key",
+          html: '<p>A client secret is a secret string that the application uses to prove its identity when requesting a token, this can also can be referred to as an application password.</p>
+          <p>A public key is a string that the application uses to prove its identity and more content here.</p>'
+        }) }}
+
+        <h2 class="govuk-heading-m">Enter Technical details</h2>
+
+        {% from "govuk/components/select/macro.njk" import govukSelect %}
+
+        <div class="govuk-form-group">
+          <label class="govuk-label govuk-label" for="location">
+            Choose environment
+          </label>
+          <select class="govuk-select" id="location" name="location" aria-describedby="location-hint">
+            <option value="choose" selected>Select type</option>
+            <option value="eastmidlands">Test</option>
+            <option value="eastofengland">Production</option>
+          </select>
+        </div>
+
+        {{ govukDetails({
+          summaryText: "Tell me more about environment type",
+          text: "Filler text in here for now, awaiting content."
         }) }}
 
         {{ govukInput({
