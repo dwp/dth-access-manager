@@ -18,12 +18,12 @@
       </h1>
 
       <p class="govuk-body">
-        This service will allow you to see, edit and update any DTH approval requests submitted by service lines. Please note a record can only be approved or declined by stating your decision in detail.
+        This service will allow you to see and update any DTH approval requests submitted by service lines. Please note a request can only be declined by stating your decision in detail.
       </p>
 
       {{ govukDetails({
         summaryText: "Learn more about updating a record",
-        text: "If there is an update then the status of the registration will be greyed out until its been approved by additional employee by OTP - so ITSM cannot approve alone. Once OTP is approved then status column is updated."
+        text: "If there is an update then the status of the registration will show 'pending-update' until its been approved by additional employee by OTP - so ITSM cannot approve alone. Once OTP is approved the status is updated further"
       }) }}
 
       <form class="form" action="/choice-answer" method="post">

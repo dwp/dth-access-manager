@@ -1,4 +1,4 @@
-{% extends "layouts/main-no-menu-links.html" %}
+{% extends "layouts/main_register.html" %}
 {% set phaseBanner = 'true' %}
 
 {% set pageName="DWP Access Manager Prototype" %}
@@ -36,6 +36,11 @@
       </ul>
     </p>
 
+    {{ govukButton({
+      text: "Start registration prototype",
+      href: "start"
+    }) }}
+
     <h2 class="govuk-heading-m">
       DWP Access Manager Approvals pages
     </h2>
@@ -52,17 +57,18 @@
           <a class="govuk-link" href="request-list-updated">DTH Registration record list (after making a decision)</a>
         </li>
         <li>
-          <a class="govuk-link" href="#">One Login Registration list (no page at present)</a>
+          <a class="govuk-link" href="request-list-ol">One Login Approvals list</a>
         </li>
         <li>
           <a class="govuk-link" href="edit-answers">View client registration request</a>
         </li>
-        <li>
+<!--    <li>
           <a class="govuk-link" href="edit-answers-approved">View client registration request (approved)</a>
         </li>
         <li>
           <a class="govuk-link" href="edit-answers-declined">View client registration request (declined)</a>
         </li>
+        -->
         <li>
           <a class="govuk-link" href="make-decision">Make a decision on this request</a>
         </li>
@@ -71,6 +77,11 @@
         </li>
       </ul>
     </p>
+
+    {{ govukButton({
+      text: "Start management prototype",
+      href: "approve-choice"
+    }) }}
 
     <h2 class="govuk-heading-m">
       Footer link pages

@@ -14,6 +14,6 @@ router.post('/choice-answer', function(request, response) {
     if (country == "dth"){
         response.redirect("/request-list")
     } else {
-        response.redirect("/onelogin")
+        response.redirect("/request-list-ol")
     }
 })
