@@ -1,0 +1,166 @@
+{% extends "layouts/main_agent_links.html" %}
+{% set phaseBanner = 'true' %}
+
+{% block pageTitle %}
+  Access Request list – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-notification-banner govuk-notification-banner--success" role="alert" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
+  <div class="govuk-notification-banner__header">
+    <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
+      Decline for Carers Allowance
+    </h2>
+  </div>
+  <div class="govuk-notification-banner__content">
+    <h3 class="govuk-notification-banner__heading">
+      You have declined CA-24248213887-WEB
+    </h3>
+    <p class="govuk-body">We declined this client request because of xyz. A decision on this request 5 days ago.</p>
+  </div>
+</div>
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <h1 class="govuk-heading-l">DTH Registrations (21)</h1>
+  </div>
+  <div class="govuk-grid-column-one-third">
+    <div class="govuk-form-group">
+<label class="govuk-label" for="sort">
+  Sort by
+</label>
+
+<select class="govuk-select" id="sort" name="sort">
+  <option value="views">Component</option>
+  <option value="updated">Service name</option>
+  <option value="published" selected>Status</option>
+  <option value="published" selected>Date received</option>
+
+</select>
+</div>
+  </div>
+</div>
+
+<table class="govuk-table" table aria-label="DTH Registrations">
+<!--     <caption class="govuk-table__caption govuk-table__caption--m">Select a record below to view or update</caption> -->
+<thead class="govuk-table__head">
+  <tr class="govuk-table__row">
+    <th scope="col" class="govuk-table__header">Environment</th>
+    <th scope="col" class="govuk-table__header">Service name</th>
+    <th scope="col" class="govuk-table__header">Status</th>
+    <th scope="col" class="govuk-table__header ">Date received</th>
+    <th scope="col" class="govuk-table__header govuk-table__header--numeric">Action</th>
+  </tr>
+</thead>
+<tbody class="govuk-table__body">
+  <tr class="govuk-table__row">
+    <td class="govuk-table__cell">TEST</td>
+    <td class="govuk-table__cell">Carers Allowance</td>
+    <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--blue">Pending-new</strong></td>
+    <td class="govuk-table__cell">25 April 2024</td>
+    <td class="govuk-table__cell govuk-table__cell--numeric"><a class="govuk-link" href="edit-answers.html">View<span class="govuk-visually-hidden"> update Carers Allowance record</span></a>
+  </tr>
+  <tr class="govuk-table__row">
+    <td class="govuk-table__cell">TEST</td>
+    <td class="govuk-table__cell">Universal Credit</td>
+    <td class="govuk-table__cell"><strong class="govuk-tag">Pending-new</strong></td>
+    <td class="govuk-table__cell">04 July 2024</td>
+    <td class="govuk-table__cell govuk-table__cell--numeric"><a class="govuk-link" href="edit-answers.html">View<span class="govuk-visually-hidden"> update Universal Credit record</span></a>
+  </tr>
+
+  <tr class="govuk-table__row">
+    <td class="govuk-table__cell">PROD</td>
+    <td class="govuk-table__cell">Access to Work</td>
+    <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--red">Declined</strong></td>
+    <td class="govuk-table__cell">12 June 2024</td>
+    <td class="govuk-table__cell govuk-table__cell--numeric"><a href="edit-answers-declined" class="govuk-link">View</a></td>
+  </tr>
+  <tr class="govuk-table__row">
+    <td class="govuk-table__cell">TEST</td>
+    <td class="govuk-table__cell">Bereavement Benefit</td>
+    <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--yellow">Pending-update</strong></td>
+    <td class="govuk-table__cell">21 June 2024</td>
+    <td class="govuk-table__cell govuk-table__cell--numeric">disabled</td>
+  </tr>
+  <tr class="govuk-table__row">
+    <td class="govuk-table__cell">PROD</td>
+    <td class="govuk-table__cell">RAMBYO</td>
+    <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--yellow">Pending-update</strong></td>
+    <td class="govuk-table__cell">04 July 2024</td>
+    <td class="govuk-table__cell govuk-table__cell--numeric">disabled</td>
+  </tr>
+  <tr class="govuk-table__row">
+    <td class="govuk-table__cell">PROD</td>
+    <td class="govuk-table__cell">Pensions Change of Circs</td>
+    <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--red">Declined</strong></td>
+    <td class="govuk-table__cell">04 July 2024</td>
+    <td class="govuk-table__cell govuk-table__cell--numeric"><a href="" class="govuk-link">View</a></td>
+  </tr>
+  <tr class="govuk-table__row">
+    <td class="govuk-table__cell">TEST</td>
+    <td class="govuk-table__cell">Carers Allowance</td>
+    <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--blue">Pending-new</strong></td>
+    <td class="govuk-table__cell">04 July 2024</td>
+    <td class="govuk-table__cell govuk-table__cell--numeric">
+      <a href="" class="govuk-link">View</a></td>
+  </tr>
+  <tr class="govuk-table__row">
+    <td class="govuk-table__cell">TEST</td>
+    <td class="govuk-table__cell">PIP</td>
+    <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--yellow">Pending-update</strong></td>
+    <td class="govuk-table__cell">04 July 2024</td>
+    <td class="govuk-table__cell govuk-table__cell--numeric">
+      <a href="edit-answers-approved" class="govuk-link">View</a></td>
+  </tr>
+  <tr class="govuk-table__row">
+    <td class="govuk-table__cell">PROD</td>
+    <td class="govuk-table__cell">Customer View</td>
+    <td class="govuk-table__cell"><strong class="govuk-tag">Pending-new</strong></td>
+    <td class="govuk-table__cell">04 July 2024</td>
+    <td class="govuk-table__cell govuk-table__cell--numeric">
+      <a href="" class="govuk-link">View</a></td>
+  </tr>
+  <tr class="govuk-table__row">
+    <td class="govuk-table__cell">PROD</td>
+    <td class="govuk-table__cell">MOT Your Vehicle</td>
+    <td class="govuk-table__cell"><strong class="govuk-tag">Pending-new</strong></td>
+    <td class="govuk-table__cell">04 July 2024</td>
+    <td class="govuk-table__cell govuk-table__cell--numeric">
+    <a href="" class="govuk-link">View</a></td>
+  </tr>
+</tbody>
+</table>
+
+                {% from "govuk/components/pagination/macro.njk" import govukPagination %}
+
+{{ govukPagination({
+  previous: {
+    href: "#"
+  },
+  next: {
+    href: "#"
+  },
+  items: [
+    {
+      number: 1,
+      current: true,
+      href: "#"
+    },
+    {
+      number: 2,
+      href: "#"
+    },
+    {
+      number: 3,
+      href: "#"
+    }
+  ]
+}) }}
+
+<p class="govuk-body"><a href="dthclient.itsm@DWP.gov.uk">Switch to GOV.UK One Login Approvals</a></p>
+
+    </div>
+  </div>
+
+{% endblock %}
