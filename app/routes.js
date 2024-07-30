@@ -17,3 +17,13 @@ router.post('/choice-answer', function(request, response) {
         response.redirect("/request-list-ol")
     }
 })
+
+router.post('/request-decision', function(request, response) {
+
+    var decision = request.session.data['yourDecision']
+    if (decision == "approve"){
+        response.redirect("/request-list-updated")
+    } else {
+        response.redirect("/request-list-declined")
+    }
+})

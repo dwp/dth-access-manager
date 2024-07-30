@@ -178,24 +178,7 @@
   </dl>'
 }) }}
 
-<form class="form" action="request-list" method="post">
-
-{% set emailHtml %}
-{{ govukInput({
-  id: "contact-by-email",
-  name: "contactByEmail",
-  type: "email",
-  autocomplete: "email",
-  spellcheck: false,
-  classes: "govuk-!-width-one-half",
-  label: {
-    text: "Email address"
-  },
-  errorMessage: {
-    text: "Email address cannot be blank"
-  }
-}) }}
-{% endset -%}
+<form class="form" action="request-decision" method="post">
 
 {% set textHtml %}
 {{ govukTextarea({
@@ -210,7 +193,7 @@
 {% endset -%}
 
 {{ govukRadios({
-  name: "contact",
+  name: "yourDecision",
   fieldset: {
     legend: {
       text: "Your decision",
@@ -238,8 +221,7 @@
 }) }}
 
 {{ govukButton({
-text: "Confirm decision",
-href: "request-list-updated"
+text: "Confirm decision"
 }) }}
 
 

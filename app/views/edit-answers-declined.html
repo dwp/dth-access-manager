@@ -1,4 +1,4 @@
-{% extends "layouts/main_agent_details.html" %}
+{% extends "layouts/main_agent_details_declined.html" %}
 {% set phaseBanner = 'true' %}
 
 {% block pageTitle %}
@@ -9,18 +9,12 @@
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-    <span class="govuk-caption-xl">ATW-WEB</span>
-      <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">
-        Access to Work
-        <strong class="govuk-tag govuk-tag--red">
-  Declined
-</strong>
+      <h1 class="govuk-heading-l govuk-!-margin-bottom-6">
+        Registration request details
   </h1>
 
   <div class="govuk-inset-text govuk-!-margin-top-0">
-
-      <h2 class="govuk-heading-m govuk-!-margin-bottom-3">Reason for decline</h2>
-
+      <h2 class="govuk-heading-m govuk-!-margin-bottom-3">Request declined</h2>
       <p>We declined this client request because of xyz. We made a decision on this request 5 days ago.</p>
 
 <a href="" role="button" draggable="false" class="govuk-button govuk-!-margin-bottom-0 govuk-button--secondary" data-module="govuk-button">
@@ -28,11 +22,6 @@
 </a>
 
 </div>
-
-{{ govukDetails({
-  summaryText: "Learn more about this client record page",
-  text: "You can use this page to check the client record and quickly make an approval decision. By updating this record you are confirming that, to the best of your knowledge, the details you are providing are correct."
-}) }}
 
 <h2 class="govuk-heading-l">Application</h2>
 
@@ -46,9 +35,6 @@
     <dd class="govuk-summary-list__value">
       Sarah Philips
     </dd>
-    <dd class="govuk-summary-list__actions">
-      <a class="govuk-link" href="edit-full-name">Change<span class="govuk-visually-hidden"> name</span></a>
-    </dd>
   </div>
   <div class="govuk-summary-list__row">
     <dt class="govuk-summary-list__key">
@@ -56,9 +42,6 @@
     </dt>
     <dd class="govuk-summary-list__value">
       sarah@testdwp.gov.uk
-    </dd>
-    <dd class="govuk-summary-list__actions">
-      <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> email address</span></a>
     </dd>
   </div>
   <div class="govuk-summary-list__row">
@@ -68,9 +51,6 @@
     <dd class="govuk-summary-list__value">
       team@mail.gov.uk
     </dd>
-    <dd class="govuk-summary-list__actions">
-      <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> team email</span></a>
-    </dd>
   </div>
   <div class="govuk-summary-list__row">
     <dt class="govuk-summary-list__key">
@@ -78,9 +58,6 @@
     </dt>
     <dd class="govuk-summary-list__value">
       manager@tmail.gov.uk
-    </dd>
-    <dd class="govuk-summary-list__actions">
-      <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> line manager email</span></a>
     </dd>
   </div>
   <div class="govuk-summary-list__row">
@@ -90,9 +67,6 @@
     <dd class="govuk-summary-list__value">
       Slack URL
     </dd>
-    <dd class="govuk-summary-list__actions">
-      <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> slack URL</span></a>
-    </dd>
   </div>
   <div class="govuk-summary-list__row">
     <dt class="govuk-summary-list__key">
@@ -100,9 +74,6 @@
     </dt>
     <dd class="govuk-summary-list__value">
       Carers Allowance
-    </dd>
-    <dd class="govuk-summary-list__actions">
-      <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> previous application number</span></a>
     </dd>
   </div>
 </dl>
@@ -115,9 +86,6 @@
     <dd class="govuk-summary-list__value">
       Test
     </dd>
-    <dd class="govuk-summary-list__actions">
-      <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> licence type</span></a>
-    </dd>
   </div>
   <div class="govuk-summary-list__row">
     <dt class="govuk-summary-list__key">
@@ -125,9 +93,6 @@
     </dt>
     <dd class="govuk-summary-list__value">
       answer here
-    </dd>
-    <dd class="govuk-summary-list__actions">
-      <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> client secret</span></a>
     </dd>
   </div>
   <div class="govuk-summary-list__row">
@@ -137,9 +102,6 @@
     <dd class="govuk-summary-list__value">
       27-5-2025
     </dd>
-    <dd class="govuk-summary-list__actions">
-      <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> home address</span></a>
-    </dd>
   </div>
   <div class="govuk-summary-list__row">
     <dt class="govuk-summary-list__key">
@@ -147,9 +109,6 @@
     </dt>
     <dd class="govuk-summary-list__value">
       http://carers-allowance-test.gov.uk/redirect
-    </dd>
-    <dd class="govuk-summary-list__actions">
-      <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> redirect url</span></a>
     </dd>
   </div>
   <div class="govuk-summary-list__row">
@@ -159,9 +118,6 @@
     <dd class="govuk-summary-list__value">
       http://carers-allowance-test.gov.uk/logout
     </dd>
-    <dd class="govuk-summary-list__actions">
-      <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> logout url</span></a>
-    </dd>
   </div>
   <div class="govuk-summary-list__row">
     <dt class="govuk-summary-list__key">
@@ -169,9 +125,6 @@
     </dt>
     <dd class="govuk-summary-list__value">
       ES256
-    </dd>
-    <dd class="govuk-summary-list__actions">
-      <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> licence period</span></a>
     </dd>
   </div>
   <div class="govuk-summary-list__row">
@@ -181,9 +134,6 @@
     <dd class="govuk-summary-list__value">
       openID
     </dd>
-    <dd class="govuk-summary-list__actions">
-      <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> licence period</span></a>
-    </dd>
   </div>
   <div class="govuk-summary-list__row">
     <dt class="govuk-summary-list__key">
@@ -191,9 +141,6 @@
     </dt>
     <dd class="govuk-summary-list__value">
       phone
-    </dd>
-    <dd class="govuk-summary-list__actions">
-      <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> licence period</span></a>
     </dd>
   </div>
 </dl>
