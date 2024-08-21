@@ -15,7 +15,7 @@ https://prototype-kit.service.gov.uk/docs/how-to-use-layouts
 {% from "govuk/components/inset-text/macro.njk" import govukInsetText %}
 {% from "internal-service-header/macro.njk" import dwpHeader %}
 {% from "internal-service-footer/macro.njk" import dwpFooter %}
-{% from "quick-reference/macro.njk" import dwpQuickReference %}
+{% from "key-details-bar/macro.njk" import dwpKeyDetailsBar %}
 
 {% block header %}
 
@@ -28,21 +28,34 @@ https://prototype-kit.service.gov.uk/docs/how-to-use-layouts
 }}
 
 {{
-    dwpQuickReference({
-        ariaLabel: "Case information",
+    dwpKeyDetailsBar({
         primaryIdentifier: {
             text: 'Name:',
-            value: 'Jane Doe'
+            value: 'Access to Work'
         },
         secondaryIdentifier: {
-            text: 'National Insurance number:',
-            value: 'QQ 12 34 56 X'
+            text: 'Component:',
+            value: 'DTH'
         },
         status: {
             text: 'Claim status:',
-            value: 'Active',
-            classes: 'govuk-tag--green'
+            value: 'Declined',
+            classes: 'govuk-tag--red'
+        },
+        additionalData: [
+        {
+            text: "Date of registration:",
+            value: "27 May 2024"
+        },
+        {
+            text: "Client ID:",
+            value: "ATW-24248213887-WEB"
+        },
+        {
+            text: "Environment:",
+            value: "TEST"
         }
+        ]
     })
 }}
 
@@ -78,8 +91,12 @@ https://prototype-kit.service.gov.uk/docs/how-to-use-layouts
                 text: "Accessibility statement"
             },
             {
-                href: "/contact-dwp-support",
+                href: "/contact-dth-support",
                 text: "Contact support (opens in a new tab)"
+            },
+            {
+                href: "",
+                text: "Privacy"
             },
             {
                 href: "/manage-prototype/clear-data",
