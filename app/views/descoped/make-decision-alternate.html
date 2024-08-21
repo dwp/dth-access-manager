@@ -174,23 +174,6 @@
 
 <form class="form" action="request-list" method="post">
 
-{% set emailHtml %}
-{{ govukInput({
-  id: "contact-by-email",
-  name: "contactByEmail",
-  type: "email",
-  autocomplete: "email",
-  spellcheck: false,
-  classes: "govuk-!-width-one-half",
-  label: {
-    text: "Email address"
-  },
-  errorMessage: {
-    text: "Email address cannot be blank"
-  }
-}) }}
-{% endset -%}
-
 {% set textHtml %}
 {{ govukTextarea({
   id: "reason-for-decline",
@@ -204,7 +187,7 @@
 {% endset -%}
 
 {{ govukRadios({
-  name: "contact",
+  name: "decision",
   fieldset: {
     legend: {
       text: "Your decision",
@@ -236,8 +219,7 @@ text: "Confirm decision",
 href: "request-list-updated"
 }) }}
 
-
-                        </form>
+</form>
 
               <p>
                 <a href="edit-answers">

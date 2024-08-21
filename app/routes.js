@@ -27,3 +27,13 @@ router.post('/request-decision', function(request, response) {
         response.redirect("/request-list-declined")
     }
 })
+
+router.post('/request-decision2', function(request, response) {
+
+    var decision = request.session.data['yourDecision2']
+    if (decision == "approve"){
+        response.redirect("/request-approved")
+    } else {
+        response.redirect("/request-declined")
+    }
+})
