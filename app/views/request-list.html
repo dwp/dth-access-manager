@@ -2,14 +2,14 @@
 {% set phaseBanner = 'true' %}
 
 {% block pageTitle %}
-  DWP Access Manager Registrations – {{ serviceName }} – GOV.UK Prototype Kit
+  DWP Access Manager Registration Requests – {{ serviceName }} – GOV.UK Prototype Kit
 {% endblock %}
 
 {% block content %}
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-    <h1 class="govuk-heading-l">DTH Registrations (21)</h1>
+    <h1 class="govuk-heading-l">DWP Registration requests (21)</h1>
   </div>
   <div class="govuk-grid-column-one-third">
     <div class="govuk-form-group">
@@ -18,10 +18,10 @@
 </label>
 
 <select class="govuk-select" id="sort" name="sort">
+  <option value="published" selected>Date received</option>
   <option value="views">Environment</option>
   <option value="updated">Service name</option>
-  <option value="published" selected>Status</option>
-  <option value="published" selected>Date received</option>
+  <option value="published">Status</option>
 
 </select>
 </div>
