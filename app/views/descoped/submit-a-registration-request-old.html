@@ -118,7 +118,32 @@
         }) }}
 
         {% set clientHtml %}
-        <p class="govuk-body">The client secret will be provided by the service and you will receive this via email.</p>
+        {{ govukInput({
+          id: "client-secret-answer",
+          name: "clientSecretAnswer",
+          type: "text",
+          autocomplete: "off",
+          spellcheck: false,
+          classes: "govuk-!-width-one-third",
+          label: {
+            text: "Client Secret answer"
+          }
+        }) }}
+
+        {{ govukDateInput({
+        id: "clientDate",
+        namePrefix: "clientDate",
+        fieldset: {
+        legend: {
+        text: "Client secret expiry date",
+        isPageHeading: true,
+        classes: "govuk-fieldset__legend-"
+        }
+        },
+        hint: {
+        text: "For example, 10 6 2025"
+        }
+        }) }}
         {% endset -%}
 
         {% set publicHtml %}
@@ -160,13 +185,13 @@
             }
           },
           hint: {
-            text: "You must use either a Client Secret or Public Key"
+            text: "You must use either a Client Secret or Public Key. The client secret will be provided by the service and you will receive this via email."
           },
           items: [
             {
               value: "client",
               text: "Client Secret",
-                conditional: {
+              conditional: {
                 html: clientHtml
               }
             },
@@ -187,6 +212,22 @@
         }) }}
 
         <h2 class="govuk-heading-m">Enter Technical details</h2>
+
+        <div class="govuk-form-group">
+          <label class="govuk-label govuk-label" for="environment">
+            Choose environment
+          </label>
+          <select class="govuk-select" id="environment" name="environment" aria-describedby="environment-hint">
+            <option value="choose" selected>Select type</option>
+            <option value="Test">Test</option>
+            <option value="Production">Production</option>
+          </select>
+        </div>
+
+        {{ govukDetails({
+          summaryText: "Tell me more about environment type",
+          text: "Filler text in here for now, awaiting content."
+        }) }}
 
         {{ govukInput({
           label: {
