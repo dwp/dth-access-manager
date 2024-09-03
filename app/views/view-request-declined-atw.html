@@ -1,0 +1,169 @@
+{% extends "layouts/main_agent_details_declined_atw.html" %}
+{% set phaseBanner = 'true' %}
+{% set backLink = 'true' %}
+
+{% block pageTitle %}
+  Registration request declined details – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+<h1 class="govuk-heading-l">This registration request was declined</h1>
+
+<!--
+<div class="govuk-inset-text govuk-!-margin-top-0">
+    <h2 class="govuk-heading-m govuk-!-margin-bottom-3">Action needed</h2>
+    <p>This application was received 6 days ago, you should aim to make a decision on this claim within 30 days.</p>
+    </div> -->
+
+<h2 class="govuk-heading-m">Reason for the decline</h2>
+
+<p class="govuk-body">This registration request was declined due the wrong redirect URLs being submitted on the registration form.</p>
+
+<h2 class="govuk-heading-m">Decision date</h2>
+
+<p class="govuk-body">25 September 2024</p>
+
+<h2 class="govuk-heading-m">Personal details</h2>
+
+<dl class="govuk-summary-list govuk-!-margin-bottom-9">
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Full Name
+    </dt>
+    <dd class="govuk-summary-list__value">
+      Sarah Philips
+    </dd>
+  </div>
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Email address
+    </dt>
+    <dd class="govuk-summary-list__value">
+      sarah@testdwp.gov.uk
+    </dd>
+  </div>
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Shared or team email address
+    </dt>
+    <dd class="govuk-summary-list__value">
+      team@mail.gov.uk
+    </dd>
+  </div>
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Line manager email address
+    </dt>
+    <dd class="govuk-summary-list__value">
+      manager@tmail.gov.uk
+    </dd>
+  </div>
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Approver's email address
+    </dt>
+    <dd class="govuk-summary-list__value">
+      approver@tmail.gov.uk
+    </dd>
+  </div>
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Your teams' Slack channel URL
+    </dt>
+    <dd class="govuk-summary-list__value">
+      Slack URL
+    </dd>
+  </div>
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      DWP service name
+    </dt>
+    <dd class="govuk-summary-list__value">
+      Carers Allowance
+  </div>
+</dl>
+<h2 class="govuk-heading-m">Public key details</h2>
+<dl class="govuk-summary-list govuk-!-margin-bottom-9">
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Public key answer
+    </dt>
+    <dd class="govuk-summary-list__value">
+      answer here
+    </dd>
+  </div>
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Public key expiry date
+    </dt>
+    <dd class="govuk-summary-list__value">
+      25 02 2025
+    </dd>
+  </div>
+</dl>
+<h2 class="govuk-heading-m">Technical details</h2>
+<dl class="govuk-summary-list govuk-!-margin-bottom-9">
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Environment type
+    </dt>
+    <dd class="govuk-summary-list__value">
+      Test
+    </dd>
+  </div>
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      IDV passed Redirect URL
+    </dt>
+    <dd class="govuk-summary-list__value">
+      url here
+    </dd>
+  </div>
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      IDV failed Redirect URL
+    </dt>
+    <dd class="govuk-summary-list__value">
+      url here
+    </dd>
+  </div>
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Logout URL
+    </dt>
+    <dd class="govuk-summary-list__value">
+      http://carers-allowance-test.gov.uk/logout
+    </dd>
+  </div>
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Scopes
+    </dt>
+    <dd class="govuk-summary-list__value">
+      openID
+    </dd>
+  </div>
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Claims
+    </dt>
+    <dd class="govuk-summary-list__value">
+      phone
+    </dd>
+  </div>
+</dl>
+
+<div class="govuk-button-group">
+      {{ govukButton({
+          text: "Return to DWP Registrations",
+          classes: "govuk-button--secondary",
+          href: "request-list"
+      }) }}
+</div>
+
+</div>
+
+
+{% endblock %}
