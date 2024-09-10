@@ -1,0 +1,240 @@
+{% extends "layouts/main_register.html" %}
+{% set phaseBanner = 'true' %}
+
+{% block pageTitle %}
+    Submit a registration request – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+    <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+            <h1 class="govuk-heading-l">
+                Submit a registration request
+            </h1>
+
+            <form action="/test-registration-check-your-answers" method="post" novalidate>
+
+                <!-- Personal details -->
+                <h2 class="govuk-heading-m">
+                Enter personal details
+                </h2>
+                <!-- Full name -->
+                {{ govukInput({
+                label: {
+                    text: "Full name"
+                },
+                id: "full-name-of-user-registering",
+                name: "fullNameOfUserRegistering"
+                }) }}
+                <!-- End of -->
+
+                <!-- Email address -->
+                {{ govukInput({
+                label: {
+                    text: "Email address"
+                },
+                id: "email-address-of-user-registering",
+                name: "emailAddressOfUserRegistering"
+                }) }}
+                <!-- End of -->
+
+                <!-- Shared or team email address -->
+                {{ govukInput({
+                label: {
+                    text: "Shared or team email address"
+                },
+                id: "shared-email-address-of-user-registering",
+                name: "sharedEmailAddressOfUserRegistering"
+                }) }}
+                <!-- End of -->
+
+                <!-- Line manager email address -->
+                {{ govukInput({
+                label: {
+                    text: "Line manager email address"
+                },
+                id: "email-address-of-line-manager",
+                name: "emailAddressOfLineManager"
+                }) }}
+                <!-- End of -->
+
+                <!-- Your teams' Slack channel URL -->
+                {{ govukInput({
+                label: {
+                    text: "Your teams' Slack channel URL"
+                },
+                id: "user-team-slack-channel-url",
+                name: "userTeamSlackChannelUrl"
+                }) }}
+                <!-- End of -->
+
+                <!-- DWP service name -->
+                {{ govukInput({
+                label: {
+                    text: "DWP service name"
+                },
+                hint: {
+                    text: "For example, Access to Work"
+                },
+                id: "user-team-slack-channel-url",
+                name: "userTeamSlackChannelUrl"
+                }) }}
+                <!-- End of -->
+                <!-- End of personal details -->
+
+                <!-- Client secret or Public key -->
+                {% set clientSecretHtml %}
+                <!-- Client secret answer -->
+                {{ govukInput({
+                label: {
+                    text: "Client Secret answer"
+                },
+                classes: "govuk-!-width-one-half",
+                id: "client-secret-answer",
+                name: "clientSecretAnswer"
+                }) }}
+                <!-- End of -->
+                <!-- Expiry date -->
+                {{ govukDateInput({
+                id: "client-secret-expiry-date",
+                namePrefix: "clientSecretExpiryDate",
+                fieldset: {
+                    legend: {
+                    text: "Client secret expiry date",
+                    classes: "govuk-fieldset__legend"
+                    }
+                },
+                hint: {
+                    text: "For example, 27 3 2007"
+                }
+                }) }}
+                <!-- End of -->
+                {% endset -%}
+
+                {% set publicSecretHtml %}
+                <!-- Public secret answer -->
+                {{ govukInput({
+                label: {
+                    text: "Public Key answer"
+                },
+                classes: "govuk-!-width-one-half",
+                id: "public-key-answer",
+                name: "publicKeyAnswer"
+                }) }}
+                <!-- End of -->
+                <!-- Expiry date -->
+                {{ govukDateInput({
+                id: "public-key-expiry-date",
+                namePrefix: "publicKeyExpiryDate",
+                fieldset: {
+                    legend: {
+                    text: "Public key expiry date",
+                    classes: "govuk-fieldset__legend"
+                    }
+                },
+                hint: {
+                    text: "For example, 27 3 2007"
+                }
+                }) }}
+                <!-- End of -->
+                {% endset -%}
+
+                <!-- Select client secret or public key Radios -->
+                {{ govukRadios({
+                name: "clientSecretOrPublicKey",
+                fieldset: {
+                    legend: {
+                    text: "Select Client secret or Public key",
+                    classes: "govuk-fieldset__legend--m"
+                    }
+                },
+                hint: {
+                    text: "You must use either a Client Secret or Public Key."
+                },
+                items: [
+                    {
+                    value: "Client Secret",
+                    text: "Client Secret",
+                    conditional: {
+                        html: clientSecretHtml
+                    }
+                    },
+                    {
+                    value: "Public Key",
+                    text: "Public Key",
+                    conditional: {
+                        html: publicSecretHtml
+                    }
+                    }
+                ]
+                }) }}
+                <!-- End of -->
+                <!-- End of Client secret or Public key -->
+
+                <!-- Technical details -->
+                <h2 class="govuk-heading-m">
+                    Enter technical details
+                </h2>
+
+                <!-- Choose environment -->
+                {{ govukSelect({
+                id: "chosen-environment",
+                name: "chosenEnvironment",
+                label: {
+                    text: "Choose environment"
+                },
+                items: [
+                    {
+                    value: "Select type",
+                    text: "Select type"
+                    },
+                    {
+                    value: "Test",
+                    text: "Test"
+                    },
+                    {
+                    value: "Production",
+                    text: "Production"
+                    }
+                ]
+                }) }}
+                <!-- End of -->
+
+                <!-- Redirect URL -->
+
+                <!-- End of -->
+
+                <!-- Logout URL -->
+
+                <!-- End of -->
+
+                <!-- ID token signature algorithm -->
+
+                <!-- End of -->
+
+                <!-- Scopes -->
+
+                <!-- End of -->
+
+                <!-- Claims -->
+
+                <!-- End of -->
+
+                <!-- End of Technical details -->
+
+                <div class="govuk-button-group">
+                {{ govukButton({
+                    text: "Continue"
+                }) }}
+
+                {{ govukButton({
+                    text: "Clear",
+                    classes: "govuk-button--secondary"
+                }) }}
+                </div>
+
+            </form>
+        </div>
+    </div>
+{% endblock %}

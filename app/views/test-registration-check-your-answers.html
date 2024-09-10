@@ -1,0 +1,322 @@
+{% extends "layouts/main_register.html" %}
+{% set phaseBanner = 'true' %}
+
+{% block pageTitle %}
+    Check answers – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+    <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds-from-desktop">
+
+            <h1 class="govuk-heading-l">
+                Check your answers before sending your request
+            </h1>
+
+            <!-- Personal details -->
+            <h2 class="govuk-heading-m">
+                Personal details
+            </h2>
+
+            {{ govukSummaryList({
+            rows: [
+                {
+                key: {
+                    text: "Name"
+                },
+                value: {
+                    text: data['fullNameOfUserRegistering']
+                },
+                actions: {
+                    items: [
+                    {
+                        href: "#",
+                        text: "Change",
+                        visuallyHiddenText: "name"
+                    }
+                    ]
+                }
+                },
+                {
+                key: {
+                    text: "Email address"
+                },
+                value: {
+                    text: data['emailAddressOfUserRegistering']
+                },
+                actions: {
+                    items: [
+                    {
+                        href: "#",
+                        text: "Change",
+                        visuallyHiddenText: "email address"
+                    }
+                    ]
+                }
+                },
+                {
+                key: {
+                    text: "Shared or team email address"
+                },
+                value: {
+                    text: data['sharedEmailAddressOfUserRegistering']
+                },
+                actions: {
+                    items: [
+                    {
+                        href: "#",
+                        text: "Change",
+                        visuallyHiddenText: "shared or team email address"
+                    }
+                    ]
+                }
+                },
+                {
+                key: {
+                    text: "Line manager email address"
+                },
+                value: {
+                    text: data['emailAddressOfLineManager']
+                },
+                actions: {
+                    items: [
+                    {
+                        href: "#",
+                        text: "Change",
+                        visuallyHiddenText: "line manager email address"
+                    }
+                    ]
+                }
+                }
+            ]
+            }) }}
+
+            <!-- Client secret or Public key -->
+            <h2 class="govuk-heading-m">
+                Select Client or Public Key
+            </h2>
+
+            {{ govukSummaryList({
+            rows: [
+                {
+                key: {
+                    text: "Key"
+                },
+                value: {
+                    text: data['clientSecretOrPublicKey'] | safe
+                },
+                actions: {
+                    items: [
+                    {
+                        href: "#",
+                        text: "Change",
+                        visuallyHiddenText: "key"
+                    }
+                    ]
+                }
+                },
+                {
+                key: {
+                    text: "Secret answer"
+                },
+                value: {
+                    text: data['clientSecretAnswer'] | safe
+                },
+                actions: {
+                    items: [
+                    {
+                        href: "#",
+                        text: "Change",
+                        visuallyHiddenText: "secret answer"
+                    }
+                    ]
+                }
+                } if data['clientSecretOrPublicKey'] == 'Client Secret',
+                {
+                key: {
+                    text: "Expiry date"
+                },
+                value: {
+                    html: data | isoDateFromDateInput("clientSecretExpiryDate") | govukDate
+                },
+                actions: {
+                    items: [
+                    {
+                        href: "#",
+                        text: "Change",
+                        visuallyHiddenText: "expiry date"
+                    }
+                    ]
+                }
+                } if data['clientSecretOrPublicKey'] == 'Client Secret',
+
+                {
+                key: {
+                    text: "Secret answer"
+                },
+                value: {
+                    text: data['publicKeyAnswer'] | safe
+                },
+                actions: {
+                    items: [
+                    {
+                        href: "#",
+                        text: "Change",
+                        visuallyHiddenText: "secret answer"
+                    }
+                    ]
+                }
+                } if data['clientSecretOrPublicKey'] == 'Public Key',
+                {
+                key: {
+                    text: "Expiry date"
+                },
+                value: {
+                    html: data | isoDateFromDateInput("publicKeyExpiryDate") | govukDate
+                },
+                actions: {
+                    items: [
+                    {
+                        href: "#",
+                        text: "Change",
+                        visuallyHiddenText: "expiry date"
+                    }
+                    ]
+                }
+                } if data['clientSecretOrPublicKey'] == 'Public Key'
+            ]
+            }) }}
+            <!-- End of -->
+
+            <!-- Technical details -->
+            <h2 class="govuk-heading-m">
+                Technical details
+            </h2>
+
+            {{ govukSummaryList({
+            rows: [
+                {
+                key: {
+                    text: "Environmnet"
+                },
+                value: {
+                    text: data['chosenEnvironment']
+                },
+                actions: {
+                    items: [
+                    {
+                        href: "#",
+                        text: "Change",
+                        visuallyHiddenText: "environment"
+                    }
+                    ]
+                }
+                },
+                {
+                key: {
+                    text: "Redirect URL"
+                },
+                value: {
+                    text: data['#']
+                },
+                actions: {
+                    items: [
+                    {
+                        href: "#",
+                        text: "Change",
+                        visuallyHiddenText: "redirect url"
+                    }
+                    ]
+                }
+                },
+                {
+                key: {
+                    text: "Logout URL"
+                },
+                value: {
+                    text: data['#']
+                },
+                actions: {
+                    items: [
+                    {
+                        href: "#",
+                        text: "Change",
+                        visuallyHiddenText: "logout url"
+                    }
+                    ]
+                }
+                },
+                {
+                key: {
+                    text: "ID token signature algorithm"
+                },
+                value: {
+                    text: data['#']
+                },
+                actions: {
+                    items: [
+                    {
+                        href: "#",
+                        text: "Change",
+                        visuallyHiddenText: "ID token signature algorithm"
+                    }
+                    ]
+                }
+                },
+                {
+                key: {
+                    text: "Scopes"
+                },
+                value: {
+                    text: data['#']
+                },
+                actions: {
+                    items: [
+                    {
+                        href: "#",
+                        text: "Change",
+                        visuallyHiddenText: "scopes"
+                    }
+                    ]
+                }
+                },
+                {
+                key: {
+                    text: "Claims"
+                },
+                value: {
+                    text: data['#']
+                },
+                actions: {
+                    items: [
+                    {
+                        href: "#",
+                        text: "Change",
+                        visuallyHiddenText: "claims"
+                    }
+                    ]
+                }
+                }
+            ]
+            }) }}
+
+            <h2 class="govuk-heading-m">Now send your registration request</h2>
+
+            <p class="govuk-body">By submitting this application you are confirming that, to the best of your knowledge, the details you are providing are correct.</p>
+
+            <form action="/form-handler" method="post" novalidate>
+
+                <input type="hidden" name="answers-checked" value="true">
+
+                <div class="govuk-button-group">
+                {{ govukButton({
+                    text: "Confirm and submit",
+                    href: "registration-successful"
+                }) }}
+                </div>
+
+        </form>
+
+        </div>
+    </div>
+{% endblock %}
