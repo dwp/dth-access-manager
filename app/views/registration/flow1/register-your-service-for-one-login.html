@@ -1,0 +1,83 @@
+{% extends "layouts/main_agent_register.html" %}
+{% set phaseBanner = 'true' %}
+
+{% block pageTitle %}
+  Register your service for GOV.UK One Login – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-xl">
+        Register your service for GOV.UK One Login
+      </h1>
+
+      <p>Use this service to:</p>
+
+      <ul class="govuk-list govuk-list--bullet">
+        <li>Submit an integration request to DWP Access Manager production environment.</li>
+      </ul>
+
+      <p>This will enable you to connect up to GOV.UK One Login.</p>
+
+      <p>It takes around 5 minutes to register.</p>
+
+      <p>The Identity and Trust Service Management Team will handle your request and update you on your service status.</p>
+
+      {{ govukButton({
+        text: "Start now",
+        href: "submit-a-registration-request",
+        isStartButton: true
+      }) }}
+
+      <h2 class="govuk-heading-m">
+        Before you start
+      </h2>
+
+      <p class="govuk-body">It is essential that you have all the information you need to hand before you register a request.</p>
+
+      <details class="govuk-details">
+      <summary class="govuk-details__summary">
+        <span class="govuk-details__summary-text">
+          You will need the following:
+        </span>
+      </summary>
+      <div class="govuk-details__text">
+        <ul class="govuk-list govuk-list--bullet">
+          <li>Your email</li>
+          <li>Shared or team email address</li>
+          <li>Line manager email address</li>
+          <li>Approver's email address</li>
+          <li>Your DWP service name</li>
+          <li>Your Teams Slack channel</li>
+          <li>Public key</li>
+          <li>Public key expiry date</li>
+          <li>Pass redirect URL</li>
+          <li>Failure redirect URL</li>
+          <li>Logout URL</li>
+          <li>Scopes</li>
+          <li>Claims</li>
+        </ul>
+      </div>
+      </details>
+
+      <h2 class="govuk-heading-m">
+        If you need help using this service
+      </h2>
+
+      <p class="govuk-body">Please see <a href="contact-dwp-support" target="_blank">our support page</a> for further guidance.</p>
+
+      <p class="govuk-body">You can email the team directly on <a href="dthclient.itsm@DWP.gov.uk">dthclient.itsm@DWP.gov.uk</a></p>
+
+      <p>We’ll reply by email within 2 days.</p>
+
+      <p>We’ll respond during office hours:
+      Monday to Friday, Office hours are 8am to 6pm.</p>
+
+      </div>
+
+  </div>
+
+{% endblock %}
