@@ -1,0 +1,57 @@
+{% extends "layouts/main_agent_register.html" %}
+{% set phaseBanner = 'true' %}
+
+{% block pageTitle %}
+  Access request submitted – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      {{ govukPanel({
+        titleText: "Your have submitted your request for GOV.UK One Login",
+        html: "Your Client ID<br><strong>CA-WEB</strong>"
+      }) }}
+
+      <p>
+        We have sent you a confirmation email. Please check your inbox to confirm receipt.
+      </p>
+
+      <h2 class="govuk-heading-m">
+        What happens next
+      </h2>
+
+      <p>
+        The email we send you will confirm that you have registered xxx client ID with the DWP Access Manager. This application will remain pending until it is approved by Identity and Trust Service Management Team.
+      </p>
+
+      <p>
+        Once this has been approved it will be passed to the GOV.UK One Login Team to establish connectivity. Once the One Login approvals have taken place you will receive another email and be contacted by the ID&T Service Management Team.
+      </p>
+
+      <div class="govuk-button-group">
+        {{ govukButton({
+          text: "Submit another registration request",
+          href: "register-your-service-for-one-login"
+        }) }}
+      </div>
+
+      <p>
+        <a href="javascript:close_window();">Close this window</a>
+      </p>
+
+      <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+      <p>
+        <a href="switch-info">
+          Continue with the prototype (link only for internal testing)
+        </a>
+      </p>
+
+
+    </div>
+  </div>
+
+{% endblock %}

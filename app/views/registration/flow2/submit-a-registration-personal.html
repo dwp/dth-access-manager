@@ -1,0 +1,138 @@
+{% extends "layouts/main_agent_register.html" %}
+{% set phaseBanner = 'true' %}
+
+{% block pageTitle %}
+  Submit a GOV.UK One Login registration request – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <span class="govuk-caption-l">Page 1 of 3</span>
+      <h1 class="govuk-heading-l">
+        Submit a GOV.UK One Login registration request
+      </h1>
+
+      <form action="/registration/flow2/submit-a-registration-secret-or-key" method="post" novalidate>
+
+        <h2 class="govuk-heading-m">Enter Personal details</h2>
+
+        {{ govukInput({
+          label: {
+            text: "Full name",
+            classes: "govuk-label"
+          },
+          classes: "govuk-input--width-20",
+          id: "full-name",
+          name: "fullName",
+          autocomplete: "name",
+          spellcheck: false
+        }) }}
+
+        {{ govukInput({
+          label: {
+            text: "Email address",
+            classes: "govuk-label"
+          },
+          classes: "govuk-input--width-20",
+          id: "email-address",
+          name: "emailAddress",
+          autocomplete: "email",
+          spellcheck: false
+        }) }}
+
+        {{ govukInput({
+          label: {
+            text: "Shared or team email address",
+            classes: "govuk-label"
+          },
+          classes: "govuk-input--width-20",
+          id: "share-team-address",
+          name: "shareteamemailAddress",
+          spellcheck: false
+        }) }}
+
+        {{ govukDetails({
+          summaryText: "Tell me more about shared and team email",
+          text: "If you use one, tell us what your team email address is. This is so someone else can pick up messages about your registration to the DWP Access Manager if you are away."
+        }) }}
+
+        {{ govukInput({
+          label: {
+            text: "Line manager email address",
+            classes: "govuk-label"
+          },
+          classes: "govuk-input--width-20",
+          id: "manager-email-address",
+          name: "managerEmailAddress",
+          spellcheck: false
+        }) }}
+
+        {{ govukInput({
+          label: {
+            text: "Approver's email address",
+            classes: "govuk-label"
+          },
+          classes: "govuk-input--width-20",
+          id: "approver-email-address",
+          name: "approverEmailAddress",
+          spellcheck: false
+        }) }}
+
+        {{ govukDetails({
+          summaryText: "Tell me more about Approver's email address",
+          text: "This is someone in your work area who can approve any updates that you need to make on the service. They will be on DWP Place as an ‘approver’ status."
+        }) }}
+
+        {{ govukInput({
+          label: {
+            text: "Your teams' Slack channel URL",
+            classes: "govuk-label"
+          },
+          classes: "govuk-input--width-20",
+          id: "team-slack-url",
+          name: "slackUrl",
+          spellcheck: false
+        }) }}
+
+        {{ govukDetails({
+          summaryText: "Tell me more about Slack channels",
+          text: "Enter the hashtag (#) or URL for your teams’ slack channel so it can get updates about your registration application."
+        }) }}
+
+        {{ govukInput({
+          label: {
+            text: "DWP service name",
+            classes: "govuk-label"
+          },
+          hint: {
+                    text: "For example, Access to Work"
+                  },
+          classes: "govuk-input--width-20",
+          id: "service-name",
+          name: "serviceName",
+          spellcheck: false
+        }) }}
+
+        {{ govukDetails({
+          summaryText: "Tell me more about the service name",
+          text: "This is the name of your service that you wish to onboard with DWP Access Manager service (DTH AM). Please ensure you choose the right service as this will determine your reference number."
+        }) }}
+
+        <div class="govuk-button-group">
+          {{ govukButton({
+            text: "Continue"
+          }) }}
+
+          {{ govukButton({
+            text: "Clear",
+            classes: "govuk-button--secondary"
+          }) }}
+        </div>
+
+      </form>
+    </div>
+  </div>
+{% endblock %}

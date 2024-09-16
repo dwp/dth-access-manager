@@ -1,0 +1,29 @@
+{% extends "layouts/main_agent_approvals.html" %}
+{% set phaseBanner = 'true' %}
+
+{% block pageTitle %}
+  Information page – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-l">
+        Switch to ITSM
+      </h1>
+
+      <p>
+        The ITSM then receives a notification email with a link to DWP Access Manager.
+      </p>
+
+      {{ govukButton({
+          text: "Continue",
+          href: "approve-choice"
+      }) }}
+
+    </div>
+  </div>
+
+{% endblock %}
