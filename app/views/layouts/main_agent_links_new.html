@@ -22,40 +22,24 @@ https://prototype-kit.service.gov.uk/docs/how-to-use-layouts
 {{
     dwpHeader({
         serviceName: "DWP Access Manager Approvals Prototype",
-        serviceHref: '/index',
-        container: true
-    })
-}}
-
-{{
-    dwpKeyDetailsBar({
-        primaryIdentifier: {
-            text: 'Name:',
-            value: 'Carers Allowance'
-        },
-        secondaryIdentifier: {
-            text: 'Component:',
-            value: 'DWP'
-        },
-        status: {
-            text: 'Claim status:',
-            value: 'Pending-new',
-            classes: 'govuk-tag--blue'
-        },
-        additionalData: [
-        {
-            text: "Date received:",
-            value: "25 April 2024"
-        },
-        {
-            text: "Client ID:",
-            value: "CA-WEB"
-        },
-        {
-            text: "Environment:",
-            value: "Production"
-        }
-        ]
+        serviceHref: 'index',
+        container: true,
+        navigation: {
+          items: [
+              {
+                  href: "approve-choice",
+                  text: "Service Guide"
+              },
+              {
+                  href: "/approvals-dwp/flow2/request-list",
+                  text: "DWP Registrations"
+              },
+              {
+                  href: "/approvals-ol/flow2/request-list-ol",
+                  text: "GOV.UK OL Approvals"
+              }
+          ]
+      }
     })
 }}
 

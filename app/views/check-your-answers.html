@@ -1,76 +1,15 @@
-{% extends "layouts/main_agent_details.html" %}
+{% extends "layouts/main_agent_register.html" %}
 {% set phaseBanner = 'true' %}
-{% set backLink = 'true' %}
 
 {% block pageTitle %}
-  Make decision – {{ serviceName }} – GOV.UK Prototype Kit
+  Check your answers before submitting – {{ serviceName }} – GOV.UK Prototype Kit
 {% endblock %}
 
 {% block content %}
-  <div class="govuk-grid-row">
-    <div class="govuk-grid-column-two-thirds">
-<h1 class="govuk-heading-l">Make a decision on this request</h1>
 
-<!--
-<div class="govuk-inset-text govuk-!-margin-top-0">
-    <h2 class="govuk-heading-m govuk-!-margin-bottom-3">Action needed</h2>
-    <p>This application was received 6 days ago, you should aim to make a decision on this claim within 30 days.</p>
-    </div> -->
-
-<form class="form" action="request-decision2" method="post">
-
-{% set textHtml %}
-{{ govukTextarea({
-  id: "reason-for-decline",
-  name: "reasonForDecline",
-  type: "text",
-  classes: "govuk-!-width-one-half",
-  label: {
-    text: "Reason for decline"
-  }
-}) }}
-{% endset -%}
-
-{{ govukRadios({
-  name: "yourDecision2",
-  fieldset: {
-    legend: {
-      text: "Your decision",
-      isPageHeading: false,
-      classes: "govuk-fieldset__legend--m"
-    }
-  },
-  hint: {
-    text: "Select one option. If you decline a request you will be expected to state why."
-  },
-  items: [
-    {
-      value: "approve",
-      text: "Approve this request",
-      checked: false
-    },
-    {
-      value: "decline",
-      text: "Decline this request",
-      conditional: {
-        html: textHtml
-      }
-    }
-  ]
-}) }}
-
-
-{{ govukButton({
-text: "Confirm decision"
-}) }}
-
-</form>
-
-
-{{ govukDetails({
-  summaryText: "Learn more about this page",
-  text: "You can use this page to check the client record and quickly make an approval decision. By updating this record you are confirming that, to the best of your knowledge, the details you are providing are correct."
-}) }}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <h1 class="govuk-heading-l">Check your answers before submitting your request</h1>
 
 <h2 class="govuk-heading-m">Personal details</h2>
 
@@ -82,6 +21,9 @@ text: "Confirm decision"
     <dd class="govuk-summary-list__value">
       Sarah Philips
     </dd>
+    <dd class="govuk-summary-list__actions">
+      <a class="govuk-link" href="edit-full-name">Change<span class="govuk-visually-hidden"> full name</span></a>
+    </dd>
   </div>
   <div class="govuk-summary-list__row">
     <dt class="govuk-summary-list__key">
@@ -89,6 +31,9 @@ text: "Confirm decision"
     </dt>
     <dd class="govuk-summary-list__value">
       sarah@testdwp.gov.uk
+    </dd>
+    <dd class="govuk-summary-list__actions">
+      <a class="govuk-link" href="edit-full-name">Change<span class="govuk-visually-hidden"> full name</span></a>
     </dd>
   </div>
   <div class="govuk-summary-list__row">
@@ -98,6 +43,9 @@ text: "Confirm decision"
     <dd class="govuk-summary-list__value">
       team@mail.gov.uk
     </dd>
+    <dd class="govuk-summary-list__actions">
+      <a class="govuk-link" href="edit-full-name">Change<span class="govuk-visually-hidden"> full name</span></a>
+    </dd>
   </div>
   <div class="govuk-summary-list__row">
     <dt class="govuk-summary-list__key">
@@ -105,6 +53,9 @@ text: "Confirm decision"
     </dt>
     <dd class="govuk-summary-list__value">
       manager@tmail.gov.uk
+    </dd>
+    <dd class="govuk-summary-list__actions">
+      <a class="govuk-link" href="edit-full-name">Change<span class="govuk-visually-hidden"> full name</span></a>
     </dd>
   </div>
   <div class="govuk-summary-list__row">
@@ -114,6 +65,9 @@ text: "Confirm decision"
     <dd class="govuk-summary-list__value">
       approver@tmail.gov.uk
     </dd>
+    <dd class="govuk-summary-list__actions">
+      <a class="govuk-link" href="edit-full-name">Change<span class="govuk-visually-hidden"> full name</span></a>
+    </dd>
   </div>
   <div class="govuk-summary-list__row">
     <dt class="govuk-summary-list__key">
@@ -121,6 +75,9 @@ text: "Confirm decision"
     </dt>
     <dd class="govuk-summary-list__value">
       Slack URL
+    </dd>
+    <dd class="govuk-summary-list__actions">
+      <a class="govuk-link" href="edit-full-name">Change<span class="govuk-visually-hidden"> full name</span></a>
     </dd>
   </div>
   <div class="govuk-summary-list__row">
@@ -130,6 +87,9 @@ text: "Confirm decision"
     <dd class="govuk-summary-list__value">
       Carers Allowance
       </dd>
+      <dd class="govuk-summary-list__actions">
+      <a class="govuk-link" href="edit-full-name">Change<span class="govuk-visually-hidden"> full name</span></a>
+    </dd>
   </div>
 </dl>
 <h2 class="govuk-heading-m">Public key details</h2>
@@ -141,6 +101,9 @@ text: "Confirm decision"
     <dd class="govuk-summary-list__value">
       answer here
     </dd>
+    <dd class="govuk-summary-list__actions">
+      <a class="govuk-link" href="edit-full-name">Change<span class="govuk-visually-hidden"> full name</span></a>
+    </dd>
   </div>
   <div class="govuk-summary-list__row">
     <dt class="govuk-summary-list__key">
@@ -148,6 +111,9 @@ text: "Confirm decision"
     </dt>
     <dd class="govuk-summary-list__value">
       25 02 2025
+    </dd>
+    <dd class="govuk-summary-list__actions">
+      <a class="govuk-link" href="edit-full-name">Change<span class="govuk-visually-hidden"> full name</span></a>
     </dd>
   </div>
 </dl>
@@ -160,6 +126,9 @@ text: "Confirm decision"
     <dd class="govuk-summary-list__value">
       Test
     </dd>
+    <dd class="govuk-summary-list__actions">
+      <a class="govuk-link" href="edit-full-name">Change<span class="govuk-visually-hidden"> full name</span></a>
+    </dd>
   </div>
   <div class="govuk-summary-list__row">
     <dt class="govuk-summary-list__key">
@@ -167,6 +136,9 @@ text: "Confirm decision"
     </dt>
     <dd class="govuk-summary-list__value">
       url here
+    </dd>
+    <dd class="govuk-summary-list__actions">
+      <a class="govuk-link" href="edit-full-name">Change<span class="govuk-visually-hidden"> full name</span></a>
     </dd>
   </div>
   <div class="govuk-summary-list__row">
@@ -176,6 +148,9 @@ text: "Confirm decision"
     <dd class="govuk-summary-list__value">
       url here
     </dd>
+    <dd class="govuk-summary-list__actions">
+      <a class="govuk-link" href="edit-full-name">Change<span class="govuk-visually-hidden"> full name</span></a>
+    </dd>
   </div>
   <div class="govuk-summary-list__row">
     <dt class="govuk-summary-list__key">
@@ -183,6 +158,9 @@ text: "Confirm decision"
     </dt>
     <dd class="govuk-summary-list__value">
       http://carers-allowance-test.gov.uk/logout
+    </dd>
+    <dd class="govuk-summary-list__actions">
+      <a class="govuk-link" href="edit-full-name">Change<span class="govuk-visually-hidden"> full name</span></a>
     </dd>
   </div>
   <div class="govuk-summary-list__row">
@@ -192,6 +170,9 @@ text: "Confirm decision"
     <dd class="govuk-summary-list__value">
       openID
     </dd>
+    <dd class="govuk-summary-list__actions">
+      <a class="govuk-link" href="edit-full-name">Change<span class="govuk-visually-hidden"> full name</span></a>
+    </dd>
   </div>
   <div class="govuk-summary-list__row">
     <dt class="govuk-summary-list__key">
@@ -200,18 +181,25 @@ text: "Confirm decision"
     <dd class="govuk-summary-list__value">
       phone
     </dd>
+    <dd class="govuk-summary-list__actions">
+      <a class="govuk-link" href="edit-full-name">Change<span class="govuk-visually-hidden"> full name</span></a>
+    </dd>
   </div>
 </dl>
 
-<div class="govuk-button-group">
-      {{ govukButton({
-          text: "Return to DWP Registrations",
-          classes: "govuk-button--secondary",
-          href: "request-list"
-      }) }}
-</div>
+<h2 class="govuk-heading-m">Now send your request</h2>
 
-</div>
+        <p class="govuk-body">By submitting this application you are confirming that, to the best of your knowledge, the details you are providing are correct.</p>
+
+        <div class="govuk-button-group">
+          {{ govukButton({
+            text: "Confirm and submit",
+            href: "/registration/flow2/submitted-your-request"
+          }) }}
+        </div>
+
+        </div>
+      </div>
 
 
 {% endblock %}

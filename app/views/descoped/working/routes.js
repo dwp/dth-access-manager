@@ -26,16 +26,7 @@ router.post('/request-decision', function(request, response) {
     } else {
         response.redirect("/request-list-declined")
     }
-})
 
-router.post('/request-decision2', function(request, response) {
-
-    var decision = request.session.data['yourDecision2']
-    if (decision == "approve"){
-        response.redirect("/request-approved")
-    } else {
-        response.redirect("/request-declined")
-    }
 })
 
 router.post('/approve-choice-answer', function(request, response) {
@@ -48,22 +39,12 @@ router.post('/approve-choice-answer', function(request, response) {
     }
 })
 
-router.post('/request-decision3', function(request, response) {
+router.post('/request-decision2', function(request, response) {
 
-    var decision = request.session.data['yourDecision3']
+    var decision = request.session.data['yourDecision2']
     if (decision == "approve"){
         response.redirect("/approvals-dwp/flow2/request-approved")
     } else {
         response.redirect("/approvals-dwp/flow2/request-declined")
-    }
-})
-
-router.post('/request-decision4', function(request, response) {
-
-    var decision = request.session.data['yourDecision4']
-    if (decision == "approve"){
-        response.redirect("/approvals-ol/flow2/one-login-approved")
-    } else {
-        response.redirect("/approvals-ol/flow2/one-login-declined")
     }
 })
