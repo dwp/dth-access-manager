@@ -1,0 +1,62 @@
+{% extends "layouts/main_agent_approvals.html" %}
+{% set phaseBanner = 'true' %}
+
+{% block pageTitle %}
+  Welcome to DWP Access Manager Approvals – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-l">
+        Welcome to DWP Access Manager Approvals
+      </h1>
+
+      <h1 class="govuk-heading-m">
+        What this service is for
+      </h1>
+
+      <p class="govuk-body">
+        This service will allow you to view and make a decision on DWP or OL approval requests submitted by service lines. Please note a request can only be declined by stating your decision in detail.
+      </p>
+
+      {{ govukDetails({
+        summaryText: "Learn more about using DWP Access Manager",
+        text: "If there is an update then the status of the registration will show 'pending-update' until its been approved by additional employee by OTP - so ITSM cannot approve alone. Once OTP is approved the status is updated further"
+      }) }}
+
+      <form class="form" action="/approve-choice-answer" method="post">
+
+{{ govukRadios({
+  name: "approve-choice",
+  value: data['approve-choice'],
+  fieldset: {
+    legend: {
+      text: "What do you want to do?",
+      isPageHeading: true,
+      classes: "govuk-fieldset__legend--m"
+    }
+  },
+  hint: {
+    text: "Please select one of the options below."
+  },
+  items: [
+            {
+              value: "dth",
+              text: "Approve DWP Access Manager registrations"
+            },
+            {
+              value: "onelogin",
+              text: "Approve GOV.UK One Login"
+            }
+          ]
+        }) }}
+
+        {{ govukButton({
+          text: "Continue"
+        }) }}
+      </form>
+    </div>
+  </div>
+{% endblock %}

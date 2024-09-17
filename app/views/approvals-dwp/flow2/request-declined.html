@@ -1,0 +1,40 @@
+{% extends "layouts/main_agent_details_declined.html" %}
+{% set phaseBanner = 'true' %}
+
+{% block pageTitle %}
+  You have declined the request – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-l">
+        You have declined the request CA-WEB
+      </h1>
+
+      <h2 class="govuk-heading-m">Decision date</h2>
+
+      <p class="govuk-body">25 September 2024</p>
+
+      <h2 class="govuk-heading-m">Decline notes</h2>
+
+      <p class="govuk-body">This registration request was declined for incorrect redirect URL being supplied. Advised client to resubmit request with the correct URL.</p>
+
+
+      <p class="govuk-body"><a href="view-request-declined">View this declined request</a></p>
+
+      <div class="govuk-button-group">
+        {{ govukButton({
+          text: "Manage another DWP request",
+          href: "request-list"
+        }) }}
+
+        {{ govukButton({
+          text: "Switch to GOV.UK OL Approvals",
+          classes: "govuk-button--secondary",
+          href: "request-list-ol"
+        }) }}
+      </div>
+
+{% endblock %}

@@ -1,4 +1,4 @@
-{% extends "layouts/main_agent_details.html" %}
+{% extends "layouts/main_agent_details_ol.html" %}
 {% set phaseBanner = 'true' %}
 {% set backLink = 'true' %}
 
@@ -9,7 +9,7 @@
 {% block content %}
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-<h1 class="govuk-heading-l">Make a decision on this request</h1>
+<h1 class="govuk-heading-l">Make a decision on this approval</h1>
 
 <!--
 <div class="govuk-inset-text govuk-!-margin-top-0">
@@ -17,55 +17,53 @@
     <p>This application was received 6 days ago, you should aim to make a decision on this claim within 30 days.</p>
     </div> -->
 
-<form class="form" action="request-decision2" method="post">
+    <form class="form" action="/request-decision4" method="post">
 
-{% set textHtml %}
-{{ govukTextarea({
-  id: "reason-for-decline",
-  name: "reasonForDecline",
-  type: "text",
-  classes: "govuk-!-width-one-half",
-  label: {
-    text: "Reason for decline"
-  }
-}) }}
-{% endset -%}
-
-{{ govukRadios({
-  name: "yourDecision2",
-  fieldset: {
-    legend: {
-      text: "Your decision",
-      isPageHeading: false,
-      classes: "govuk-fieldset__legend--m"
-    }
-  },
-  hint: {
-    text: "Select one option. If you decline a request you will be expected to state why."
-  },
-  items: [
-    {
-      value: "approve",
-      text: "Approve this request",
-      checked: false
-    },
-    {
-      value: "decline",
-      text: "Decline this request",
-      conditional: {
-        html: textHtml
+    {% set textHtml %}
+    {{ govukTextarea({
+      id: "reason-for-decline",
+      name: "reasonForDecline",
+      type: "text",
+      classes: "govuk-!-width-one-half",
+      label: {
+        text: "Reason for decline"
       }
-    }
-  ]
-}) }}
+    }) }}
+    {% endset -%}
 
+    {{ govukRadios({
+      name: "yourDecision4",
+      fieldset: {
+        legend: {
+          text: "Your decision",
+          isPageHeading: true,
+          classes: "govuk-fieldset__legend--m"
+        }
+      },
+      hint: {
+        text: "Select one option. If you decline a request you will be expected to state why."
+      },
+      items: [
+        {
+          value: "approve",
+          text: "Approve for One Login",
+          checked: false
+        },
+        {
+          value: "decline",
+          text: "Decline for One Login",
+          conditional: {
+            html: textHtml
+          }
+        }
+      ]
+    }) }}
 
-{{ govukButton({
-text: "Confirm decision"
-}) }}
+    {{ govukButton({
+    text: "Confirm decision"
+    }) }}
 
-</form>
-
+    </form>
 
 {{ govukDetails({
   summaryText: "Learn more about this page",
