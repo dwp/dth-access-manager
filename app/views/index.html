@@ -41,16 +41,20 @@
 
     <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
 
+    <h2 class="govuk-heading-l">
+          Latest journey iterations
+        </h2>
+
+      <p class="govuk-body">
+              We recently took the Access Manager prototype to a design clinic for critique. We had a number of recommendations which I am implementing on both the registration and management side.
+      </p>
+
     <h2 class="govuk-heading-m">
       DWP Access Manager Registration - New flow
     </h2>
 
     <p class="govuk-body">
       <strong>Last update:</strong> 17th September 2024
-    </p>
-
-    <p class="govuk-body">
-      We recently took the Access Manager prototype to a design clinic for critique. We had a number of recommendations which I am implementing on this new journey for registration.
     </p>
 
     <h2 class="govuk-heading-s">
@@ -76,10 +80,10 @@
           <a class="govuk-link" href="/registration/flow2/submit-a-registration-personal.html">Personal details (Question Page 1)</a>
         </li>
         <li>
-          <a class="govuk-link" href="/registration/flow2/submit-a-registration-secret-or-key.html">Client Secret or Public Key (Question Page 2)</a>
+          <a class="govuk-link" href="/registration/flow2/submit-a-registration-technical.html">Technical details (Question Page 2)</a>
         </li>
         <li>
-          <a class="govuk-link" href="/registration/flow2/submit-a-registration-technical.html">Technical details (Question Page 3)</a>
+          <a class="govuk-link" href="/registration/flow2/submit-a-registration-secret-or-key.html">Client Secret or Public Key (Descoped for MVP)</a>
         </li>
         <li>
           <a class="govuk-link" href="/registration/flow2/check-your-answers.html">Check your answers</a>
@@ -96,6 +100,65 @@
     }) }}
 
     <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+    <h2 class="govuk-heading-m">
+      DWP Access Manager Approvals - New flow
+    </h2>
+
+    <p class="govuk-body">
+      <strong>Last update:</strong> 19th September 2024
+    </p>
+
+    <h2 class="govuk-heading-s">
+      Main changes
+    </h2>
+
+    <ul class="govuk-list govuk-list--bullet">
+      <li>Combine decision pages into one from the previous two</li>
+      <li>Have dedicated decision outcomes pages instead of a notification banner</li>
+      <li>Some improvements to page and page title content</li>
+    </ul>
+
+    <h2 class="govuk-heading-s">
+      Quick page links
+    </h2>
+
+    <p class="govuk-body">
+      <ul class="govuk-list govuk-list--bullet">
+        <li>
+          <a class="govuk-link" href="/approvals-dwp/flow2/approve-choice.html">Welcome to DWP Access Manager Approvals</a>
+        </li>
+        <li>
+          <a class="govuk-link" href="/approvals-dwp/flow2/request-list.html">DWP Registration record list</a>
+        </li>
+        <li>
+          <a class="govuk-link" href="/approvals-dwp/flow2/make-decision.html">Make a decision on this request</a>
+        </li>
+        <li>
+          <a class="govuk-link" href="/approvals-dwp/flow2/request-approved.html">Request approved confirmed (DWP)</a>
+        </li>
+        <li>
+          <a class="govuk-link" href="request-declined">Request declined confirmed (DWP)</a>
+        </li>
+        <li>
+          <a class="govuk-link" href="/approvals-ol/flow2/one-login-declined">Request declined confirmed (OL)</a>
+        </li>
+        <li>
+          <a class="govuk-link" href="/approvals-dwp/flow2/view-request-declined">View previously declined request (DWP)</a>
+        </li>
+      </ul>
+    </p>
+
+    {{ govukButton({
+      text: "Start new management prototype",
+      href: "/approvals-dwp/flow2/approve-choice.html"
+    }) }}
+
+      <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+      <h2 class="govuk-heading-l">
+        Previous journey iterations
+      </h2>
 
     <h2 class="govuk-heading-m">
       DWP Access Manager Registration pages

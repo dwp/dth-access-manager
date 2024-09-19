@@ -2,7 +2,7 @@
 {% set phaseBanner = 'true' %}
 
 {% block pageTitle %}
-  Submit a GOV.UK One Login registration request – {{ serviceName }} – GOV.UK Prototype Kit
+  Enter your personal details – {{ serviceName }} – GOV.UK Prototype Kit
 {% endblock %}
 
 {% block content %}
@@ -10,14 +10,12 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      <span class="govuk-caption-l">Page 1 of 3</span>
+      <span class="govuk-caption-l">Page 1 of 2</span>
       <h1 class="govuk-heading-l">
-        Submit a GOV.UK One Login registration request
+        Enter your personal details
       </h1>
 
-      <form action="/registration/flow2/submit-a-registration-secret-or-key" method="post" novalidate>
-
-        <h2 class="govuk-heading-m">Enter Personal details</h2>
+      <form action="/registration/flow2/submit-a-registration-technical" method="post" novalidate>
 
         {{ govukInput({
           label: {
