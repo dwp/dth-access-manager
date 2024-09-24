@@ -68,15 +68,29 @@
 
         {{ govukInput({
           label: {
-            text: "Approver's email address",
+            text: "Primary approver email address",
             classes: "govuk-label"
           },
           hint: {
                     text: "Someone in your work area who can approve updates"
                   },
           classes: "govuk-input--width-20",
-          id: "approver-email-address",
-          name: "approverEmailAddress",
+          id: "primary-approver-email-address",
+          name: "primaryApproverEmailAddress",
+          spellcheck: false
+        }) }}
+
+        {{ govukInput({
+          label: {
+            text: "Secondary approver email address",
+            classes: "govuk-label"
+          },
+          hint: {
+                    text: "In case your primary approver is away or unavailable"
+                  },
+          classes: "govuk-input--width-20",
+          id: "secondary-approver-email-address",
+          name: "secondaryApproverEmailAddress",
           spellcheck: false
         }) }}
 
