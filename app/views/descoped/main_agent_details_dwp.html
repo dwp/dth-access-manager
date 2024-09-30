@@ -15,7 +15,8 @@ https://prototype-kit.service.gov.uk/docs/how-to-use-layouts
 {% from "govuk/components/inset-text/macro.njk" import govukInsetText %}
 {% from "internal-service-header/macro.njk" import dwpHeader %}
 {% from "internal-service-footer/macro.njk" import dwpFooter %}
-{% from "key-details-bar/macro.njk" import dwpKeyDetailsBar %}
+{% from "quick-reference/macro.njk" import dwpQuickReference %}
+
 
 {% block header %}
 
@@ -27,37 +28,6 @@ https://prototype-kit.service.gov.uk/docs/how-to-use-layouts
     })
 }}
 
-{{
-    dwpKeyDetailsBar({
-        primaryIdentifier: {
-            text: 'Name:',
-            value: 'Access to Work'
-        },
-        secondaryIdentifier: {
-            text: 'Component:',
-            value: 'DWP'
-        },
-        status: {
-            text: 'Claim status:',
-            value: 'Declined',
-            classes: 'govuk-tag--red'
-        },
-        additionalData: [
-        {
-            text: "Date received:",
-            value: "12 June 2024"
-        },
-        {
-            text: "Client ID:",
-            value: "ATW-WEB"
-        },
-        {
-            text: "Environment:",
-            value: "Production"
-        }
-        ]
-    })
-}}
 
 {% endblock %}
 

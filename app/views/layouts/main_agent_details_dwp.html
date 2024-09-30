@@ -27,38 +27,6 @@ https://prototype-kit.service.gov.uk/docs/how-to-use-layouts
     })
 }}
 
-{{
-    dwpKeyDetailsBar({
-        primaryIdentifier: {
-            text: 'Name:',
-            value: 'Access to Work'
-        },
-        secondaryIdentifier: {
-            text: 'Component:',
-            value: 'DWP'
-        },
-        status: {
-            text: 'Claim status:',
-            value: 'Declined',
-            classes: 'govuk-tag--red'
-        },
-        additionalData: [
-        {
-            text: "Date received:",
-            value: "12 June 2024"
-        },
-        {
-            text: "Client ID:",
-            value: "ATW-WEB"
-        },
-        {
-            text: "Environment:",
-            value: "Production"
-        }
-        ]
-    })
-}}
-
 {% endblock %}
 
 {% block beforeContent %}
