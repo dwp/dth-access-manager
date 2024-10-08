@@ -1,0 +1,280 @@
+{% extends "layouts/main_agent_register.html" %}
+{% set phaseBanner = 'true' %}
+
+{% block pageTitle %}
+  Check your answers before submitting – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <h1 class="govuk-heading-l">Check your answers before submitting your request</h1>
+
+    {{ govukSummaryList({
+      classes: "govuk-!-margin-bottom-9",
+      rows: [
+        {
+          key: {
+            text: "Name"
+          },
+          value: {
+            text: data['fullName']
+          },
+          actions: {
+            items: [
+              {
+                href: "#",
+                text: "Change",
+                visuallyHiddenText: "Full name"
+              }
+            ]
+          }
+        },
+        {
+          key: {
+            text: "Email address"
+          },
+          value: {
+            text: data['emailAddress']
+          },
+          actions: {
+            items: [
+              {
+                href: "#",
+                text: "Change",
+                visuallyHiddenText: "email address"
+              }
+            ]
+          }
+        },
+        {
+          key: {
+            text: "Shared or team email address"
+          },
+          value: {
+            text: data['shareteamemailAddress']
+          },
+          actions: {
+            items: [
+              {
+                href: "#",
+                text: "Change",
+                visuallyHiddenText: "customer reference"
+              }
+            ]
+          }
+        },
+        {
+          key: {
+            text: "Line manager's email address"
+          },
+          value: {
+            text: data['managerEmailAddress']
+          },
+          actions: {
+            items: [
+              {
+                href: "#",
+                text: "Change",
+                visuallyHiddenText: "line manager's address"
+              }
+            ]
+          }
+        },
+        {
+          key: {
+            text: "Primary approver's email address"
+          },
+          value: {
+            text: data['primaryApproverEmailAddress']
+          },
+          actions: {
+            items: [
+              {
+                href: "#",
+                text: "Change",
+                visuallyHiddenText: "Primary approver's email address"
+              }
+            ]
+          }
+        },
+        {
+          key: {
+            text: "Secondary approver's email address"
+          },
+          value: {
+            text: data['secondaryApproverEmailAddress']
+          },
+          actions: {
+            items: [
+              {
+                href: "#",
+                text: "Change",
+                visuallyHiddenText: "Secondary approver's email address"
+              }
+            ]
+          }
+        },
+        {
+          key: {
+            text: "Your teams' Slack channel URL"
+          },
+          value: {
+            text: data['slackUrl']
+          },
+          actions: {
+            items: [
+              {
+                href: "#",
+                text: "Change",
+                visuallyHiddenText: "slack channel url"
+              }
+            ]
+          }
+        },
+        {
+          key: {
+            text: "DWP service name"
+          },
+          value: {
+            text: data['serviceName']
+          },
+          actions: {
+            items: [
+              {
+                href: "#",
+                text: "Change",
+                visuallyHiddenText: "contact details"
+              }
+            ]
+          }
+        }
+      ]
+    }) }}
+
+    <h2 class="govuk-heading-m">Technical details</h2>
+
+    {{ govukSummaryList({
+      classes: "govuk-!-margin-bottom-9",
+      rows: [
+      {
+        key: {
+          text: "Environment type"
+        },
+        value: {
+          text: "test"
+        },
+        actions: {
+          items: [
+            {
+              href: "#",
+              text: "Change",
+              visuallyHiddenText: "Environment type"
+            }
+          ]
+        }
+      },
+        {
+          key: {
+            text: "IDV passed redirect URL"
+          },
+          value: {
+            text: data['idvPassedRedirectUrl']
+          },
+          actions: {
+            items: [
+              {
+                href: "#",
+                text: "Change",
+                visuallyHiddenText: "IDV passed Redirect URL"
+              }
+            ]
+          }
+        },
+        {
+          key: {
+            text: "IDV failed redirect URL"
+          },
+          value: {
+            text: data['idvFailedRedirectUrl']
+          },
+          actions: {
+            items: [
+              {
+                href: "#",
+                text: "Change",
+                visuallyHiddenText: "IDV passed redirect URL"
+              }
+            ]
+          }
+        },
+        {
+          key: {
+            text: "Logout URL"
+          },
+          value: {
+            text: data['logOutUrl']
+          },
+          actions: {
+            items: [
+              {
+                href: "#",
+                text: "Change",
+                visuallyHiddenText: "Logout URL"
+              }
+            ]
+          }
+        },
+        {
+          key: {
+            text: "Scopes"
+          },
+          value: {
+            text: data['scopes']
+          },
+          actions: {
+            items: [
+              {
+                href: "#",
+                text: "Change",
+                visuallyHiddenText: "scopes"
+              }
+            ]
+          }
+        },
+        {
+          key: {
+            text: "Claims"
+          },
+          value: {
+            text: data['Claims']
+          },
+          actions: {
+            items: [
+              {
+                href: "#",
+                text: "Change",
+                visuallyHiddenText: "claims"
+              }
+            ]
+          }
+        }
+      ]
+    }) }}
+
+    <h2 class="govuk-heading-m">Now send your request</h2>
+
+            <p class="govuk-body">By submitting this application you are confirming that, to the best of your knowledge, the details you are providing are correct.</p>
+
+            <div class="govuk-button-group">
+              {{ govukButton({
+                text: "Confirm and submit",
+                href: "/registration/flow2/submitted-your-request"
+              }) }}
+            </div>
+
+            </div>
+          </div>
+
+{% endblock %}
