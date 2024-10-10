@@ -53,16 +53,40 @@
           Latest journey iterations
         </h2>
 
-      <p class="govuk-body">
-              We recently took the Access Manager prototype to a design clinic for critique. We had a number of recommendations which I am implementing on both the registration and management side.
-      </p>
-
     <h2 class="govuk-heading-m">
-      DWP Access Manager Registration - New flow
+        DWP Access Manager Registration - Flow 3 (Dynamic)
     </h2>
 
     <p class="govuk-body">
-      <strong>Last update:</strong> 8th October 2024
+      <strong>Last update:</strong> 10th October 2024
+    </p>
+
+    <p class="govuk-body">
+      On this iteration we have given some thought to simplifying the check answers page. Instead of offering a change link for every user input the link is now only present on the section heading. We felt this made sense as all the questions in that section would be presented to a user updating.
+    </p>
+
+    <p class="govuk-body">
+      Please fill in all the input fields on this flow with relevant sample data.
+    </p>
+
+    {{ govukButton({
+      text: "Start registration prototype",
+      href: "/registration/flow3/registration-request-for-one-login.html"
+    }) }}
+
+    <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+
+    <h2 class="govuk-heading-m">
+      DWP Access Manager Registration - Flow 2
+    </h2>
+
+    <p class="govuk-body">
+          <strong>Last update:</strong> 8th October 2024
+    </p>
+
+    <p class="govuk-body">
+            We recently took the Access Manager prototype to a design clinic for critique. We had a number of recommendations which I am implementing on both the registration and management side.
     </p>
 
     <h2 class="govuk-heading-s">
@@ -71,7 +95,7 @@
 
     <ul class="govuk-list govuk-list--bullet">
       <li>More hint text used as alternate to drop downs</li>
-      <li>Question page now split over three pages</li>
+      <li>Question page now split over two pages</li>
       <li>Check answer page now re-inserted into journey</li>
     </ul>
 
@@ -103,7 +127,7 @@
     </p>
 
     {{ govukButton({
-      text: "Start new registration prototype",
+      text: "Start registration prototype",
       href: "/registration/flow2/registration-request-for-one-login.html"
     }) }}
 
@@ -161,7 +185,7 @@
     </p>
 
     {{ govukButton({
-      text: "Start new management prototype",
+      text: "Start management prototype",
       href: "/approvals-dwp/flow2/approve-choice.html"
     }) }}
 

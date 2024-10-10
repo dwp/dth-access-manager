@@ -1,0 +1,146 @@
+{% extends "layouts/main_agent_register.html" %}
+{% set phaseBanner = 'true' %}
+{% set backLink = 'true' %}
+
+{% block pageTitle %}
+  Update personal details – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-l">
+        Update personal details
+      </h1>
+
+      <form action="/registration/flow2/check-your-answers-cards" method="post" novalidate>
+
+        {{ govukInput({
+          label: {
+            text: "Full name",
+            classes: "govuk-label"
+          },
+          classes: "govuk-input--width-20",
+          id: "full-name",
+          name: "fullName",
+          value: data['fullName'],
+          autocomplete: "name",
+          spellcheck: false
+        }) }}
+
+        {{ govukInput({
+          label: {
+            text: "Email address",
+            classes: "govuk-label"
+          },
+          classes: "govuk-input--width-20",
+          id: "email-address",
+          name: "emailAddress",
+          value: data['emailAddress'],
+          autocomplete: "email",
+          spellcheck: false
+        }) }}
+
+        {{ govukInput({
+          label: {
+            text: "Shared or team email address",
+            classes: "govuk-label"
+          },
+          hint: {
+                    text: "Enter a team email to also receive progress updates"
+                  },
+          classes: "govuk-input--width-20",
+          id: "share-team-address",
+          name: "shareteamemailAddress",
+          value: data['shareteamemailAddress'],
+          spellcheck: false
+        }) }}
+
+        {{ govukInput({
+          label: {
+            text: "Line manager email address",
+            classes: "govuk-label"
+          },
+          classes: "govuk-input--width-20",
+          id: "manager-email-address",
+          name: "managerEmailAddress",
+          value: data['managerEmailAddress'],
+          spellcheck: false
+        }) }}
+
+        {{ govukInput({
+          label: {
+            text: "Primary approver email address",
+            classes: "govuk-label"
+          },
+          hint: {
+                    text: "Someone in your work area who can approve updates"
+                  },
+          classes: "govuk-input--width-20",
+          id: "primary-approver-email-address",
+          name: "primaryApproverEmailAddress",
+          value: data['primaryApproverEmailAddress'],
+          spellcheck: false
+        }) }}
+
+        {{ govukInput({
+          label: {
+            text: "Secondary approver email address",
+            classes: "govuk-label"
+          },
+          hint: {
+                    text: "In case your primary approver is away or unavailable"
+                  },
+          classes: "govuk-input--width-20",
+          id: "secondary-approver-email-address",
+          name: "secondaryApproverEmailAddress",
+          value: data['secondaryApproverEmailAddress'],
+          spellcheck: false
+        }) }}
+
+        {{ govukInput({
+          label: {
+            text: "Your teams' Slack channel URL",
+            classes: "govuk-label"
+          },
+          hint: {
+                    text: "For example, #access-to-work"
+                  },
+          classes: "govuk-input--width-20",
+          id: "team-slack-url",
+          name: "slackUrl",
+          value: data['slackUrl'],
+          spellcheck: false
+        }) }}
+
+        {{ govukInput({
+          label: {
+            text: "DWP service name",
+            classes: "govuk-label"
+          },
+          hint: {
+                    text: "For example, Access to Work"
+                  },
+          classes: "govuk-input--width-20",
+          id: "service-name",
+          name: "serviceName",
+          value: data['serviceName'],
+          spellcheck: false
+        }) }}
+
+        <div class="govuk-button-group">
+          {{ govukButton({
+            text: "Update and return"
+          }) }}
+
+          {{ govukButton({
+            text: "Cancel",
+            classes: "govuk-button--secondary"
+          }) }}
+        </div>
+
+      </form>
+    </div>
+  </div>
+{% endblock %}
