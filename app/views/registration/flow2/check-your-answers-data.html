@@ -11,12 +11,14 @@
   <div class="govuk-grid-column-two-thirds">
     <h1 class="govuk-heading-l">Check your answers before submitting your request</h1>
 
+    <h2 class="govuk-heading-m">Personal details</h2>
+
     {{ govukSummaryList({
       classes: "govuk-!-margin-bottom-9",
       rows: [
         {
           key: {
-            text: "Name"
+            text: "Full name"
           },
           value: {
             text: data['fullName']
@@ -24,7 +26,7 @@
           actions: {
             items: [
               {
-                href: "#",
+                href: "update-registration-personal",
                 text: "Change",
                 visuallyHiddenText: "Full name"
               }

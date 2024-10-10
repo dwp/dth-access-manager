@@ -1,0 +1,172 @@
+{% extends "layouts/main_agent_register.html" %}
+{% set phaseBanner = 'true' %}
+
+{% block pageTitle %}
+  Check your answers before submitting – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <h1 class="govuk-heading-l">Check your answers before submitting your request</h1>
+
+    <p class="govuk-body">You can change any of your previous answers by clicking the change link in either section. If you are happy, confirm and submit below.</p>
+
+  {{ govukSummaryList({
+  card: {
+    title: {
+      text: "Personal details"
+    },
+    actions: {
+      items: [
+        {
+          href: "update-registration-personal",
+          text: "Change",
+          visuallyHiddenText: "Personal details"
+        }
+      ]
+    }
+  },
+  rows: [
+    {
+      key: {
+        text: "Full name"
+      },
+      value: {
+        text: data['fullName']
+      }
+    },
+    {
+      key: {
+        text: "Email address"
+      },
+      value: {
+        text: data['emailAddress']
+      }
+    },
+    {
+      key: {
+        text: "Shared or team email address"
+      },
+      value: {
+        text: data['shareteamemailAddress']
+      }
+    },
+    {
+      key: {
+        text: "Line manager's email address"
+      },
+      value: {
+        text: data['managerEmailAddress']
+      }
+    },
+    {
+      key: {
+        text: "Primary approver's email address"
+      },
+      value: {
+        text: data['primaryApproverEmailAddress']
+      }
+    },
+    {
+      key: {
+        text: "Secondary approver's email address"
+      },
+      value: {
+        text: data['secondaryApproverEmailAddress']
+      }
+    },
+    {
+      key: {
+        text: "Your teams' Slack channel URL"
+      },
+      value: {
+        text: data['slackUrl']
+      }
+    },
+    {
+      key: {
+        text: "DWP service name"
+      },
+      value: {
+        text: data['serviceName']
+      }
+    }
+  ]
+  }) }}
+
+  {{ govukSummaryList({
+  card: {
+    title: {
+      text: "Technical details"
+    },
+    actions: {
+      items: [
+        {
+          href: "update-registration-technical",
+          text: "Change",
+          visuallyHiddenText: "Technical details"
+        }
+      ]
+    }
+  },
+  rows: [
+    {
+      key: {
+        text: "IDV passed redirect URL"
+      },
+      value: {
+        text: data['idvPassedRedirectUrl']
+      }
+    },
+    {
+      key: {
+        text: "IDV failed redirect URL"
+      },
+      value: {
+        text: data['idvFailedRedirectUrl']
+      }
+    },
+    {
+      key: {
+        text: "Logout URL"
+      },
+      value: {
+        text: data['logOutUrl']
+      }
+    },
+    {
+      key: {
+        text: "Scopes"
+      },
+      value: {
+        text: data['scopes']
+      }
+    },
+    {
+      key: {
+        text: "Claims"
+      },
+      value: {
+        text: data['Claims']
+      }
+    }
+  ]
+  }) }}
+
+    <h2 class="govuk-heading-m">Now send your request</h2>
+
+            <p class="govuk-body">By submitting this application you are confirming that, to the best of your knowledge, the details you are providing are correct.</p>
+
+            <div class="govuk-button-group">
+              {{ govukButton({
+                text: "Confirm and submit",
+                href: "/registration/flow2/submitted-your-request"
+              }) }}
+            </div>
+
+            </div>
+          </div>
+
+{% endblock %}
