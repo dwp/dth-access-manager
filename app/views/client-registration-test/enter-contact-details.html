@@ -1,0 +1,75 @@
+{% extends "layouts/main_agent_client_registration_test.html" %}
+{% from "govuk/components/details/macro.njk" import govukDetails %}
+{% set backLink = 'true' %}
+
+{% block pageTitle %}
+  Start page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+
+
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+<form class="form" action="./responsible-onboarding" method="post">
+
+      <h1 class="govuk-heading-xl">
+Enter your contact details
+      </h1>
+
+ {{ govukInput({
+          label: {
+            text: "Full name",
+            classes: "govuk-label"
+          },
+          classes: "govuk-input--width-20",
+          id: "full-name1",
+          name: "fullName1",
+          autocomplete: "name",
+          spellcheck: false
+        }) }}
+
+         {{ govukInput({
+          label: {
+            text: "Job role",
+            classes: "govuk-label"
+          },
+          classes: "govuk-input--width-20",
+          id: "job-role",
+          name: "jobRole1",
+          autocomplete: "name",
+          spellcheck: false
+        }) }}
+
+        {{ govukInput({
+          label: {
+            text: "Email address",
+            classes: "govuk-label"
+          },
+  hint: {
+    text: "This cannot be an engineering email address. It needs to be in the format john.stevens@dwp.gov.uk"
+  },
+          classes: "govuk-input--width-20",
+          id: "manager-email-address1",
+          name: "managerEmailAddress1",
+          spellcheck: false
+        }) }}
+
+{{ govukDetails({
+  summaryText: "Why can't I use my engineering email address?",
+  text: "To manage your onboarding to Access Manager, we are using single sign on, which requires a DWP email address."
+}) }}
+
+
+ <button type="submit" class="govuk-button" data-module="govuk-button">
+  Continue
+</button>
+
+      </form>
+  
+    </div>
+</div>
+
+{% endblock %}

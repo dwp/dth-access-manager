@@ -1,0 +1,58 @@
+{% extends "layouts/main_agent_client_registration_test.html" %}
+
+{% block pageTitle %}
+  Start page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+
+
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-xl">
+     Register for the Access Manager
+test environment
+      </h1>
+
+      <h2 class="govuk-heading-m">Before you start:</h2>
+
+      <ul class="govuk-list govuk-list--bullet">
+        <li>read <a class="govuk-link" href="#" target="_blank">the Access Manager onboarding guidance</a></li>
+        <li>check your service is not already registered for the test environment. <a class="govuk-link" href="#" target="_blank">See all registered services</a></li>
+     
+      </ul>
+
+    <h2 class="govuk-heading-m">You will need:</h2>
+
+      <ul class="govuk-list govuk-list--bullet">
+        <li>to meet the  <a class="govuk-link" href="#" target="_blank">techical pre-requisites</a></li>
+        <li>your product area and service name</li>
+        <li>your team's contact details</li>
+        </ul>
+
+   <p class="govuk-body">
+     If you want to share citizen data with other services, you will also need to tell us:
+     </p>
+     <ul class="govuk-list govuk-list--bullet">
+        <li>your scopes</li>
+        <li>your allowed clients</li>
+     
+     
+    </ul>
+<br>
+      {{ govukButton({
+        text: "Start now",
+        href: "technical-prereq",
+        isStartButton: true
+      }) }}
+<br>
+  <p class="govuk-body">
+When you have completed your registration, you will receive your client credentials by secure email.</p>
+
+    </div>
+</div>
+
+{% endblock %}

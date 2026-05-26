@@ -1,0 +1,39 @@
+{% extends "layouts/main_agent_client_registration_test.html" %}
+{% from "govuk/components/details/macro.njk" import govukDetails %}
+
+
+{% block pageTitle %}
+  Start page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+
+
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+ {{ govukPanel({
+        titleText: "Registration request sent",
+        html: ""
+      }) }}
+
+      <p class="govuk-body">If any details change or you want to add new scopes or allowed clients you can <a class="govuk-link" href="#" target="_blank">view and amend your request</a>.</p>
+
+      <h2 class="govuk-heading-m">What happens next</h2>
+
+      <p class="govuk-body">
+       You will receive a confirmation email. 
+      </p>
+      <p class="govuk-body">
+        The contact you have provided will receive your client credentials by secure email. This will give you access to the test environment.
+      </p>
+
+      <p class="govuk-body">You can find out more about the next steps in the <a class="govuk-link" href="#" target="_blank">Access Manager onboarding guidance</a>.</p>
+
+  
+    </div>
+
+
+{% endblock %}

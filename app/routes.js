@@ -6,64 +6,115 @@
 const govukPrototypeKit = require('govuk-prototype-kit')
 const router = govukPrototypeKit.requests.setupRouter()
 
-//router.post('/country-answer', function(request, response) {
 
-router.post('/choice-answer', function(request, response) {
 
-    var country = request.session.data['choice']
-    if (country == "dth"){
-        response.redirect("/request-list")
+
+
+
+// Handle form submission
+router.post('/enter-their-contact-details', (req, res) => {
+    // Check if a radio button is selected
+    const selectedOption = req.body['responsibleon'];
+
+    if (selectedOption) {
+        // Route user based on their selection
+        if (selectedOption === "me") {
+            // Send user here
+            res.redirect('/client-registration-test/responsible-client-credentials');
+        } else {
+            // Send user here
+            res.redirect('/client-registration-test/enter-their-contact-details');
+        }
     } else {
-        response.redirect("/request-list-ol")
+        // If no radio button is selected, redirect to error page
+        res.redirect('/client-registration-test/responsible-onboarding?error=true');
     }
-})
+});
 
-router.post('/request-decision', function(request, response) {
 
-    var decision = request.session.data['yourDecision']
-    if (decision == "approve"){
-        response.redirect("/request-list-updated")
+// Handle form submission
+router.post('/enter-their-contact-details2', (req, res) => {
+    // Check if a radio button is selected
+    const selectedOption = req.body['responsiblecred'];
+
+     if (selectedOption) {
+        // If radio option is selected:
+        if (selectedOption === "me") {
+            // Send user to...
+            res.redirect('/client-registration-test/register-resource-server');
+        } else if (selectedOption === "thisperson") {
+            // Send user to enter passport details
+            res.redirect('/client-registration-test/register-resource-server');
+        } else if (selectedOption === "someone") {
+            // Send user to prove identity at the post office
+            res.redirect('/client-registration-test/enter-their-contact-details2');
+        }
     } else {
-        response.redirect("/request-list-declined")
+        // If no radio button is selected, redirect to error page
+        res.redirect('/client-registration-test/responsible-onboarding?error=true');
     }
-})
+});
 
-router.post('/request-decision2', function(request, response) {
 
-    var decision = request.session.data['yourDecision2']
-    if (decision == "approve"){
-        response.redirect("/request-approved")
+// Handle form submission
+router.post('/check-answers-rc', (req, res) => {
+    // Check if a radio button is selected
+    const selectedOption = req.body['regresource'];
+
+    if (selectedOption) {
+        // Route user based on their selection
+        if (selectedOption === "yes") {
+            // Send user here
+            res.redirect('/client-registration-test/add-scopes');
+        } else {
+            // Send user here
+            res.redirect('/client-registration-test/check-answers-consuming-service');
+        }
     } else {
-        response.redirect("/request-declined")
+        // If no radio button is selected, redirect to error page
+        res.redirect('/client-registration-test/register-resource-server?error=true');
     }
-})
+});
 
-router.post('/approve-choice-answer', function(request, response) {
 
-    var choice = request.session.data['approve-choice']
-    if (choice == "dth"){
-        response.redirect("/approvals-dwp/flow2/request-list")
+
+// Handle form submission
+router.post('/scopes-list', (req, res) => {
+    // Check if a radio button is selected
+    const selectedOption = req.body['add-another'];
+
+    if (selectedOption) {
+        // Route user based on their selection
+        if (selectedOption === "yes") {
+            // Send user here
+            res.redirect('/client-registration-test/add-scopes');
+        } else {
+            // Send user here
+            res.redirect('/client-registration-test/select-allowed-clients');
+        }
     } else {
-        response.redirect("/approvals-ol/flow2/request-list-ol")
+        // If no radio button is selected, redirect to error page
+        res.redirect('/client-registration-test/scopes-list?error=true');
     }
-})
+});
 
-router.post('/request-decision3', function(request, response) {
 
-    var decision = request.session.data['yourDecision3']
-    if (decision == "approve"){
-        response.redirect("/approvals-dwp/flow2/request-approved")
+// Handle form submission
+router.post('/ara-product', (req, res) => {
+    // Check if a radio button is selected
+    const selectedOption = req.body['araproduct'];
+
+    if (selectedOption) {
+        // Route user based on their selection
+        if (selectedOption === "Not applicable") {
+            // Send user here
+            res.redirect('/client-registration-test/enter-product-name');
+        } else {
+            // Send user here
+            res.redirect('/client-registration-test/enter-service-name');
+        }
     } else {
-        response.redirect("/approvals-dwp/flow2/request-declined")
+        // If no radio button is selected, redirect to error page
+        res.redirect('/client-registration-test/select-ara-product?error=true');
     }
-})
-
-router.post('/request-decision4', function(request, response) {
-
-    var decision = request.session.data['yourDecision4']
-    if (decision == "approve"){
-        response.redirect("/approvals-ol/flow2/one-login-approved")
-    } else {
-        response.redirect("/approvals-ol/flow2/one-login-declined")
-    }
-})
+});

@@ -1,0 +1,349 @@
+{% extends "layouts/main_agent_client_registration_test.html" %}
+{% from "govuk/components/details/macro.njk" import govukDetails %}
+{% set backLink = 'true' %}
+
+{% block pageTitle %}
+  Start page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+
+
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+<form class="form" action="./confirmation" method="post">
+
+      <h1 class="govuk-heading-xl">
+Check your answers before 
+sending your request
+      </h1>
+
+
+
+
+
+     {% if data['araproduct'] %}
+     {{ govukSummaryList({
+  card: {
+    title: {
+      text: "Product and service name"
+    },
+    actions: {
+      items: [
+        {
+          href: "update-registration-personal",
+          text: "Change answers",
+          visuallyHiddenText: "Change product and service name"
+        }
+      ]
+    }
+  },
+  rows: [
+    {
+      key: {
+        text: "Product"
+      },
+      value: {
+        text: data['araproduct']
+      }
+    },
+    {
+      key: {
+        text: "Service name"
+      },
+      value: {
+        text: data['servicename']
+      }
+    },
+    {
+      key: {
+        text: "GPG public key"
+      },
+      value: {
+        text: 	data['GPG']
+      }
+    }
+  ]
+  }) }}
+      
+    {% else %} 
+      {{ govukSummaryList({
+  card: {
+    title: {
+      text: "Product and service name"
+    },
+    actions: {
+      items: [
+        {
+          href: "update-registration-personal",
+          text: "Change answers",
+          visuallyHiddenText: "Change product and service name"
+        }
+      ]
+    }
+  },
+  rows: [
+    {
+      key: {
+        text: "Product"
+      },
+      value: {
+        text: data['productarea']
+      }
+    },
+    {
+      key: {
+        text: "Service name"
+      },
+      value: {
+        text: data['servicename']
+      }
+    },
+    {
+      key: {
+        text: "GPG public key"
+      },
+      value: {
+        text: 	data['GPG']
+      }
+    }
+  ]
+  }) }}
+    {% endif %}
+
+
+
+
+
+
+{{ govukSummaryList({
+  card: {
+    title: {
+      text: "Contact details: registration"
+    },
+    actions: {
+      items: [
+        {
+          href: "update-registration-personal",
+          text: "Change answers",
+          visuallyHiddenText: "Change contact details: registration"
+        }
+      ]
+    }
+  },
+  rows: [
+    {
+      key: {
+        text: "Name"
+      },
+      value: {
+        text: data['fullName1']
+      }
+    },
+    {
+      key: {
+        text: "Job role"
+      },
+      value: {
+        text: data['jobRole1']
+      }
+    },
+    {
+      key: {
+        text: "Contact details"
+      },
+      value: {
+        text: data['managerEmailAddress1']
+      }
+    }
+  ]
+  }) }}
+
+
+  {{ govukSummaryList({
+  card: {
+    title: {
+      text: "Contact details: managing onboarding"
+    },
+    actions: {
+      items: [
+        {
+          href: "update-registration-personal",
+          text: "Change answers",
+          visuallyHiddenText: "Change contact details: managing onboarding"
+        }
+      ]
+    }
+  },
+  rows: [
+    {
+      key: {
+        text: "Name"
+      },
+      value: {
+        text: data['fullName2']
+      }
+    },
+    {
+      key: {
+        text: "Job role"
+      },
+      value: {
+        text: data['jobRole2']
+      }
+    },
+    {
+      key: {
+        text: "Contact details"
+      },
+      value: {
+        text: data['managerEmailAddress2']
+      }
+    }
+  ]
+  }) }}
+
+  {{ govukSummaryList({
+  card: {
+    title: {
+      text: "Contact details: client credentials"
+    },
+    actions: {
+      items: [
+        {
+          href: "update-registration-personal",
+          text: "Change answers",
+          visuallyHiddenText: "Change contact details: client credentials"
+        }
+      ]
+    }
+  },
+  rows: [
+    {
+      key: {
+        text: "Name"
+      },
+      value: {
+        text: data['fullName3']
+      }
+    },
+    {
+      key: {
+        text: "Job role"
+      },
+      value: {
+        text: data['jobRole3']
+      }
+    },
+    {
+      key: {
+        text: "Contact details"
+      },
+      value: {
+        text: 	data['managerEmailAddress3']
+      }
+    }
+  ]
+  }) }}
+
+
+  {{ govukSummaryList({
+  card: {
+    title: {
+      text: "Scopes"
+    },
+    actions: {
+      items: [
+        {
+          href: "update-registration-technical",
+          text: "Change answers",
+          visuallyHiddenText: "Change scopes"
+        }
+      ]
+    }
+  },
+  rows: [
+    {
+      key: {
+        text: "Scope1"
+      },
+      value: {
+        text: data['scopename1']
+      }
+    
+    }
+  ]
+  }) }}
+
+
+  {{ govukSummaryList({
+  card: {
+    title: {
+      text: "Allowed clients"
+    },
+    actions: {
+      items: [
+        {
+          href: "update-registration-technical",
+          text: "Change answers",
+          visuallyHiddenText: "Change technical details"
+        }
+      ]
+    }
+  },
+  rows: [
+    {
+      key: {
+        text: "Client ID"
+      },
+      value: {
+        text: "XXCXCXCXCYXC1234"
+      }
+    },
+    {
+      key: {
+       text: "Client ID"
+      },
+      value: {
+       text: "XXCXCXCXCYXC1234"
+      }
+    },
+    {
+      key: {
+       text: "Client ID"
+      },
+      value: {
+        text: "XXCXCXCXCYXC1234"
+      }
+    },
+    {
+      key: {
+       text: "Client ID"
+      },
+      value: {
+       text: "XXCXCXCXCYXC1234"
+      }
+    },
+    {
+      key: {
+       text: "Client ID"
+      },
+      value: {
+        text: "XXCXCXCXCYXC1234"
+      }
+    }
+  ]
+  }) }}
+
+
+<button type="submit" class="govuk-button" data-module="govuk-button">
+  Confirm and submit
+</button>
+
+</form>
+    </div>
+</div>
+
+{% endblock %}

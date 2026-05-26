@@ -1,0 +1,53 @@
+{% extends "layouts/main_agent_client_registration_test.html" %}
+{% from "govuk/components/details/macro.njk" import govukDetails %}
+{% set backLink = 'true' %}
+
+{% block pageTitle %}
+  Start page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+
+
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+<form class="form" action="/check-answers-rc" method="post">
+      <h1 class="govuk-heading-xl">
+Do you need to register as a resource server?
+      </h1>
+
+   <p class="govuk-body">
+A resource server shares citizen data with other services. <br> You will be asked to tell us your scopes and allowed clients.      </p>
+
+{{ govukRadios({
+  name: "regresource",
+  fieldset: {
+    legend: {
+      text: ""
+    }
+  },
+  items: [
+    {
+      value: "yes",
+      text: "Yes -  I need to share data with other services"
+    },
+    {
+      value: "no",
+      text: "No - I only need to access data from other services"
+    }
+  ]
+}) }}
+
+
+ <button type="submit" class="govuk-button" data-module="govuk-button">
+  Continue
+</button>
+
+</form>
+    </div>
+
+</div>
+{% endblock %}

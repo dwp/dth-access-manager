@@ -5,9 +5,13 @@
     "start": "govuk-prototype-kit start"
   },
   "dependencies": {
-    "@dwp/dwp-frontend": "3.0.0",
-    "@govuk-prototype-kit/common-templates": "2.0.1",
-    "govuk-frontend": "5.6.0",
-    "govuk-prototype-kit": "13.16.2"
+    "@dwp/dwp-frontend": "4.1.0",
+    "@govuk-prototype-kit/common-templates": "3.0.0",
+    "@ministryofjustice/frontend": "^9.0.0",
+    "@x-govuk/govuk-prototype-components": "^6.0.0",
+    "govuk-frontend": "^6.1.0",
+    "govuk-prototype-kit": "13.20.0",
+    "hmrc-frontend": "7.15.0",
+    "moment": "^2.30.1"
   }
 }

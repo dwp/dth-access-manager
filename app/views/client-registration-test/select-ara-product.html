@@ -1,0 +1,90 @@
+{% extends "layouts/main_agent_client_registration_test.html" %}
+{% from "govuk/components/details/macro.njk" import govukDetails %}
+{% set backLink = 'true' %}
+
+{% block pageTitle %}
+  Start page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+
+
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+ <form class="form" action="/ara-product" method="post">
+
+      <h1 class="govuk-heading-xl">
+Which ARA product does your service belong to?
+      </h1>
+
+
+{{ xGovukAutocomplete({
+  id: "araproduct",
+  name: "araproduct",
+  allowEmpty: false,
+  label: {
+    classes: "govuk-label--m",
+    isPageHeading: false,
+    text: "Select ARA product"
+  },
+  items: [
+    { text: "Access To Work" },
+    { text: "Address Verification" },
+    { text: "Appointment Booking Providers" },
+    { text: "Asynchronous messaging(Insecure)" },
+    { text: "Asynchronous messaging(Secure)" },
+    { text: "Bank Verification" },
+    { text: "Banking System Providers" },
+    { text: "Colleague Web" },
+    { text: "Customer Web" },
+    { text: "Child Maintenance" },
+    { text: "DWP Agent View" },
+    { text: "DWP Customer View" },
+    { text: "Email(external)" },
+    { text: "Face to Face" },
+    { text: "Fraud Investigation" },
+    { text: "Gov.Uk" },
+    { text: "Gov.UK.Pay" },
+    { text: "HMRC Earnings" },
+    { text: "HMRC Capital" },
+    { text: "HMRC Tax Credits" },
+    { text: "Incapacity Benefit" },
+    { text: "Invalidity Benefit" },
+    { text: "Income Support" },
+    { text: "Maternity Allowance" },
+    { text: "NINO Management" },
+    { text: "Not applicable" },
+    { text: "Post" },
+    { text: "Pension Credit" },
+    { text: "Repay My Debt" },
+    { text: "Sickness Benefit" },
+    { text: "State Pension(Old Style)" },
+    { text: "Video" },
+    { text: "Voice - Assisted" },
+    { text: "Voice - Self serve" },
+    { text: "Kiosk" },
+    { text: "Quality Assurance" },
+    { text: "Webchat - Assisted" },
+    { text: "Webchat - Self serve" }
+  ]
+}) }}
+
+
+{{ govukDetails({
+  summaryText: "I can't find the product I'm looking for",
+  text: "You can select 'Not applicable' if you cannot find the product you are looking for."
+}) }}
+
+ <button type="submit" class="govuk-button" data-module="govuk-button">
+  Continue
+</button>
+
+</form>
+
+  
+    </div>
+
+</div>
+{% endblock %}

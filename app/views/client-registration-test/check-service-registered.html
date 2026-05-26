@@ -1,0 +1,99 @@
+{% extends "layouts/main_agent_client_registration_test.html" %}
+{% from "govuk/components/details/macro.njk" import govukDetails %}
+{% from "govuk/components/table/macro.njk" import govukTable %}
+{% set backLink = 'true' %}
+
+{% block pageTitle %}
+  Start page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+
+
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+ <form class="form" action="./enter-contact-details" method="post">
+      <h1 class="govuk-heading-xl">
+Check if your service is already registered with Access Manager
+      </h1>
+{{ govukInsetText({
+  text: data['servicename']
+}) }}
+
+      <p class="govuk-body">
+There are 4 services with similar names who have already registered for the Access Manager test environment. 
+     </p>
+      <p class="govuk-body">
+You only need to register once. If your service is listed below you do not need to register again.
+     </p>
+<br><br>
+
+{{ govukTable({
+  caption: "Services and contact details",
+  captionClasses: "govuk-table__caption--m",
+  firstCellIsHeader: true,
+  head: [
+    {
+      text: "Service name"
+    },
+    {
+      text: "Contact details",
+      format: "numeric"
+    }
+  ],
+  rows: [
+    [
+      {
+        text: data['servicename']
+      },
+      {
+        text: "sarah.philips@dwp.gov.uk",
+        format: "numeric"
+      }
+    ],
+     [
+      {
+        text: data['servicename']
+      },
+      {
+        text: "john.mcconnell@dwp.gov.uk",
+        format: "numeric"
+      }
+    ],
+    [
+      {
+        text: data['servicename']
+      },
+      {
+        text: "emily.smith@dwp.gov.uk",
+        format: "numeric"
+      }
+    ],
+    [
+      {
+        text: data['servicename']
+      },
+      {
+        text: "terry.philips@dwp.gov.uk",
+        format: "numeric"
+      }
+    ]
+  ]
+}) }}
+   <p class="govuk-body">
+If your service name is not listed, you can continue.
+     </p>
+ <button type="submit" class="govuk-button" data-module="govuk-button">
+  Continue
+</button>
+    </form>
+
+  
+
+    </div>
+</div>
+
+{% endblock %}
