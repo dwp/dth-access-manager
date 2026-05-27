@@ -42,6 +42,9 @@ router.post('/enter-their-contact-details2', (req, res) => {
         if (selectedOption === "me") {
             // Send user to...
             res.redirect('/client-registration-test/register-resource-server');
+        } else if (selectedOption === "me2") {
+            // Send user to enter passport details
+            res.redirect('/client-registration-test/register-resource-server');
         } else if (selectedOption === "thisperson") {
             // Send user to enter passport details
             res.redirect('/client-registration-test/register-resource-server');

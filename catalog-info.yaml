@@ -2,7 +2,7 @@ apiVersion: backstage.io/v1alpha1
 kind: Component
 metadata:
   name: prototype.interface.dth-access-manager
-  title: DTH-Access-Manager
+  title: dth-access-manager
   description: |
     DWP Access Manager prototype
 

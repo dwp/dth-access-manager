@@ -24,7 +24,7 @@ sending your request
 
 
 
-     {% if data['araproduct'] %}
+       {% if data['araproduct'] == 'true' %}
      {{ govukSummaryList({
   card: {
     title: {
@@ -33,7 +33,7 @@ sending your request
     actions: {
       items: [
         {
-          href: "update-registration-personal",
+          href: "./select-ara-product",
           text: "Change answers",
           visuallyHiddenText: "Change product and service name"
         }
@@ -77,9 +77,9 @@ sending your request
     actions: {
       items: [
         {
-          href: "update-registration-personal",
+          href: "./technical-prereq",
           text: "Change answers",
-          visuallyHiddenText: "Change product and service name"
+          visuallyHiddenText: "Change product name, service name or GPG public key"
         }
       ]
     }
@@ -126,7 +126,7 @@ sending your request
     actions: {
       items: [
         {
-          href: "update-registration-personal",
+          href: "./enter-contact-details",
           text: "Change answers",
           visuallyHiddenText: "Change contact details: registration"
         }
@@ -162,7 +162,59 @@ sending your request
   }) }}
 
 
-  {{ govukSummaryList({
+
+
+{% if data['responsibleon'] == 'me' %}
+  
+{{ govukSummaryList({
+  card: {
+    title: {
+      text: "Contact details: managing onboarding"
+    },
+    actions: {
+      items: [
+        {
+          href: "./responsible-onboarding",
+          text: "Change answers",
+          visuallyHiddenText: "Change contact details: managing onboarding"
+        }
+      ]
+    }
+  },
+  rows: [
+    {
+      key: {
+        text: "Name"
+      },
+      value: {
+        text: data['fullName1']
+      }
+    },
+    {
+      key: {
+        text: "Job role"
+      },
+      value: {
+        text: data['jobRole1']
+      }
+    },
+    {
+      key: {
+        text: "Contact details"
+      },
+      value: {
+        text: data['managerEmailAddress1']
+      }
+    }
+  ]
+  }) }}
+
+
+
+{% else %}
+
+
+{{ govukSummaryList({
   card: {
     title: {
       text: "Contact details: managing onboarding"
@@ -205,7 +257,15 @@ sending your request
   ]
   }) }}
 
-  {{ govukSummaryList({
+
+
+{% endif %}
+
+ 
+
+{% if data['responsiblecred'] == 'me' %}
+  
+{{ govukSummaryList({
   card: {
     title: {
       text: "Contact details: client credentials"
@@ -213,7 +273,101 @@ sending your request
     actions: {
       items: [
         {
-          href: "update-registration-personal",
+          href: "./responsible-client-credentials",
+          text: "Change answers",
+          visuallyHiddenText: "Change contact details: client credentials"
+        }
+      ]
+    }
+  },
+  rows: [
+    {
+      key: {
+        text: "Name"
+      },
+      value: {
+        text: data['fullName1']
+      }
+    },
+    {
+      key: {
+        text: "Job role"
+      },
+      value: {
+        text: data['jobRole1']
+      }
+    },
+    {
+      key: {
+        text: "Contact details"
+      },
+      value: {
+        text: data['managerEmailAddress1']
+      }
+    }
+  ]
+  }) }}
+
+
+
+{% elif data['responsiblecred'] == 'me2' %}
+
+
+{{ govukSummaryList({
+  card: {
+    title: {
+      text: "Contact details: client credentials"
+    },
+    actions: {
+      items: [
+        {
+          href: "./responsible-client-credentials",
+          text: "Change answers",
+          visuallyHiddenText: "Change contact details: client credentials"
+        }
+      ]
+    }
+  },
+  rows: [
+    {
+      key: {
+        text: "Name"
+      },
+      value: {
+        text: data['fullName1']
+      }
+    },
+    {
+      key: {
+        text: "Job role"
+      },
+      value: {
+        text: data['jobRole1']
+      }
+    },
+    {
+      key: {
+        text: "Contact details"
+      },
+      value: {
+        text: data['managerEmailAddress1']
+      }
+    }
+  ]
+  }) }}
+
+
+{% else %}
+
+{{ govukSummaryList({
+  card: {
+    title: {
+      text: "Contact details: client credentials"
+    },
+    actions: {
+      items: [
+        {
+          href: "./responsible-client-credentials",
           text: "Change answers",
           visuallyHiddenText: "Change contact details: client credentials"
         }
@@ -242,11 +396,16 @@ sending your request
         text: "Contact details"
       },
       value: {
-        text: 	data['managerEmailAddress3']
+        text: data['managerEmailAddress3']
       }
     }
   ]
   }) }}
+
+
+
+{% endif %}
+
 
 
   {{ govukSummaryList({
@@ -257,7 +416,7 @@ sending your request
     actions: {
       items: [
         {
-          href: "update-registration-technical",
+          href: "./scopes-list",
           text: "Change answers",
           visuallyHiddenText: "Change scopes"
         }
@@ -267,7 +426,7 @@ sending your request
   rows: [
     {
       key: {
-        text: "Scope1"
+        text: "Scope"
       },
       value: {
         text: data['scopename1']
@@ -278,7 +437,10 @@ sending your request
   }) }}
 
 
-  {{ govukSummaryList({
+
+
+
+{{ govukSummaryList({
   card: {
     title: {
       text: "Allowed clients"
@@ -337,10 +499,15 @@ sending your request
   ]
   }) }}
 
+{{ govukButton({
+        text: "Confirm and submit",
+        href: "",
+        isStartButton: false
+      }) }}
+    </div>
 
-<button type="submit" class="govuk-button" data-module="govuk-button">
-  Confirm and submit
-</button>
+
+
 
 </form>
     </div>
