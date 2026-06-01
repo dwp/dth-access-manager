@@ -1,6 +1,6 @@
 {% extends "layouts/main_agent_client_registration_test.html" %}
 {% from "govuk/components/details/macro.njk" import govukDetails %}
-{% set backLink = 'true' %}
+
 
 {% block pageTitle %}
   Start page template – {{ serviceName }} – GOV.UK Prototype Kit
@@ -11,21 +11,35 @@
 
 {% block content %}
 
+
+
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
+
+
+      {% set html %}
+  <h3 class="govuk-notification-banner__heading">
+   Changes saved successfully
+  </h3>
+{% endset %}
+
+{{ govukNotificationBanner({
+  html: html,
+  type: "success"
+}) }}
+
 
 <form class="form" action="./confirmation" method="post">
 
       <h1 class="govuk-heading-xl">
-Check your answers before 
-sending your request
+Test environment registration
       </h1>
 
 
 
 
 
-     {% if data['araproduct'] %}
+       {% if data['araproduct'] %}
      {{ govukSummaryList({
   card: {
     title: {
@@ -78,9 +92,9 @@ sending your request
     actions: {
       items: [
         {
-          href: "./enter-product-name",
+          href: "./technical-prereq",
           text: "Change answers",
-          visuallyHiddenText: "Change product and service name"
+          visuallyHiddenText: "Change product name, service name or GPG public key"
         }
       ]
     }
@@ -407,12 +421,172 @@ sending your request
 
 {% endif %}
 
+{% if data['regresource'] == 'yes' %}
 
-<button type="submit" class="govuk-button" data-module="govuk-button">
-  Confirm and submit
-</button>
+  {{ govukSummaryList({
+  card: {
+    title: {
+      text: "Scopes"
+    },
+    actions: {
+      items: [
+        {
+          href: "./scopes-list",
+          text: "Change answers",
+          visuallyHiddenText: "Change scopes"
+        }
+      ]
+    }
+  },
+  rows: [
+    {
+      key: {
+        text: "Scope"
+      },
+      value: {
+        text: data['scopename1']
+      }
+    
+    }
+  ]
+  }) }}
 
-  </form>
+
+
+
+
+{{ govukSummaryList({
+  card: {
+    title: {
+      text: "Allowed clients"
+    },
+    actions: {
+      items: [
+        {
+          href: "update-registration-technical",
+          text: "Change answers",
+          visuallyHiddenText: "Change technical details"
+        }
+      ]
+    }
+  },
+  rows: [
+    {
+      key: {
+        text: "Client ID"
+      },
+      value: {
+        text: "XXCXCXCXCYXC1234"
+      }
+    },
+    {
+      key: {
+       text: "Client ID"
+      },
+      value: {
+       text: "XXCXCXCXCYXC1234"
+      }
+    },
+    {
+      key: {
+       text: "Client ID"
+      },
+      value: {
+        text: "XXCXCXCXCYXC1234"
+      }
+    },
+    {
+      key: {
+       text: "Client ID"
+      },
+      value: {
+       text: "XXCXCXCXCYXC1234"
+      }
+    },
+    {
+      key: {
+       text: "Client ID"
+      },
+      value: {
+        text: "XXCXCXCXCYXC1234"
+      }
+    }
+  ]
+  }) }}
+
+{% else %}
+
+
+  {{ govukSummaryList({
+  card: {
+    title: {
+      text: "Scopes"
+    },
+    actions: {
+      items: [
+        {
+          href: "./scopes-list",
+          text: "Change answers",
+          visuallyHiddenText: "Change scopes"
+        }
+      ]
+    }
+  },
+  rows: [
+    {
+      key: {
+        text: "Scope"
+      },
+      value: {
+        text: "No scopes selected"
+      }
+    
+    }
+  ]
+  }) }}
+
+
+
+
+
+{{ govukSummaryList({
+  card: {
+    title: {
+      text: "Allowed clients"
+    },
+    actions: {
+      items: [
+        {
+          href: "update-registration-technical",
+          text: "Change answers",
+          visuallyHiddenText: "Change technical details"
+        }
+      ]
+    }
+  },
+  rows: [
+    {
+      key: {
+        text: "Client ID"
+      },
+      value: {
+        text: "No clients selected"
+      }
+   
+    }
+  ]
+  }) }}
+
+
+{% endif %}
+
+
+    </div>
+
+
+
+
+</form>
     </div>
 </div>
 

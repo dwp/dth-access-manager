@@ -48,12 +48,19 @@ Enter your contact details
             text: "Email address",
             classes: "govuk-label"
           },
+  hint: {
+    text: "This cannot be an engineering email address. It needs to be in the format john.stevens@dwp.gov.uk"
+  },
           classes: "govuk-input--width-20",
           id: "manager-email-address1",
           name: "managerEmailAddress1",
           spellcheck: false
         }) }}
 
+{{ govukDetails({
+  summaryText: "Why can't I use my engineering email address?",
+  text: "To manage your onboarding to Access Manager, we are using single sign on, which requires a DWP email address."
+}) }}
 
 
  <button type="submit" class="govuk-button" data-module="govuk-button">

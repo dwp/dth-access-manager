@@ -1,0 +1,111 @@
+{% extends "layouts/main_agent_client_registration_test.html" %}
+
+{% block pageTitle %}
+  Start page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+
+
+
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      
+      <h1 class="govuk-heading-l">Access Manager progress overview</h1>
+      <span class="govuk-caption-xl">Service name: {{ data['servicename'] }}</span>
+<br>
+      <h2 class="govuk-heading-m">1. Test environment</h2>
+
+      {{ govukTaskList({
+        idPrefix: "before-you-start",
+        items: [
+          {
+            title: {
+              text: "Register"
+            },
+            status: {
+              text: "Completed"
+            }
+          },
+          {
+            title: {
+              text: "Manage"
+            },
+            href: "./client-management-test/test-environment-registration",
+            status: {
+              tag: {
+                text: "Available",
+                classes: "govuk-tag--blue"
+              }
+            }
+          }
+        ]
+      }) }}
+
+      <h2 class="govuk-heading-m govuk-!-margin-top-5">2. Staging environment</h2>
+
+        {{ govukTaskList({
+        idPrefix: "before-you-start",
+        items: [
+          {
+            title: {
+              text: "Register"
+            },
+             href: "#",
+      status: {
+        tag: {
+          text: "To do",
+          classes: "govuk-tag--yellow"
+            } 
+          }
+          },
+          {
+           title: {
+        text: "Manage"
+      },
+      status: {
+        tag: {
+          text: "Not available yet",
+          classes: "govuk-tag--grey"
+        }
+      }
+    }
+  ]
+}) }}
+
+
+      <h2 class="govuk-heading-m govuk-!-margin-top-5">3. Live environment</h2>
+
+        {{ govukTaskList({
+        idPrefix: "before-you-start",
+        items: [
+          {
+            title: {
+              text: "Register"
+            },
+      status: {
+        tag: {
+          text: "Not available yet",
+          classes: "govuk-tag--grey"
+            } 
+          }
+          },
+          {
+           title: {
+        text: "Manage"
+      },
+      status: {
+        tag: {
+          text: "Not available yet",
+          classes: "govuk-tag--grey"
+        }
+      }
+    }
+  ]
+}) }}
+
+
+    </div>
+  </div>
+{% endblock %}

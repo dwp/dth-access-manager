@@ -1,0 +1,47 @@
+{% extends "layouts/main_agent_client_registration_test.html" %}
+{% from "govuk/components/details/macro.njk" import govukDetails %}
+{% set backLink = 'true' %}
+
+{% block pageTitle %}
+  Start page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+
+
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+<form class="form" action="./scopes-list" method="post">
+
+      <h1 class="govuk-heading-xl">
+Add a scope
+      </h1>
+      {{ govukInsetText({
+  text: "Enter one scope at a time. You will be able to add multiple scopes."
+}) }}
+
+  {{ govukInput({
+          label: {
+            text: "Scope name",
+            classes: "govuk-label"
+        },
+          classes: "govuk-input--width-two-thirds",
+          id: "scopen-name1",
+          name: "scopename1",
+          spellcheck: false
+        }) }}
+
+
+
+ <button type="submit" class="govuk-button" data-module="govuk-button">
+  Continue
+</button>
+
+</form>
+  
+    </div>
+</div>
+
+{% endblock %}

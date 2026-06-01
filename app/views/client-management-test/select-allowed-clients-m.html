@@ -1,0 +1,225 @@
+{% extends "layouts/main_agent_client_registration_test.html" %}
+{% from "govuk/components/details/macro.njk" import govukDetails %}
+{%- from "moj/components/search/macro.njk" import mojSearch -%}
+{% set backLink = 'true' %}
+
+{% block pageTitle %}
+  Start page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+
+
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+
+      <h1 class="govuk-heading-xl">
+Select your allowed clients
+      </h1>
+
+<div class="govuk-inset-text">
+ You can select multiple clients. <br><br>
+ You will need to speak with the relevant service to confirm their client ID.
+</div>
+<br>
+
+{{ mojSearch({
+  action: "#",
+  method: "post",
+  input: {
+    id: "search",
+    name: "search"
+  },
+  label: {
+    text: "Find a client",
+    classes: "govuk-!-font-weight-bold"
+  },
+  hint: {
+    text: "You can search by client ID or service name"
+  },
+  button: {
+    text: "Search"
+  }
+}) }}
+
+<br>
+
+<table class="govuk-table" data-module="moj-multi-select" data-id-prefix="client-" name="allowedclients">
+  <thead class="govuk-table__head">
+    <tr class="govuk-table__row">
+      <th class="govuk-table__header" scope="col" id="clients-select-all"></th>
+      <th class="govuk-table__header" scope="col">Client ID</th>
+      <th class="govuk-table__header govuk-table__header--numeric" scope="col">Service name</th>
+   
+    </tr>
+  </thead>
+  <tbody class="govuk-table__body">
+    <tr class="govuk-table__row govuk-table__row--selected">
+      <td class="govuk-table__cell">
+        <div class="govuk-checkboxes__item govuk-checkboxes--small moj-multi-select__checkbox">
+          <input type="checkbox" class="govuk-checkboxes__input" id="client-123" name="client-123">
+          <label class="govuk-label govuk-checkboxes__label" for="client-123">
+            <span class="govuk-visually-hidden">Select Client 123</span>
+          </label>
+        </div>
+      </td>
+      <td class="govuk-table__cell">123********</td>
+      <td class="govuk-table__cell govuk-table__cell--numeric">PIP</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell">
+        <div class="govuk-checkboxes__item govuk-checkboxes--small moj-multi-select__checkbox">
+         <input type="checkbox" class="govuk-checkboxes__input" id="client-456" name="client-456">
+          <label class="govuk-label govuk-checkboxes__label" for="client-456">
+            <span class="govuk-visually-hidden">Select Client 456</span>
+          </label>
+        </div>
+      </td>
+      </td>
+           <td class="govuk-table__cell">456********</td>
+      <td class="govuk-table__cell govuk-table__cell--numeric">PIP</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell">
+        <div class="govuk-checkboxes__item govuk-checkboxes--small moj-multi-select__checkbox">
+          <input type="checkbox" class="govuk-checkboxes__input" id="client-789" name="client-789">
+          <label class="govuk-label govuk-checkboxes__label" for="client-789">
+            <span class="govuk-visually-hidden">Select Client-789</span>
+          </label>
+        </div>
+      </td>
+  <td class="govuk-table__cell">789********</td>
+      <td class="govuk-table__cell govuk-table__cell--numeric">PIP</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell">
+        <div class="govuk-checkboxes__item govuk-checkboxes--small moj-multi-select__checkbox">
+          <input type="checkbox" class="govuk-checkboxes__input" id="mountain-everest" value="everest">
+          <label class="govuk-label govuk-checkboxes__label" for="mountain-everest">
+            <span class="govuk-visually-hidden">Select Everest</span>
+          </label>
+        </div>
+      </td>
+   <td class="govuk-table__cell">********3345</td>
+      <td class="govuk-table__cell govuk-table__cell--numeric">PIP</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell">
+        <div class="govuk-checkboxes__item govuk-checkboxes--small moj-multi-select__checkbox">
+          <input type="checkbox" class="govuk-checkboxes__input" id="mountain-kilimanjaro" value="kilimanjaro">
+          <label class="govuk-label govuk-checkboxes__label" for="mountain-kilimanjaro">
+            <span class="govuk-visually-hidden">Select Kilimanjaro</span>
+          </label>
+        </div>
+      </td>
+       <td class="govuk-table__cell">********1454</td>
+      <td class="govuk-table__cell govuk-table__cell--numeric">PIP</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell">
+        <div class="govuk-checkboxes__item govuk-checkboxes--small moj-multi-select__checkbox">
+          <input type="checkbox" class="govuk-checkboxes__input" id="mountain-puncak-jaya" value="puncak-jaya">
+          <label class="govuk-label govuk-checkboxes__label" for="mountain-puncak-jaya">
+            <span class="govuk-visually-hidden">Select Puncak Jaya</span>
+          </label>
+        </div>
+      </td>
+      <td class="govuk-table__cell">********7801</td>
+      <td class="govuk-table__cell govuk-table__cell--numeric">PIP</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell">
+        <div class="govuk-checkboxes__item govuk-checkboxes--small moj-multi-select__checkbox">
+          <input type="checkbox" class="govuk-checkboxes__input" id="mountain-vinson" value="vinson">
+          <label class="govuk-label govuk-checkboxes__label" for="mountain-vinson">
+            <span class="govuk-visually-hidden">Select Vinson</span>
+          </label>
+        </div>
+      </td>
+   <td class="govuk-table__cell">********3147</td>
+      <td class="govuk-table__cell govuk-table__cell--numeric">PIP</td>
+    </tr>
+      <tr class="govuk-table__row">
+      <td class="govuk-table__cell">
+        <div class="govuk-checkboxes__item govuk-checkboxes--small moj-multi-select__checkbox">
+          <input type="checkbox" class="govuk-checkboxes__input" id="mountain-vinson" value="vinson">
+          <label class="govuk-label govuk-checkboxes__label" for="mountain-vinson">
+            <span class="govuk-visually-hidden">Select Vinson</span>
+          </label>
+        </div>
+      </td>
+   <td class="govuk-table__cell">********8778</td>
+      <td class="govuk-table__cell govuk-table__cell--numeric">PIP</td>
+    </tr>
+      <tr class="govuk-table__row">
+      <td class="govuk-table__cell">
+        <div class="govuk-checkboxes__item govuk-checkboxes--small moj-multi-select__checkbox">
+          <input type="checkbox" class="govuk-checkboxes__input" id="mountain-vinson" value="vinson">
+          <label class="govuk-label govuk-checkboxes__label" for="mountain-vinson">
+            <span class="govuk-visually-hidden">Select Vinson</span>
+          </label>
+        </div>
+      </td>
+  <td class="govuk-table__cell">********1098</td>
+      <td class="govuk-table__cell govuk-table__cell--numeric">PIP</td>
+    </tr>
+      <tr class="govuk-table__row">
+      <td class="govuk-table__cell">
+        <div class="govuk-checkboxes__item govuk-checkboxes--small moj-multi-select__checkbox">
+          <input type="checkbox" class="govuk-checkboxes__input" id="mountain-vinson" value="vinson">
+          <label class="govuk-label govuk-checkboxes__label" for="mountain-vinson">
+            <span class="govuk-visually-hidden">Select Vinson</span>
+          </label>
+        </div>
+      </td>
+   <td class="govuk-table__cell">********3214</td>
+      <td class="govuk-table__cell govuk-table__cell--numeric">PIP</td>
+    </tr>
+  </tbody>
+</table>
+
+{{ govukPagination({
+  previous: {
+    href: "#"
+  },
+  next: {
+    href: "#"
+  },
+  items: [
+    {
+      number: 1,
+      href: "#"
+    },
+    {
+      number: 2,
+      current: true,
+      href: "#"
+    },
+    {
+      number: 3,
+      href: "#"
+    }
+  ]
+}) }}
+<br><br>
+
+{{ govukDetails({
+  summaryText: "I can't find the client I need",
+  text: "This might be because the client has not registered with Access Manager yet."
+}) }}
+<br>
+
+      {{ govukButton({
+        text: "Continue",
+        href: "check-answers-resource-server",
+        isStartButton: false
+      }) }}
+<br>
+  
+    </div>
+
+
+{% endblock %}

@@ -1,0 +1,105 @@
+{% extends "layouts/main_agent_client_registration_test.html" %}
+{% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
+{% from "govuk/components/input/macro.njk" import govukInput %}
+{% set backLink = 'true' %}
+
+{% block pageTitle %}
+  Start page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+
+
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+ <form class="form" action="./select-ara-product" method="post">
+
+      <h1 class="govuk-heading-xl">
+    Technical pre-requisites
+      </h1>
+ <p class="govuk-body">
+    You must meet all the technical pre-requisites.
+     </p>
+      <p class="govuk-body">
+Confirm that your service:
+     </p>
+     {% set textHtml %}
+{{ govukInput({
+  id: "azure",
+  name: "azure",
+  type: "text",
+  spellcheck: false,
+  classes: "govuk-!-width-one-third",
+  label: {
+    text: "is on HCS EKS 2 Azure or On-premise"
+  }
+}) }}
+{% endset -%}
+
+{% set textHtml %}
+{{ govukInput({
+  id: "kong",
+  name: "kong",
+  type: "text",
+  classes: "govuk-!-width-one-third",
+  label: {
+    text: "Phone number"
+  }
+}) }}
+{% endset -%}
+
+{% set textHtml %}
+{{ govukInput({
+  id: "GPG",
+  name: "GPG",
+  type: "text",
+  classes: "govuk-!-width-two-thirds  ",
+  label: {
+    text: "Enter your GPG public key "
+  }
+}) }}
+{% endset -%}
+
+{{ govukCheckboxes({
+  name: "prereq",
+  fieldset: {
+    legend: {
+      text: "",
+      classes: "govuk-fieldset__legend--xl"
+    }
+  },
+  items: [
+    {
+      value: "azure",
+      text: "is on HCS EKS 2 Azure or On-premise"
+    },
+    {
+      value: "kong",
+      text: "is using Kong v3.4 or later"
+    },
+    {
+      value: "GPG",
+      text: "has GPG set up to receive your client credentials",
+      conditional: {
+        html: textHtml
+      }
+    }
+  ]
+}) }}
+
+
+ <button type="submit" class="govuk-button" data-module="govuk-button">
+  Continue
+</button>
+<br>
+  
+
+</form>
+
+    </div>
+</div>
+
+{% endblock %}

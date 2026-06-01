@@ -1,0 +1,47 @@
+{% extends "layouts/main_agent_client_registration_test.html" %}
+{% from "govuk/components/details/macro.njk" import govukDetails %}
+{% set backLink = 'true' %}
+
+{% block pageTitle %}
+  Start page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+
+
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+ <form class="form" action="./enter-service-name" method="post">
+      <h1 class="govuk-heading-xl">
+What is the name of your product area?
+      </h1>
+
+
+{{ govukInput({
+          label: {
+            text: "Product area",
+            classes: "govuk-label"
+          },
+           hint: {
+        text: ""
+        },
+          classes: "govuk-input--width-two-thirds",
+          id: "productarea",
+          name: "productarea",
+          spellcheck: false
+        }) }}
+
+ <button type="submit" class="govuk-button" data-module="govuk-button">
+  Continue
+</button>
+
+      </form>
+
+  
+    </div>
+
+</div>
+{% endblock %}

@@ -7,7 +7,7 @@ const govukPrototypeKit = require('govuk-prototype-kit')
 const router = govukPrototypeKit.requests.setupRouter()
 
 
-
+//Routes for registration test environment//
 
 
 
@@ -121,3 +121,13 @@ router.post('/ara-product', (req, res) => {
         res.redirect('/client-registration-test/select-ara-product?error=true');
     }
 });
+
+
+
+
+
+
+
+
+//Routes for client management test environment//
+
