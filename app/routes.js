@@ -60,7 +60,7 @@ router.post('/enter-their-contact-details2', (req, res) => {
 
 
 // Handle form submission
-router.post('/check-answers-rc', (req, res) => {
+router.post('/reg-resource', (req, res) => {
     // Check if a radio button is selected
     const selectedOption = req.body['regresource'];
 
@@ -78,6 +78,9 @@ router.post('/check-answers-rc', (req, res) => {
         res.redirect('/client-registration-test/register-resource-server?error=true');
     }
 });
+
+
+
 
 
 
@@ -150,3 +153,45 @@ router.post('/ara-product-m', (req, res) => {
 
 //Routes for client management test environment//
 
+
+
+// Handle form submission
+router.post('/reg-resource-m', (req, res) => {
+    // Check if a radio button is selected
+    const selectedOption = req.body['regresource'];
+
+    if (selectedOption) {
+        // Route user based on their selection
+        if (selectedOption === "yes") {
+            // Send user here
+            res.redirect('/client-management-test/add-scopes-m');
+        } else {
+            // Send user here
+            res.redirect('/client-management-test/check-answers-m');
+        }
+    } else {
+        // If no radio button is selected, redirect to error page
+        res.redirect('/client-management-test/register-resource-server-m?error=true');
+    }
+});
+
+
+// Handle form submission
+router.post('/scopes-list-m', (req, res) => {
+    // Check if a radio button is selected
+    const selectedOption = req.body['add-another'];
+
+    if (selectedOption) {
+        // Route user based on their selection
+        if (selectedOption === "yes") {
+            // Send user here
+            res.redirect('/client-management-test/add-scopes-m');
+        } else {
+            // Send user here
+            res.redirect('/client-management-test/select-allowed-clients-m');
+        }
+    } else {
+        // If no radio button is selected, redirect to error page
+        res.redirect('/client-management-test/scopes-list-m?error=true');
+    }
+});

@@ -13,7 +13,7 @@
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-<form class="form" action="./confirmation" method="post">
+
 
       <h1 class="govuk-heading-xl">
 Check your answers before 
@@ -408,6 +408,8 @@ sending your request
 
 
 
+{% if data['regresource'] == 'yes' %}
+
   {{ govukSummaryList({
   card: {
     title: {
@@ -448,9 +450,9 @@ sending your request
     actions: {
       items: [
         {
-          href: "update-registration-technical",
+          href: "./select-allowed-clients-m",
           text: "Change answers",
-          visuallyHiddenText: "Change technical details"
+          visuallyHiddenText: "Change allowed clients"
         }
       ]
     }
@@ -485,7 +487,7 @@ sending your request
        text: "Client ID"
       },
       value: {
-       text: "456********"
+       text: "334********"
       }
     },
     {
@@ -493,15 +495,62 @@ sending your request
        text: "Client ID"
       },
       value: {
-        text: "123********"
+        text: "414********"
       }
     }
   ]
   }) }}
 
+{% else %}
+
+
+  {{ govukSummaryList({
+  card: {
+    title: {
+      text: "Do you need to register as a resource server?"
+    },
+    actions: {
+      items: [
+        {
+          href: "./register-resource-server",
+          text: "Change answers",
+          visuallyHiddenText: "Change scopes"
+        }
+      ]
+    }
+  },
+  rows: [
+    {
+      key: {
+        text: "Answer"
+      },
+      value: {
+        text: "No - I only need to access data from other services"
+      }
+    
+    }
+  ]
+  }) }}
+
+{% endif %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 {{ govukButton({
         text: "Confirm and submit",
-        href: "",
+        href: "confirmation",
         isStartButton: false
       }) }}
     </div>
@@ -509,7 +558,11 @@ sending your request
 
 
 
-</form>
+
+
+
+
+
     </div>
 </div>
 

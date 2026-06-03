@@ -410,6 +410,8 @@ Check your answers before saving your changes
 
 
 
+{% if data['regresource'] == 'yes' %}
+
   {{ govukSummaryList({
   card: {
     title: {
@@ -452,7 +454,7 @@ Check your answers before saving your changes
         {
           href: "./select-allowed-clients-m",
           text: "Change answers",
-          visuallyHiddenText: "Change technical details"
+          visuallyHiddenText: "Change allowed clients"
         }
       ]
     }
@@ -463,7 +465,7 @@ Check your answers before saving your changes
         text: "Client ID"
       },
       value: {
-        text: "XXCXCXCXCYXC1234"
+        text: "123********"
       }
     },
     {
@@ -471,7 +473,7 @@ Check your answers before saving your changes
        text: "Client ID"
       },
       value: {
-       text: "XXCXCXCXCYXC1234"
+       text: "456********"
       }
     },
     {
@@ -479,7 +481,7 @@ Check your answers before saving your changes
        text: "Client ID"
       },
       value: {
-        text: "XXCXCXCXCYXC1234"
+        text: "789********"
       }
     },
     {
@@ -487,7 +489,7 @@ Check your answers before saving your changes
        text: "Client ID"
       },
       value: {
-       text: "XXCXCXCXCYXC1234"
+       text: "334********"
       }
     },
     {
@@ -495,12 +497,46 @@ Check your answers before saving your changes
        text: "Client ID"
       },
       value: {
-        text: "XXCXCXCXCYXC1234"
+        text: "414********"
       }
     }
   ]
   }) }}
 
+{% else %}
+
+
+
+  {{ govukSummaryList({
+  card: {
+    title: {
+      text: "Do you need to register as a resource server?"
+    },
+    actions: {
+      items: [
+        {
+          href: "./register-resource-server-m",
+          text: "Change answers",
+          visuallyHiddenText: "Change scopes"
+        }
+      ]
+    }
+  },
+  rows: [
+    {
+      key: {
+        text: "Answer"
+      },
+      value: {
+        text: "No - I only need to access data from other services"
+      }
+    
+    }
+  ]
+  }) }}
+
+
+{% endif %}
 {{ govukButton({
         text: "Save changes",
         href: "",

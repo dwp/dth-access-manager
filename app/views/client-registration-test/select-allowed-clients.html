@@ -20,6 +20,8 @@
 Select your allowed clients
       </h1>
 
+        <form class="form" action="./check-answers" method="post">
+
 <div class="govuk-inset-text">
  You can select multiple clients. <br><br>
  You will need to speak with the relevant service to confirm their client ID.
@@ -47,21 +49,20 @@ Select your allowed clients
 
 <br>
 
-<table class="govuk-table" data-module="moj-multi-select" data-id-prefix="client-" name="allowedclients">
+<table class="govuk-table" data-module="moj-multi-select" data-id-prefix="clients-">
   <thead class="govuk-table__head">
     <tr class="govuk-table__row">
       <th class="govuk-table__header" scope="col" id="clients-select-all"></th>
       <th class="govuk-table__header" scope="col">Client ID</th>
       <th class="govuk-table__header govuk-table__header--numeric" scope="col">Service name</th>
-   
     </tr>
   </thead>
   <tbody class="govuk-table__body">
     <tr class="govuk-table__row govuk-table__row--selected">
       <td class="govuk-table__cell">
         <div class="govuk-checkboxes__item govuk-checkboxes--small moj-multi-select__checkbox">
-          <input type="checkbox" class="govuk-checkboxes__input" id="client-123" name="client-123">
-          <label class="govuk-label govuk-checkboxes__label" for="client-123">
+          <input type="checkbox" class="govuk-checkboxes__input" id="client-1" name="allowedclients" value="client123" {{ checked('client-1','client123') }}>
+          <label class="govuk-label govuk-checkboxes__label" for="client-1">
             <span class="govuk-visually-hidden">Select Client 123</span>
           </label>
         </div>
@@ -72,8 +73,8 @@ Select your allowed clients
     <tr class="govuk-table__row">
       <td class="govuk-table__cell">
         <div class="govuk-checkboxes__item govuk-checkboxes--small moj-multi-select__checkbox">
-         <input type="checkbox" class="govuk-checkboxes__input" id="client-456" name="client-456">
-          <label class="govuk-label govuk-checkboxes__label" for="client-456">
+         <input type="checkbox" class="govuk-checkboxes__input" id="client-2" name="allowedclients" value="client456" {{ checked('client-2','client456') }}>
+          <label class="govuk-label govuk-checkboxes__label" for="client-2">
             <span class="govuk-visually-hidden">Select Client 456</span>
           </label>
         </div>
@@ -85,8 +86,8 @@ Select your allowed clients
     <tr class="govuk-table__row">
       <td class="govuk-table__cell">
         <div class="govuk-checkboxes__item govuk-checkboxes--small moj-multi-select__checkbox">
-          <input type="checkbox" class="govuk-checkboxes__input" id="client-789" name="client-789">
-          <label class="govuk-label govuk-checkboxes__label" for="client-789">
+          <input type="checkbox" class="govuk-checkboxes__input" id="client-3" name="allowedclients" value="client789" {{ checked('client-3','client789') }}>
+          <label class="govuk-label govuk-checkboxes__label" for="client-3">
             <span class="govuk-visually-hidden">Select Client-789</span>
           </label>
         </div>
@@ -97,8 +98,8 @@ Select your allowed clients
     <tr class="govuk-table__row">
       <td class="govuk-table__cell">
         <div class="govuk-checkboxes__item govuk-checkboxes--small moj-multi-select__checkbox">
-          <input type="checkbox" class="govuk-checkboxes__input" id="mountain-everest" value="everest">
-          <label class="govuk-label govuk-checkboxes__label" for="mountain-everest">
+          <input type="checkbox" class="govuk-checkboxes__input" id="client-4" name="allowedclients" value="client334" {{ checked('client-4','client334') }}>
+          <label class="govuk-label govuk-checkboxes__label" for="client-4">
             <span class="govuk-visually-hidden">Select Everest</span>
           </label>
         </div>
@@ -109,8 +110,8 @@ Select your allowed clients
     <tr class="govuk-table__row">
       <td class="govuk-table__cell">
         <div class="govuk-checkboxes__item govuk-checkboxes--small moj-multi-select__checkbox">
-          <input type="checkbox" class="govuk-checkboxes__input" id="mountain-kilimanjaro" value="kilimanjaro">
-          <label class="govuk-label govuk-checkboxes__label" for="mountain-kilimanjaro">
+          <input type="checkbox" class="govuk-checkboxes__input" id="client-5" name="allowedclients" value="client414" {{ checked('client-5','client414') }}>
+          <label class="govuk-label govuk-checkboxes__label" for="client-5">
             <span class="govuk-visually-hidden">Select Kilimanjaro</span>
           </label>
         </div>
@@ -121,8 +122,8 @@ Select your allowed clients
     <tr class="govuk-table__row">
       <td class="govuk-table__cell">
         <div class="govuk-checkboxes__item govuk-checkboxes--small moj-multi-select__checkbox">
-          <input type="checkbox" class="govuk-checkboxes__input" id="mountain-puncak-jaya" value="puncak-jaya">
-          <label class="govuk-label govuk-checkboxes__label" for="mountain-puncak-jaya">
+          <input type="checkbox" class="govuk-checkboxes__input" id="client-6" name="allowedclients" value="client780" {{ checked('client-6','client780') }}>
+          <label class="govuk-label govuk-checkboxes__label" for="client-6">
             <span class="govuk-visually-hidden">Select Puncak Jaya</span>
           </label>
         </div>
@@ -133,8 +134,8 @@ Select your allowed clients
     <tr class="govuk-table__row">
       <td class="govuk-table__cell">
         <div class="govuk-checkboxes__item govuk-checkboxes--small moj-multi-select__checkbox">
-          <input type="checkbox" class="govuk-checkboxes__input" id="mountain-vinson" value="vinson">
-          <label class="govuk-label govuk-checkboxes__label" for="mountain-vinson">
+          <input type="checkbox" class="govuk-checkboxes__input" id="client-7" name="allowedclients" value="client347" {{ checked('client-7','client347') }}>
+          <label class="govuk-label govuk-checkboxes__label" for="client-7">
             <span class="govuk-visually-hidden">Select Vinson</span>
           </label>
         </div>
@@ -145,8 +146,8 @@ Select your allowed clients
       <tr class="govuk-table__row">
       <td class="govuk-table__cell">
         <div class="govuk-checkboxes__item govuk-checkboxes--small moj-multi-select__checkbox">
-          <input type="checkbox" class="govuk-checkboxes__input" id="mountain-vinson" value="vinson">
-          <label class="govuk-label govuk-checkboxes__label" for="mountain-vinson">
+          <input type="checkbox" class="govuk-checkboxes__input" id="client-8" name="allowedclients" value="client877" {{ checked('client-8','client877') }}>
+          <label class="govuk-label govuk-checkboxes__label" for="client-8">
             <span class="govuk-visually-hidden">Select Vinson</span>
           </label>
         </div>
@@ -157,8 +158,8 @@ Select your allowed clients
       <tr class="govuk-table__row">
       <td class="govuk-table__cell">
         <div class="govuk-checkboxes__item govuk-checkboxes--small moj-multi-select__checkbox">
-          <input type="checkbox" class="govuk-checkboxes__input" id="mountain-vinson" value="vinson">
-          <label class="govuk-label govuk-checkboxes__label" for="mountain-vinson">
+          <input type="checkbox" class="govuk-checkboxes__input" id="client-9" name="allowedclients" value="client109" {{ checked('client-9','client109') }}>
+          <label class="govuk-label govuk-checkboxes__label" for="client-9">
             <span class="govuk-visually-hidden">Select Vinson</span>
           </label>
         </div>
@@ -169,8 +170,8 @@ Select your allowed clients
       <tr class="govuk-table__row">
       <td class="govuk-table__cell">
         <div class="govuk-checkboxes__item govuk-checkboxes--small moj-multi-select__checkbox">
-          <input type="checkbox" class="govuk-checkboxes__input" id="mountain-vinson" value="vinson">
-          <label class="govuk-label govuk-checkboxes__label" for="mountain-vinson">
+          <input type="checkbox" class="govuk-checkboxes__input" id="client-10" name="allowedclients" value="client321" {{ checked('client-10','client321') }}>
+          <label class="govuk-label govuk-checkboxes__label" for="client-10">
             <span class="govuk-visually-hidden">Select Vinson</span>
           </label>
         </div>
@@ -180,6 +181,13 @@ Select your allowed clients
     </tr>
   </tbody>
 </table>
+
+
+
+
+
+
+
 
 {{ govukPagination({
   previous: {
@@ -214,12 +222,12 @@ Select your allowed clients
 
       {{ govukButton({
         text: "Continue",
-        href: "check-answers-resource-server",
+        href: "check-answers",
         isStartButton: false
       }) }}
 <br>
-  
+  </form>
     </div>
-
+</div>
 
 {% endblock %}

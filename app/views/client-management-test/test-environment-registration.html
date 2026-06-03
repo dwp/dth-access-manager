@@ -461,7 +461,7 @@ Test environment registration
         text: "Client ID"
       },
       value: {
-        text: "XXCXCXCXCYXC1234"
+        text: "123********"
       }
     },
     {
@@ -469,7 +469,7 @@ Test environment registration
        text: "Client ID"
       },
       value: {
-       text: "XXCXCXCXCYXC1234"
+       text: "456********"
       }
     },
     {
@@ -477,7 +477,7 @@ Test environment registration
        text: "Client ID"
       },
       value: {
-        text: "XXCXCXCXCYXC1234"
+        text: "789********"
       }
     },
     {
@@ -485,7 +485,7 @@ Test environment registration
        text: "Client ID"
       },
       value: {
-       text: "XXCXCXCXCYXC1234"
+       text: "334********"
       }
     },
     {
@@ -493,7 +493,7 @@ Test environment registration
        text: "Client ID"
       },
       value: {
-        text: "XXCXCXCXCYXC1234"
+        text: "414********"
       }
     }
   ]
@@ -502,15 +502,16 @@ Test environment registration
 {% else %}
 
 
+
   {{ govukSummaryList({
   card: {
     title: {
-      text: "Scopes"
+      text: "Do you need to register as a resource server?"
     },
     actions: {
       items: [
         {
-          href: "./add-scopes-m",
+          href: "./register-resource-server-m",
           text: "Change answers",
           visuallyHiddenText: "Change scopes"
         }
@@ -520,44 +521,12 @@ Test environment registration
   rows: [
     {
       key: {
-        text: "Scope"
+        text: "Answer"
       },
       value: {
-        text: "No scopes selected"
+        text: "No - I only need to access data from other services"
       }
     
-    }
-  ]
-  }) }}
-
-
-
-
-
-{{ govukSummaryList({
-  card: {
-    title: {
-      text: "Allowed clients"
-    },
-    actions: {
-      items: [
-        {
-          href: "./select-allowed-clients-m",
-          text: "Change answers",
-          visuallyHiddenText: "Change allowed clients"
-        }
-      ]
-    }
-  },
-  rows: [
-    {
-      key: {
-        text: "Client ID"
-      },
-      value: {
-        text: "No clients selected"
-      }
-   
     }
   ]
   }) }}
