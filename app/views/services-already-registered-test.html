@@ -1,0 +1,123 @@
+{% extends "layouts/main_agent_client_already_registered-test.html" %}
+
+{% block pageTitle %}
+  Start page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+
+
+
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      
+      <h1 class="govuk-heading-l">Access Manager test environment registered services</h1>
+   
+
+
+      <p class="govuk-body">
+These services are registered with the Access Manager test environment.
+     </p>
+      <p class="govuk-body">
+If your service is listed here but you do not know your client credentials, get in touch with the contact provided.
+     </p>
+     <br>
+
+{{ mojSearch({
+  action: "#",
+  method: "post",
+  input: {
+    id: "search",
+    name: "search"
+  },
+  label: {
+    text: "Find out if a service is already registered",
+    classes: "govuk-!-font-weight-bold"
+  },
+  button: {
+    text: "Search"
+  }
+}) }}
+
+<br><br>
+
+        <table class="govuk-table">
+  <caption class="govuk-table__caption govuk-table__caption--m">Services and contact details</caption>
+  <thead class="govuk-table__head">
+    <tr class="govuk-table__row">
+      <th scope="col" class="govuk-table__header">Service name</th>
+      <th scope="col" class="govuk-table__header govuk-table__header--numeric">Contact details</th>
+    </tr>
+  </thead>
+  <tbody class="govuk-table__body">
+    <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__header">PIP - 1234</th>
+      <td class="govuk-table__cell govuk-table__cell--numeric">sarah.philips@dwp.gov.uk</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__header">PIP - 4567</th>
+      <td class="govuk-table__cell govuk-table__cell--numeric">john.mcconnell@dwp.gov.uk</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__header">PIP - 7891</th>
+      <td class="govuk-table__cell govuk-table__cell--numeric ">emily.smith@dwp.gov.uk </td>
+    </tr>
+        <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__header">PIP - 9019</th>
+      <td class="govuk-table__cell govuk-table__cell--numeric ">john.connor@dwp.gov.uk</td>
+    </tr>
+        <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__header">PIP - 6966</th>
+      <td class="govuk-table__cell govuk-table__cell--numeric ">tom.crooze@dwp.gov.uk</td>
+    </tr>
+        <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__header">PIP - 0145</th>
+      <td class="govuk-table__cell govuk-table__cell--numeric ">alice.smith@dwp.gov.uk</td>
+    </tr>
+        <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__header">PIP - 3141</th>
+      <td class="govuk-table__cell govuk-table__cell--numeric ">tom.wood@dwp.gov.uk</td>
+    </tr>
+        <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__header">PIP - 5651</th>
+      <td class="govuk-table__cell govuk-table__cell--numeric ">ted.mosby@dwp.gov.uk</td>
+    </tr>
+        <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__header">PIP - 7041</th>
+      <td class="govuk-table__cell govuk-table__cell--numeric ">sheldon.cooper@dwp.gov.uk</td>
+    </tr>
+        <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__header">PIP - 9111</th>
+      <td class="govuk-table__cell govuk-table__cell--numeric ">sandra.jones@dwp.gov.uk</td>
+    </tr>
+  </tbody>
+</table>
+{{ govukPagination({
+  previous: {
+    href: "#"
+  },
+  next: {
+    href: "#"
+  },
+  items: [
+    {
+      number: 1,
+      current: true,
+      href: "#"
+    },
+    {
+      number: 2,
+      href: "#"
+    },
+    {
+      number: 3,
+      href: "#"
+    }
+  ]
+}) }}
+
+
+    </div>
+  </div>
+{% endblock %}

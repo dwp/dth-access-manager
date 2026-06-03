@@ -1,4 +1,4 @@
-{% extends "layouts/main_agent_client_registration_test.html" %}
+{% extends "layouts/main_agent_client_management-test.html" %}
 {% from "govuk/components/details/macro.njk" import govukDetails %}
 {% set backLink = 'true' %}
 
@@ -13,27 +13,25 @@
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-<form class="form" action="./confirmation" method="post">
+<form class="form" action="./test-environment-registration-saved" method="post">
 
       <h1 class="govuk-heading-xl">
-Check your answers before 
-sending your request
+Check your answers before saving your changes
       </h1>
 
 
 
 
-
-       {% if data['araproduct'] %}
+       {% if data['araproduct'] == 'Not applicable' %}
      {{ govukSummaryList({
   card: {
     title: {
-      text: "Product and service name"
+      text: "GPG key, product and service name"
     },
     actions: {
       items: [
         {
-          href: "./select-ara-product",
+          href: "./technical-prereq-m",
           text: "Change answers",
           visuallyHiddenText: "Change product and service name"
         }
@@ -41,50 +39,14 @@ sending your request
     }
   },
   rows: [
-    {
-      key: {
-        text: "Product"
-      },
-      value: {
-        text: data['araproduct']
-      }
-    },
-    {
-      key: {
-        text: "Service name"
-      },
-      value: {
-        text: data['servicename']
-      }
-    },
-    {
+     {
       key: {
         text: "GPG public key"
       },
       value: {
         text: 	data['GPG']
       }
-    }
-  ]
-  }) }}
-      
-    {% else %} 
-      {{ govukSummaryList({
-  card: {
-    title: {
-      text: "Product and service name"
     },
-    actions: {
-      items: [
-        {
-          href: "./technical-prereq",
-          text: "Change answers",
-          visuallyHiddenText: "Change product name, service name or GPG public key"
-        }
-      ]
-    }
-  },
-  rows: [
     {
       key: {
         text: "Product"
@@ -100,18 +62,58 @@ sending your request
       value: {
         text: data['servicename']
       }
+    }
+  ]
+  }) }}
+      
+    {% else %} 
+      {{ govukSummaryList({
+  card: {
+    title: {
+      text: "GPG key, product and service name"
     },
-    {
+    actions: {
+      items: [
+        {
+          href: "./technical-prereq-m",
+          text: "Change answers",
+          visuallyHiddenText: "Change product name, service name or GPG public key"
+        }
+      ]
+    }
+  },
+  rows: [
+     {
       key: {
         text: "GPG public key"
       },
       value: {
         text: 	data['GPG']
       }
+    },
+    {
+      key: {
+        text: "Product"
+      },
+      value: {
+        text: data['araproduct']
+      }
+    },
+    {
+      key: {
+        text: "Service name"
+      },
+      value: {
+        text: data['servicename']
+      }
     }
   ]
   }) }}
     {% endif %}
+
+
+
+
 
 
 
@@ -126,7 +128,7 @@ sending your request
     actions: {
       items: [
         {
-          href: "./enter-contact-details",
+          href: "./enter-contact-details-m",
           text: "Change answers",
           visuallyHiddenText: "Change contact details: registration"
         }
@@ -174,7 +176,7 @@ sending your request
     actions: {
       items: [
         {
-          href: "./responsible-onboarding",
+          href: "./enter-their-contact-details-m",
           text: "Change answers",
           visuallyHiddenText: "Change contact details: managing onboarding"
         }
@@ -222,7 +224,7 @@ sending your request
     actions: {
       items: [
         {
-          href: "update-registration-personal",
+          href: "./enter-their-contact-details-m",
           text: "Change answers",
           visuallyHiddenText: "Change contact details: managing onboarding"
         }
@@ -273,7 +275,7 @@ sending your request
     actions: {
       items: [
         {
-          href: "./responsible-client-credentials",
+          href: "./enter-their-contact-details2-m",
           text: "Change answers",
           visuallyHiddenText: "Change contact details: client credentials"
         }
@@ -321,7 +323,7 @@ sending your request
     actions: {
       items: [
         {
-          href: "./responsible-client-credentials",
+          href: "./enter-their-contact-details2-m",
           text: "Change answers",
           visuallyHiddenText: "Change contact details: client credentials"
         }
@@ -367,7 +369,7 @@ sending your request
     actions: {
       items: [
         {
-          href: "./responsible-client-credentials",
+          href: "./enter-their-contact-details2-m",
           text: "Change answers",
           visuallyHiddenText: "Change contact details: client credentials"
         }
@@ -416,7 +418,7 @@ sending your request
     actions: {
       items: [
         {
-          href: "./scopes-list",
+          href: "./scopes-list-m",
           text: "Change answers",
           visuallyHiddenText: "Change scopes"
         }
@@ -448,7 +450,7 @@ sending your request
     actions: {
       items: [
         {
-          href: "update-registration-technical",
+          href: "./select-allowed-clients-m",
           text: "Change answers",
           visuallyHiddenText: "Change technical details"
         }
@@ -500,7 +502,7 @@ sending your request
   }) }}
 
 {{ govukButton({
-        text: "Confirm and submit",
+        text: "Save changes",
         href: "",
         isStartButton: false
       }) }}

@@ -1,4 +1,4 @@
-{% extends "layouts/main_agent_client_registration_test.html" %}
+{% extends "layouts/main_agent_client_management-test.html" %}
 {% from "govuk/components/details/macro.njk" import govukDetails %}
 
 
@@ -23,16 +23,16 @@ Test environment registration
 
 
 
-       {% if data['araproduct'] %}
+       {% if data['araproduct'] == 'Not applicable' %}
      {{ govukSummaryList({
   card: {
     title: {
-      text: "Product and service name"
+      text: "GPG key, product and service name"
     },
     actions: {
       items: [
         {
-          href: "./select-ara-product",
+          href: "./technical-prereq-m",
           text: "Change answers",
           visuallyHiddenText: "Change product and service name"
         }
@@ -40,50 +40,14 @@ Test environment registration
     }
   },
   rows: [
-    {
-      key: {
-        text: "Product"
-      },
-      value: {
-        text: data['araproduct']
-      }
-    },
-    {
-      key: {
-        text: "Service name"
-      },
-      value: {
-        text: data['servicename']
-      }
-    },
-    {
+     {
       key: {
         text: "GPG public key"
       },
       value: {
         text: 	data['GPG']
       }
-    }
-  ]
-  }) }}
-      
-    {% else %} 
-      {{ govukSummaryList({
-  card: {
-    title: {
-      text: "Product and service name"
     },
-    actions: {
-      items: [
-        {
-          href: "./technical-prereq",
-          text: "Change answers",
-          visuallyHiddenText: "Change product name, service name or GPG public key"
-        }
-      ]
-    }
-  },
-  rows: [
     {
       key: {
         text: "Product"
@@ -99,18 +63,55 @@ Test environment registration
       value: {
         text: data['servicename']
       }
+    }
+  ]
+  }) }}
+      
+    {% else %} 
+      {{ govukSummaryList({
+  card: {
+    title: {
+      text: "GPG key, product and service name"
     },
-    {
+    actions: {
+      items: [
+        {
+          href: "./technical-prereq-m",
+          text: "Change answers",
+          visuallyHiddenText: "Change product name, service name or GPG public key"
+        }
+      ]
+    }
+  },
+  rows: [
+     {
       key: {
         text: "GPG public key"
       },
       value: {
         text: 	data['GPG']
       }
+    },
+    {
+      key: {
+        text: "Product"
+      },
+      value: {
+        text: data['araproduct']
+      }
+    },
+    {
+      key: {
+        text: "Service name"
+      },
+      value: {
+        text: data['servicename']
+      }
     }
   ]
   }) }}
     {% endif %}
+
 
 
 
@@ -125,7 +126,7 @@ Test environment registration
     actions: {
       items: [
         {
-          href: "./enter-contact-details",
+          href: "./enter-contact-details-m",
           text: "Change answers",
           visuallyHiddenText: "Change contact details: registration"
         }
@@ -173,7 +174,7 @@ Test environment registration
     actions: {
       items: [
         {
-          href: "./responsible-onboarding",
+          href: "./enter-their-contact-details-m",
           text: "Change answers",
           visuallyHiddenText: "Change contact details: managing onboarding"
         }
@@ -221,7 +222,7 @@ Test environment registration
     actions: {
       items: [
         {
-          href: "update-registration-personal",
+          href: "./enter-their-contact-details-m",
           text: "Change answers",
           visuallyHiddenText: "Change contact details: managing onboarding"
         }
@@ -272,7 +273,7 @@ Test environment registration
     actions: {
       items: [
         {
-          href: "./responsible-client-credentials",
+          href: "./enter-their-contact-details2-m",
           text: "Change answers",
           visuallyHiddenText: "Change contact details: client credentials"
         }
@@ -320,7 +321,7 @@ Test environment registration
     actions: {
       items: [
         {
-          href: "./responsible-client-credentials",
+          href: "./enter-their-contact-details2-m",
           text: "Change answers",
           visuallyHiddenText: "Change contact details: client credentials"
         }
@@ -366,7 +367,7 @@ Test environment registration
     actions: {
       items: [
         {
-          href: "responsible-client-credentials-m",
+          href: "./enter-their-contact-details-m",
           text: "Change answers",
           visuallyHiddenText: "Change contact details: client credentials"
         }
@@ -415,7 +416,7 @@ Test environment registration
     actions: {
       items: [
         {
-          href: "scopes-list-m",
+          href: "./scopes-list-m",
           text: "Change answers",
           visuallyHiddenText: "Change scopes"
         }
@@ -447,7 +448,7 @@ Test environment registration
     actions: {
       items: [
         {
-          href: "select-allowed-clients-m",
+          href: "./select-allowed-clients-m",
           text: "Change answers",
           visuallyHiddenText: "Change allowed clients"
         }
@@ -509,7 +510,7 @@ Test environment registration
     actions: {
       items: [
         {
-          href: "add-scopes-m",
+          href: "./add-scopes-m",
           text: "Change answers",
           visuallyHiddenText: "Change scopes"
         }
@@ -541,7 +542,7 @@ Test environment registration
     actions: {
       items: [
         {
-          href: "select-allowed-clients-m",
+          href: "./select-allowed-clients-m",
           text: "Change answers",
           visuallyHiddenText: "Change allowed clients"
         }

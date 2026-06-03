@@ -25,16 +25,16 @@ sending your request
 
 
 
-     {% if data['araproduct'] %}
+      {% if data['araproduct'] == 'Not applicable' %}
      {{ govukSummaryList({
   card: {
     title: {
-      text: "Product and service name"
+      text: "GPG key, product and service name"
     },
     actions: {
       items: [
         {
-          href: "./select-ara-product",
+          href: "./technical-prereq",
           text: "Change answers",
           visuallyHiddenText: "Change product and service name"
         }
@@ -42,50 +42,14 @@ sending your request
     }
   },
   rows: [
-    {
-      key: {
-        text: "Product"
-      },
-      value: {
-        text: data['araproduct']
-      }
-    },
-    {
-      key: {
-        text: "Service name"
-      },
-      value: {
-        text: data['servicename']
-      }
-    },
-    {
+   {
       key: {
         text: "GPG public key"
       },
       value: {
         text: 	data['GPG']
       }
-    }
-  ]
-  }) }}
-      
-    {% else %} 
-      {{ govukSummaryList({
-  card: {
-    title: {
-      text: "Product and service name"
     },
-    actions: {
-      items: [
-        {
-          href: "./enter-product-name",
-          text: "Change answers",
-          visuallyHiddenText: "Change product and service name"
-        }
-      ]
-    }
-  },
-  rows: [
     {
       key: {
         text: "Product"
@@ -101,18 +65,55 @@ sending your request
       value: {
         text: data['servicename']
       }
+    }
+  ]
+  }) }}
+      
+    {% else %} 
+      {{ govukSummaryList({
+  card: {
+    title: {
+      text: "GPG key, product and service name"
     },
-    {
+    actions: {
+      items: [
+        {
+          href: "./technical-prereq",
+          text: "Change answers",
+          visuallyHiddenText: "Change product name, service name or GPG public key"
+        }
+      ]
+    }
+  },
+  rows: [
+     {
       key: {
         text: "GPG public key"
       },
       value: {
         text: 	data['GPG']
       }
+    },
+    {
+      key: {
+        text: "Product"
+      },
+      value: {
+        text: data['araproduct']
+      }
+    },
+    {
+      key: {
+        text: "Service name"
+      },
+      value: {
+        text: data['servicename']
+      }
     }
   ]
   }) }}
     {% endif %}
+
 
 
 

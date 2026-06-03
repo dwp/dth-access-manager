@@ -123,6 +123,25 @@ router.post('/ara-product', (req, res) => {
 });
 
 
+// Handle form submission
+router.post('/ara-product-m', (req, res) => {
+    // Check if a radio button is selected
+    const selectedOption = req.body['araproduct'];
+
+    if (selectedOption) {
+        // Route user based on their selection
+        if (selectedOption === "Not applicable") {
+            // Send user here
+            res.redirect('/client-management-test/enter-product-name-m');
+        } else {
+            // Send user here
+            res.redirect('/client-management-test/enter-service-name-m');
+        }
+    } else {
+        // If no radio button is selected, redirect to error page
+        res.redirect('/client-management-test/select-ara-product-m?error=true');
+    }
+});
 
 
 

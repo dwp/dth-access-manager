@@ -1,4 +1,4 @@
-{% extends "layouts/main_agent_client_registration_test.html" %}
+{% extends "layouts/main_agent_client_management-test.html" %}
 {% from "govuk/components/details/macro.njk" import govukDetails %}
 {%- from "moj/components/search/macro.njk" import mojSearch -%}
 {% set backLink = 'true' %}
@@ -191,11 +191,11 @@ Select your allowed clients
   items: [
     {
       number: 1,
+      current: true,
       href: "#"
     },
     {
       number: 2,
-      current: true,
       href: "#"
     },
     {

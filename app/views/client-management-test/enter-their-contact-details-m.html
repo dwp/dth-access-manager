@@ -1,4 +1,4 @@
-{% extends "layouts/main_agent_client_registration_test.html" %}
+{% extends "layouts/main_agent_client_management-test.html" %}
 {% from "govuk/components/details/macro.njk" import govukDetails %}
 {% set backLink = 'true' %}
 
@@ -14,10 +14,10 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-<form class="form" action="./responsible-client-credentials" method="post">
+<form class="form" action="./check-answers-resource-server-m" method="post">
 
       <h1 class="govuk-heading-xl">
-Enter their contact details
+Enter contact details for onboarding
       </h1>
 
  {{ govukInput({
@@ -49,19 +49,13 @@ Enter their contact details
             text: "Email address",
             classes: "govuk-label"
           },
-  hint: {
-    text: "This cannot be an engineering email address. It needs to be in the format john.stevens@dwp.gov.uk"
-  },
           classes: "govuk-input--width-20",
           id: "manager-email-address2",
           name: "managerEmailAddress2",
           spellcheck: false
         }) }}
 
-{{ govukDetails({
-  summaryText: "Why can't I use my engineering email address?",
-  text: "To manage your onboarding to Access Manager, we are using single sign on, which requires a DWP email address."
-}) }}
+
 
  <button type="submit" class="govuk-button" data-module="govuk-button">
   Continue
