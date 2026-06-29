@@ -281,10 +281,10 @@ router.post('/scopes-list-m', (req, res) => {
         // Route user based on their selection
         if (selectedOption === "yes") {
             // Send user here
-            res.redirect('/client-management-test/add-scopes-m');
+            res.redirect('/client-management-test/add-scopes1-m');
         } else {
             // Send user here
-            res.redirect('/client-management-test/select-allowed-clients-m');
+            res.redirect('/client-management-test/check-answers-m');
         }
     } else {
         // If no radio button is selected, redirect to error page
@@ -305,7 +305,7 @@ router.post('/scopes-list1-m', (req, res) => {
             res.redirect('/client-management-test/add-scopes2-m');
         } else {
             // Send user here
-            res.redirect('/client-management-test/select-allowed-clients-m');
+            res.redirect('/client-management-test/check-answers-m');
         }
     } else {
         // If no radio button is selected, redirect to error page
@@ -326,7 +326,7 @@ router.post('/scopes-list2-m', (req, res) => {
             res.redirect('/client-management-test/add-scopes3-m');
         } else {
             // Send user here
-            res.redirect('/client-management-test/select-allowed-clients-m');
+            res.redirect('/client-management-test/check-answers-m');
         }
     } else {
         // If no radio button is selected, redirect to error page
@@ -348,7 +348,7 @@ router.post('/scopes-list3-m', (req, res) => {
             res.redirect('/client-management-test/add-scopes4-m');
         } else {
             // Send user here
-            res.redirect('/client-management-test/select-allowed-clients-m');
+            res.redirect('/client-management-test/check-answers-m');
         }
     } else {
         // If no radio button is selected, redirect to error page
@@ -370,7 +370,7 @@ router.post('/scopes-list4-m', (req, res) => {
             res.redirect('/client-management-test/add-scopes4-m');
         } else {
             // Send user here
-            res.redirect('/client-management-test/select-allowed-clients-m');
+            res.redirect('/client-management-test/check-answers-m');
         }
     } else {
         // If no radio button is selected, redirect to error page
