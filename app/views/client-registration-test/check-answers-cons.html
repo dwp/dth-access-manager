@@ -408,100 +408,6 @@ sending your request
 
 
 
-{% if data['regresource'] == 'yes' %}
-
-  {{ govukSummaryList({
-  card: {
-    title: {
-      text: "Scopes"
-    },
-    actions: {
-      items: [
-        {
-          href: "./scopes-list",
-          text: "Change answers",
-          visuallyHiddenText: "Change scopes"
-        }
-      ]
-    }
-  },
-  rows: [
-    {
-      key: {
-        text: "Scope"
-      },
-      value: {
-        text: data['scopename1']
-      }
-    
-    }
-  ]
-  }) }}
-
-
-
-
-
-{{ govukSummaryList({
-  card: {
-    title: {
-      text: "Allowed clients"
-    },
-    actions: {
-      items: [
-        {
-          href: "./select-allowed-clients-m",
-          text: "Change answers",
-          visuallyHiddenText: "Change allowed clients"
-        }
-      ]
-    }
-  },
-  rows: [
-    {
-      key: {
-        text: "Client ID"
-      },
-      value: {
-        text: "123********"
-      }
-    },
-    {
-      key: {
-       text: "Client ID"
-      },
-      value: {
-       text: "456********"
-      }
-    },
-    {
-      key: {
-       text: "Client ID"
-      },
-      value: {
-        text: "789********"
-      }
-    },
-    {
-      key: {
-       text: "Client ID"
-      },
-      value: {
-       text: "334********"
-      }
-    },
-    {
-      key: {
-       text: "Client ID"
-      },
-      value: {
-        text: "414********"
-      }
-    }
-  ]
-  }) }}
-
-{% else %}
 
 
   {{ govukSummaryList({
@@ -532,7 +438,7 @@ sending your request
   ]
   }) }}
 
-{% endif %}
+
 
 
 

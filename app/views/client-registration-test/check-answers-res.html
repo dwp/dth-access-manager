@@ -1,0 +1,607 @@
+{% extends "layouts/main_agent_client_registration_test.html" %}
+{% from "govuk/components/details/macro.njk" import govukDetails %}
+{% set backLink = 'true' %}
+
+{% block pageTitle %}
+  Start page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+
+
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+
+      <h1 class="govuk-heading-xl">
+Check your answers before 
+sending your request
+      </h1>
+
+
+
+
+
+       {% if data['araproduct'] == 'Not applicable' %}
+     {{ govukSummaryList({
+  card: {
+    title: {
+      text: "GPG key, product and service name"
+    },
+    actions: {
+      items: [
+        {
+          href: "./select-ara-product",
+          text: "Change answers",
+          visuallyHiddenText: "Change product and service name"
+        }
+      ]
+    }
+  },
+  rows: [
+     {
+      key: {
+        text: "GPG public key"
+      },
+      value: {
+        text: 	data['GPG']
+      }
+    },
+    {
+      key: {
+        text: "Product"
+      },
+      value: {
+        text: data['productarea']
+      }
+    },
+    {
+      key: {
+        text: "Service name"
+      },
+      value: {
+        text: data['servicename']
+      }
+    }
+  ]
+  }) }}
+      
+    {% else %} 
+      {{ govukSummaryList({
+  card: {
+    title: {
+      text: "GPG key, product and service name"
+    },
+    actions: {
+      items: [
+        {
+          href: "./technical-prereq",
+          text: "Change answers",
+          visuallyHiddenText: "Change product name, service name or GPG public key"
+        }
+      ]
+    }
+  },
+  rows: [
+     {
+      key: {
+        text: "GPG public key"
+      },
+      value: {
+        text: 	data['GPG']
+      }
+    },
+    {
+      key: {
+        text: "Product"
+      },
+      value: {
+        text: data['araproduct']
+      }
+    },
+    {
+      key: {
+        text: "Service name"
+      },
+      value: {
+        text: data['servicename']
+      }
+    }
+  ]
+  }) }}
+    {% endif %}
+
+
+
+
+
+
+{{ govukSummaryList({
+  card: {
+    title: {
+      text: "Contact details: registration"
+    },
+    actions: {
+      items: [
+        {
+          href: "./enter-contact-details",
+          text: "Change answers",
+          visuallyHiddenText: "Change contact details: registration"
+        }
+      ]
+    }
+  },
+  rows: [
+    {
+      key: {
+        text: "Name"
+      },
+      value: {
+        text: data['fullName1']
+      }
+    },
+    {
+      key: {
+        text: "Job role"
+      },
+      value: {
+        text: data['jobRole1']
+      }
+    },
+    {
+      key: {
+        text: "Contact details"
+      },
+      value: {
+        text: data['managerEmailAddress1']
+      }
+    }
+  ]
+  }) }}
+
+
+
+
+{% if data['responsibleon'] == 'me' %}
+  
+{{ govukSummaryList({
+  card: {
+    title: {
+      text: "Contact details: managing onboarding"
+    },
+    actions: {
+      items: [
+        {
+          href: "./responsible-onboarding",
+          text: "Change answers",
+          visuallyHiddenText: "Change contact details: managing onboarding"
+        }
+      ]
+    }
+  },
+  rows: [
+    {
+      key: {
+        text: "Name"
+      },
+      value: {
+        text: data['fullName1']
+      }
+    },
+    {
+      key: {
+        text: "Job role"
+      },
+      value: {
+        text: data['jobRole1']
+      }
+    },
+    {
+      key: {
+        text: "Contact details"
+      },
+      value: {
+        text: data['managerEmailAddress1']
+      }
+    }
+  ]
+  }) }}
+
+
+
+{% else %}
+
+
+{{ govukSummaryList({
+  card: {
+    title: {
+      text: "Contact details: managing onboarding"
+    },
+    actions: {
+      items: [
+        {
+          href: "update-registration-personal",
+          text: "Change answers",
+          visuallyHiddenText: "Change contact details: managing onboarding"
+        }
+      ]
+    }
+  },
+  rows: [
+    {
+      key: {
+        text: "Name"
+      },
+      value: {
+        text: data['fullName2']
+      }
+    },
+    {
+      key: {
+        text: "Job role"
+      },
+      value: {
+        text: data['jobRole2']
+      }
+    },
+    {
+      key: {
+        text: "Contact details"
+      },
+      value: {
+        text: data['managerEmailAddress2']
+      }
+    }
+  ]
+  }) }}
+
+
+
+{% endif %}
+
+ 
+
+{% if data['responsiblecred'] == 'me' %}
+  
+{{ govukSummaryList({
+  card: {
+    title: {
+      text: "Contact details: client credentials"
+    },
+    actions: {
+      items: [
+        {
+          href: "./responsible-client-credentials",
+          text: "Change answers",
+          visuallyHiddenText: "Change contact details: client credentials"
+        }
+      ]
+    }
+  },
+  rows: [
+    {
+      key: {
+        text: "Name"
+      },
+      value: {
+        text: data['fullName1']
+      }
+    },
+    {
+      key: {
+        text: "Job role"
+      },
+      value: {
+        text: data['jobRole1']
+      }
+    },
+    {
+      key: {
+        text: "Contact details"
+      },
+      value: {
+        text: data['managerEmailAddress1']
+      }
+    }
+  ]
+  }) }}
+
+
+
+{% elif data['responsiblecred'] == 'me2' %}
+
+
+{{ govukSummaryList({
+  card: {
+    title: {
+      text: "Contact details: client credentials"
+    },
+    actions: {
+      items: [
+        {
+          href: "./responsible-client-credentials",
+          text: "Change answers",
+          visuallyHiddenText: "Change contact details: client credentials"
+        }
+      ]
+    }
+  },
+  rows: [
+    {
+      key: {
+        text: "Name"
+      },
+      value: {
+        text: data['fullName1']
+      }
+    },
+    {
+      key: {
+        text: "Job role"
+      },
+      value: {
+        text: data['jobRole1']
+      }
+    },
+    {
+      key: {
+        text: "Contact details"
+      },
+      value: {
+        text: data['managerEmailAddress1']
+      }
+    }
+  ]
+  }) }}
+
+
+{% else %}
+
+{{ govukSummaryList({
+  card: {
+    title: {
+      text: "Contact details: client credentials"
+    },
+    actions: {
+      items: [
+        {
+          href: "./responsible-client-credentials",
+          text: "Change answers",
+          visuallyHiddenText: "Change contact details: client credentials"
+        }
+      ]
+    }
+  },
+  rows: [
+    {
+      key: {
+        text: "Name"
+      },
+      value: {
+        text: data['fullName3']
+      }
+    },
+    {
+      key: {
+        text: "Job role"
+      },
+      value: {
+        text: data['jobRole3']
+      }
+    },
+    {
+      key: {
+        text: "Contact details"
+      },
+      value: {
+        text: data['managerEmailAddress3']
+      }
+    }
+  ]
+  }) }}
+
+
+
+{% endif %}
+
+
+
+
+{# === SCOPES SUMMARY (Fixed) === #}
+{% set scope1 = data['scopename1'] | default("") | trim | length > 0 %}
+{% set scope2 = data['scopename2'] | default("") | trim | length > 0 %}
+{% set scope3 = data['scopename3'] | default("") | trim | length > 0 %}
+{% set scope4 = data['scopename4'] | default("") | trim | length > 0 %}
+{% set scope5 = data['scopename5'] | default("") | trim | length > 0 %}
+
+{% if scope1 and not scope2 and not scope3 and not scope4 and not scope5 %}
+
+  {{ govukSummaryList({
+    card: {
+      title: { text: "Scopes" },
+      actions: {
+        items: [{ href: "./scopes-list", text: "Change answers", visuallyHiddenText: "Change scopes" }]
+      }
+    },
+    rows: [{ key: { text: "Scope" }, value: { text: data['scopename1'] | trim } }]
+  }) }}
+
+{% elif scope1 and scope2 and not scope3 and not scope4 and not scope5 %}
+
+  {{ govukSummaryList({
+    card: {
+      title: { text: "Scopes" },
+      actions: {
+        items: [{ href: "./scopes-list1", text: "Change answers", visuallyHiddenText: "Change scopes" }]
+      }
+    },
+    rows: [
+      { key: { text: "Scope" }, value: { text: data['scopename1'] | trim } },
+      { key: { text: "Scope" }, value: { text: data['scopename2'] | trim } }
+    ]
+  }) }}
+
+{% elif scope1 and scope2 and scope3 and not scope4 and not scope5 %}
+
+  {{ govukSummaryList({
+    card: {
+      title: { text: "Scopes" },
+      actions: {
+        items: [{ href: "./scopes-list2", text: "Change answers", visuallyHiddenText: "Change scopes" }]
+      }
+    },
+    rows: [
+      { key: { text: "Scope" }, value: { text: data['scopename1'] | trim } },
+      { key: { text: "Scope" }, value: { text: data['scopename2'] | trim } },
+      { key: { text: "Scope" }, value: { text: data['scopename3'] | trim } }
+    ]
+  }) }}
+
+{% elif scope1 and scope2 and scope3 and scope4 and not scope5 %}
+
+  {{ govukSummaryList({
+    card: {
+      title: { text: "Scopes" },
+      actions: {
+        items: [{ href: "./scopes-list3", text: "Change answers", visuallyHiddenText: "Change scopes" }]
+      }
+    },
+    rows: [
+      { key: { text: "Scope" }, value: { text: data['scopename1'] | trim } },
+      { key: { text: "Scope" }, value: { text: data['scopename2'] | trim } },
+      { key: { text: "Scope" }, value: { text: data['scopename3'] | trim } },
+      { key: { text: "Scope" }, value: { text: data['scopename4'] | trim } }
+    ]
+  }) }}
+
+{% else %}
+
+  {{ govukSummaryList({
+    card: {
+      title: { text: "Scopes" },
+      actions: {
+        items: [{ href: "./scopes-list4", text: "Change answers", visuallyHiddenText: "Change scopes" }]
+      }
+    },
+    rows: [
+      { key: { text: "Scope" }, value: { text: data['scopename1'] | trim } },
+      { key: { text: "Scope" }, value: { text: data['scopename2'] | trim } },
+      { key: { text: "Scope" }, value: { text: data['scopename3'] | trim } },
+      { key: { text: "Scope" }, value: { text: data['scopename4'] | trim } },
+      { key: { text: "Scope" }, value: { text: data['scopename5'] | trim } }
+    ]
+  }) }}
+
+{% endif %}
+
+
+
+<div class="govuk-summary-card">
+  <div class="govuk-summary-card__title-wrapper">
+  
+    <h2 class="govuk-summary-card__title">
+      Allowed clients
+    </h2>
+  
+  
+    
+    <div class="govuk-summary-card__actions">
+      <a class="govuk-link" href="./select-allowed-clients-m">Change answers<span class="govuk-visually-hidden"> Change allowed clients (Allowed clients)</span></a>
+    </div>
+    
+  
+  </div>
+
+  <div class="govuk-summary-card__content">
+    <dl class="govuk-summary-list">
+    
+      
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Client ID
+        </dt>
+        <dd class="govuk-summary-list__value">
+          123********
+        </dd>
+        
+      </div>
+      
+    
+      
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Client ID
+        </dt>
+        <dd class="govuk-summary-list__value">
+          456********
+        </dd>
+        
+      </div>
+      
+    
+      
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Client ID
+        </dt>
+        <dd class="govuk-summary-list__value">
+          789********
+        </dd>
+        
+      </div>
+      
+    
+      
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Client ID
+        </dt>
+        <dd class="govuk-summary-list__value">
+          334********
+        </dd>
+        
+      </div>
+      
+    
+      
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Client ID
+        </dt>
+        <dd class="govuk-summary-list__value">
+          414********
+        </dd>
+        
+      </div>
+      
+    
+    </dl>
+  </div>
+</div>
+
+
+
+
+
+
+{{ govukButton({
+        text: "Confirm and submit",
+        href: "confirmation",
+        isStartButton: false
+      }) }}
+    </div>
+
+
+
+
+
+
+
+
+
+    </div>
+</div>
+
+{% endblock %}

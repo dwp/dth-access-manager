@@ -71,7 +71,7 @@ router.post('/reg-resource', (req, res) => {
             res.redirect('/client-registration-test/add-scopes');
         } else {
             // Send user here
-            res.redirect('/client-registration-test/check-answers-consuming-service');
+            res.redirect('/client-registration-test/check-answers-cons');
         }
     } else {
         // If no radio button is selected, redirect to error page
@@ -93,7 +93,7 @@ router.post('/scopes-list', (req, res) => {
         // Route user based on their selection
         if (selectedOption === "yes") {
             // Send user here
-            res.redirect('/client-registration-test/add-scopes');
+            res.redirect('/client-registration-test/add-scopes1');
         } else {
             // Send user here
             res.redirect('/client-registration-test/select-allowed-clients');
@@ -104,6 +104,84 @@ router.post('/scopes-list', (req, res) => {
     }
 });
 
+// Handle form submission
+router.post('/scopes-list1', (req, res) => {
+    // Check if a radio button is selected
+    const selectedOption = req.body['add-another2'];
+
+    if (selectedOption) {
+        // Route user based on their selection
+        if (selectedOption === "yes") {
+            // Send user here
+            res.redirect('/client-registration-test/add-scopes2');
+        } else {
+            // Send user here
+            res.redirect('/client-registration-test/select-allowed-clients');
+        }
+    } else {
+        // If no radio button is selected, redirect to error page
+        res.redirect('/client-registration-test/scopes-list?error=true');
+    }
+});
+
+// Handle form submission
+router.post('/scopes-list2', (req, res) => {
+    // Check if a radio button is selected
+    const selectedOption = req.body['add-another3'];
+
+    if (selectedOption) {
+        // Route user based on their selection
+        if (selectedOption === "yes") {
+            // Send user here
+            res.redirect('/client-registration-test/add-scopes3');
+        } else {
+            // Send user here
+            res.redirect('/client-registration-test/select-allowed-clients');
+        }
+    } else {
+        // If no radio button is selected, redirect to error page
+        res.redirect('/client-registration-test/scopes-list?error=true');
+    }
+});
+
+// Handle form submission
+router.post('/scopes-list3', (req, res) => {
+    // Check if a radio button is selected
+    const selectedOption = req.body['add-another4'];
+
+    if (selectedOption) {
+        // Route user based on their selection
+        if (selectedOption === "yes") {
+            // Send user here
+            res.redirect('/client-registration-test/add-scopes4');
+        } else {
+            // Send user here
+            res.redirect('/client-registration-test/select-allowed-clients');
+        }
+    } else {
+        // If no radio button is selected, redirect to error page
+        res.redirect('/client-registration-test/scopes-list?error=true');
+    }
+});
+// Handle form submission
+router.post('/scopes-list4', (req, res) => {
+    // Check if a radio button is selected
+    const selectedOption = req.body['add-another5'];
+
+    if (selectedOption) {
+        // Route user based on their selection
+        if (selectedOption === "yes") {
+            // Send user here
+            res.redirect('/client-registration-test/add-scopes4');
+        } else {
+            // Send user here
+            res.redirect('/client-registration-test/select-allowed-clients');
+        }
+    } else {
+        // If no radio button is selected, redirect to error page
+        res.redirect('/client-registration-test/scopes-list?error=true');
+    }
+});
 
 // Handle form submission
 router.post('/ara-product', (req, res) => {
@@ -126,6 +204,14 @@ router.post('/ara-product', (req, res) => {
 });
 
 
+
+router.post('/clients', function (req, res) {
+  res.redirect('/client-registration-test/check-answers-res');
+});
+
+
+
+
 // Handle form submission
 router.post('/ara-product-m', (req, res) => {
     // Check if a radio button is selected
@@ -145,6 +231,13 @@ router.post('/ara-product-m', (req, res) => {
         res.redirect('/client-management-test/select-ara-product-m?error=true');
     }
 });
+
+
+
+
+
+
+
 
 
 

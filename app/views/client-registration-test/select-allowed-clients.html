@@ -20,7 +20,7 @@
 Select your allowed clients
       </h1>
 
-        <form class="form" action="./check-answers" method="post">
+       
 
 <div class="govuk-inset-text">
  You can select multiple clients. <br><br>
@@ -49,6 +49,8 @@ Select your allowed clients
 
 <br>
 
+ <form class="form" action="/clients" method="post">
+
 <table class="govuk-table" data-module="moj-multi-select" data-id-prefix="clients-">
   <thead class="govuk-table__head">
     <tr class="govuk-table__row">
@@ -58,10 +60,16 @@ Select your allowed clients
     </tr>
   </thead>
   <tbody class="govuk-table__body">
-    <tr class="govuk-table__row govuk-table__row--selected">
+
+    <tr class="govuk-table__row">
       <td class="govuk-table__cell">
         <div class="govuk-checkboxes__item govuk-checkboxes--small moj-multi-select__checkbox">
-          <input type="checkbox" class="govuk-checkboxes__input" id="client-1" name="allowedclients" value="client123" {{ checked('client-1','client123') }}>
+          <input type="checkbox" 
+                 class="govuk-checkboxes__input" 
+                 id="client-1" 
+                 name="allowedclients" 
+                 value="client123" 
+                 {{ checked("allowedclients", "client123") }}>
           <label class="govuk-label govuk-checkboxes__label" for="client-1">
             <span class="govuk-visually-hidden">Select Client 123</span>
           </label>
@@ -70,59 +78,88 @@ Select your allowed clients
       <td class="govuk-table__cell">123********</td>
       <td class="govuk-table__cell govuk-table__cell--numeric">PIP</td>
     </tr>
+
     <tr class="govuk-table__row">
       <td class="govuk-table__cell">
         <div class="govuk-checkboxes__item govuk-checkboxes--small moj-multi-select__checkbox">
-         <input type="checkbox" class="govuk-checkboxes__input" id="client-2" name="allowedclients" value="client456" {{ checked('client-2','client456') }}>
+          <input type="checkbox" 
+                 class="govuk-checkboxes__input" 
+                 id="client-2" 
+                 name="allowedclients" 
+                 value="client456" 
+                 {{ checked("allowedclients", "client456") }}>
           <label class="govuk-label govuk-checkboxes__label" for="client-2">
             <span class="govuk-visually-hidden">Select Client 456</span>
           </label>
         </div>
       </td>
-      </td>
-           <td class="govuk-table__cell">456********</td>
+      <td class="govuk-table__cell">456********</td>
       <td class="govuk-table__cell govuk-table__cell--numeric">PIP</td>
     </tr>
+
     <tr class="govuk-table__row">
       <td class="govuk-table__cell">
         <div class="govuk-checkboxes__item govuk-checkboxes--small moj-multi-select__checkbox">
-          <input type="checkbox" class="govuk-checkboxes__input" id="client-3" name="allowedclients" value="client789" {{ checked('client-3','client789') }}>
+          <input type="checkbox" 
+                 class="govuk-checkboxes__input" 
+                 id="client-3" 
+                 name="allowedclients" 
+                 value="client789" 
+                 {{ checked("allowedclients", "client789") }}>
           <label class="govuk-label govuk-checkboxes__label" for="client-3">
-            <span class="govuk-visually-hidden">Select Client-789</span>
+            <span class="govuk-visually-hidden">Select Client 789</span>
           </label>
         </div>
       </td>
-  <td class="govuk-table__cell">789********</td>
+      <td class="govuk-table__cell">789********</td>
       <td class="govuk-table__cell govuk-table__cell--numeric">PIP</td>
     </tr>
+
     <tr class="govuk-table__row">
       <td class="govuk-table__cell">
         <div class="govuk-checkboxes__item govuk-checkboxes--small moj-multi-select__checkbox">
-          <input type="checkbox" class="govuk-checkboxes__input" id="client-4" name="allowedclients" value="client334" {{ checked('client-4','client334') }}>
+          <input type="checkbox" 
+                 class="govuk-checkboxes__input" 
+                 id="client-4" 
+                 name="allowedclients" 
+                 value="client334" 
+                 {{ checked("allowedclients", "client334") }}>
           <label class="govuk-label govuk-checkboxes__label" for="client-4">
             <span class="govuk-visually-hidden">Select Everest</span>
           </label>
         </div>
       </td>
-   <td class="govuk-table__cell">334********</td>
+      <td class="govuk-table__cell">334********</td>
       <td class="govuk-table__cell govuk-table__cell--numeric">PIP</td>
     </tr>
+
     <tr class="govuk-table__row">
       <td class="govuk-table__cell">
         <div class="govuk-checkboxes__item govuk-checkboxes--small moj-multi-select__checkbox">
-          <input type="checkbox" class="govuk-checkboxes__input" id="client-5" name="allowedclients" value="client414" {{ checked('client-5','client414') }}>
+          <input type="checkbox" 
+                 class="govuk-checkboxes__input" 
+                 id="client-5" 
+                 name="allowedclients" 
+                 value="client414" 
+                 {{ checked("allowedclients", "client414") }}>
           <label class="govuk-label govuk-checkboxes__label" for="client-5">
             <span class="govuk-visually-hidden">Select Kilimanjaro</span>
           </label>
         </div>
       </td>
-       <td class="govuk-table__cell">414********</td>
+      <td class="govuk-table__cell">414********</td>
       <td class="govuk-table__cell govuk-table__cell--numeric">PIP</td>
     </tr>
+
     <tr class="govuk-table__row">
       <td class="govuk-table__cell">
         <div class="govuk-checkboxes__item govuk-checkboxes--small moj-multi-select__checkbox">
-          <input type="checkbox" class="govuk-checkboxes__input" id="client-6" name="allowedclients" value="client780" {{ checked('client-6','client780') }}>
+          <input type="checkbox" 
+                 class="govuk-checkboxes__input" 
+                 id="client-6" 
+                 name="allowedclients" 
+                 value="client780" 
+                 {{ checked("allowedclients", "client780") }}>
           <label class="govuk-label govuk-checkboxes__label" for="client-6">
             <span class="govuk-visually-hidden">Select Puncak Jaya</span>
           </label>
@@ -131,57 +168,81 @@ Select your allowed clients
       <td class="govuk-table__cell">780********</td>
       <td class="govuk-table__cell govuk-table__cell--numeric">PIP</td>
     </tr>
+
     <tr class="govuk-table__row">
       <td class="govuk-table__cell">
         <div class="govuk-checkboxes__item govuk-checkboxes--small moj-multi-select__checkbox">
-          <input type="checkbox" class="govuk-checkboxes__input" id="client-7" name="allowedclients" value="client347" {{ checked('client-7','client347') }}>
+          <input type="checkbox" 
+                 class="govuk-checkboxes__input" 
+                 id="client-7" 
+                 name="allowedclients" 
+                 value="client347" 
+                 {{ checked("allowedclients", "client347") }}>
           <label class="govuk-label govuk-checkboxes__label" for="client-7">
             <span class="govuk-visually-hidden">Select Vinson</span>
           </label>
         </div>
       </td>
-   <td class="govuk-table__cell">347********</td>
+      <td class="govuk-table__cell">347********</td>
       <td class="govuk-table__cell govuk-table__cell--numeric">PIP</td>
     </tr>
-      <tr class="govuk-table__row">
+
+    <tr class="govuk-table__row">
       <td class="govuk-table__cell">
         <div class="govuk-checkboxes__item govuk-checkboxes--small moj-multi-select__checkbox">
-          <input type="checkbox" class="govuk-checkboxes__input" id="client-8" name="allowedclients" value="client877" {{ checked('client-8','client877') }}>
+          <input type="checkbox" 
+                 class="govuk-checkboxes__input" 
+                 id="client-8" 
+                 name="allowedclients" 
+                 value="client877" 
+                 {{ checked("allowedclients", "client877") }}>
           <label class="govuk-label govuk-checkboxes__label" for="client-8">
             <span class="govuk-visually-hidden">Select Vinson</span>
           </label>
         </div>
       </td>
-   <td class="govuk-table__cell">877********</td>
+      <td class="govuk-table__cell">877********</td>
       <td class="govuk-table__cell govuk-table__cell--numeric">PIP</td>
     </tr>
-      <tr class="govuk-table__row">
+
+    <tr class="govuk-table__row">
       <td class="govuk-table__cell">
         <div class="govuk-checkboxes__item govuk-checkboxes--small moj-multi-select__checkbox">
-          <input type="checkbox" class="govuk-checkboxes__input" id="client-9" name="allowedclients" value="client109" {{ checked('client-9','client109') }}>
+          <input type="checkbox" 
+                 class="govuk-checkboxes__input" 
+                 id="client-9" 
+                 name="allowedclients" 
+                 value="client109" 
+                 {{ checked("allowedclients", "client109") }}>
           <label class="govuk-label govuk-checkboxes__label" for="client-9">
             <span class="govuk-visually-hidden">Select Vinson</span>
           </label>
         </div>
       </td>
-  <td class="govuk-table__cell">109********</td>
+      <td class="govuk-table__cell">109********</td>
       <td class="govuk-table__cell govuk-table__cell--numeric">PIP</td>
     </tr>
-      <tr class="govuk-table__row">
+
+    <tr class="govuk-table__row">
       <td class="govuk-table__cell">
         <div class="govuk-checkboxes__item govuk-checkboxes--small moj-multi-select__checkbox">
-          <input type="checkbox" class="govuk-checkboxes__input" id="client-10" name="allowedclients" value="client321" {{ checked('client-10','client321') }}>
+          <input type="checkbox" 
+                 class="govuk-checkboxes__input" 
+                 id="client-10" 
+                 name="allowedclients" 
+                 value="client321" 
+                 {{ checked("allowedclients", "client321") }}>
           <label class="govuk-label govuk-checkboxes__label" for="client-10">
             <span class="govuk-visually-hidden">Select Vinson</span>
           </label>
         </div>
       </td>
-   <td class="govuk-table__cell">321********</td>
+      <td class="govuk-table__cell">321********</td>
       <td class="govuk-table__cell govuk-table__cell--numeric">PIP</td>
     </tr>
+
   </tbody>
 </table>
-
 
 
 
@@ -220,13 +281,11 @@ Select your allowed clients
 }) }}
 <br>
 
-      {{ govukButton({
-        text: "Continue",
-        href: "check-answers",
-        isStartButton: false
-      }) }}
-<br>
-  </form>
+ <button type="submit" class="govuk-button" data-module="govuk-button">
+    Continue
+  </button>
+</form>
+
     </div>
 </div>
 
