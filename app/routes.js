@@ -209,6 +209,9 @@ router.post('/clients', function (req, res) {
   res.redirect('/client-registration-test/check-answers-res');
 });
 
+router.post('/clients-m', function (req, res) {
+  res.redirect('/client-management-test/check-answers-m');
+});
 
 
 
@@ -286,5 +289,91 @@ router.post('/scopes-list-m', (req, res) => {
     } else {
         // If no radio button is selected, redirect to error page
         res.redirect('/client-management-test/scopes-list-m?error=true');
+    }
+});
+
+
+// Handle form submission
+router.post('/scopes-list1-m', (req, res) => {
+    // Check if a radio button is selected
+    const selectedOption = req.body['add-another2'];
+
+    if (selectedOption) {
+        // Route user based on their selection
+        if (selectedOption === "yes") {
+            // Send user here
+            res.redirect('/client-management-test/add-scopes2-m');
+        } else {
+            // Send user here
+            res.redirect('/client-management-test/select-allowed-clients-m');
+        }
+    } else {
+        // If no radio button is selected, redirect to error page
+        res.redirect('/client-management-test/scopes-list1-m?error=true');
+    }
+});
+
+
+// Handle form submission
+router.post('/scopes-list2-m', (req, res) => {
+    // Check if a radio button is selected
+    const selectedOption = req.body['add-another3'];
+
+    if (selectedOption) {
+        // Route user based on their selection
+        if (selectedOption === "yes") {
+            // Send user here
+            res.redirect('/client-management-test/add-scopes3-m');
+        } else {
+            // Send user here
+            res.redirect('/client-management-test/select-allowed-clients-m');
+        }
+    } else {
+        // If no radio button is selected, redirect to error page
+        res.redirect('/client-management-test/scopes-list2-m?error=true');
+    }
+});
+
+
+
+// Handle form submission
+router.post('/scopes-list3-m', (req, res) => {
+    // Check if a radio button is selected
+    const selectedOption = req.body['add-another4'];
+
+    if (selectedOption) {
+        // Route user based on their selection
+        if (selectedOption === "yes") {
+            // Send user here
+            res.redirect('/client-management-test/add-scopes4-m');
+        } else {
+            // Send user here
+            res.redirect('/client-management-test/select-allowed-clients-m');
+        }
+    } else {
+        // If no radio button is selected, redirect to error page
+        res.redirect('/client-management-test/scopes-list2-m?error=true');
+    }
+});
+
+
+
+// Handle form submission
+router.post('/scopes-list4-m', (req, res) => {
+    // Check if a radio button is selected
+    const selectedOption = req.body['add-another5'];
+
+    if (selectedOption) {
+        // Route user based on their selection
+        if (selectedOption === "yes") {
+            // Send user here
+            res.redirect('/client-management-test/add-scopes4-m');
+        } else {
+            // Send user here
+            res.redirect('/client-management-test/select-allowed-clients-m');
+        }
+    } else {
+        // If no radio button is selected, redirect to error page
+        res.redirect('/client-management-test/scopes-list2-m?error=true');
     }
 });

@@ -408,96 +408,184 @@ Test environment registration
 
 {% if data['regresource'] == 'yes' %}
 
+
+
+
+{# === SCOPES SUMMARY (Fixed) === #}
+{% set scope1 = data['scopename1'] | default("") | trim | length > 0 %}
+{% set scope2 = data['scopename2'] | default("") | trim | length > 0 %}
+{% set scope3 = data['scopename3'] | default("") | trim | length > 0 %}
+{% set scope4 = data['scopename4'] | default("") | trim | length > 0 %}
+{% set scope5 = data['scopename5'] | default("") | trim | length > 0 %}
+
+{% if scope1 and not scope2 and not scope3 and not scope4 and not scope5 %}
+
   {{ govukSummaryList({
-  card: {
-    title: {
-      text: "Scopes"
-    },
-    actions: {
-      items: [
-        {
-          href: "./scopes-list-m",
-          text: "Change answers",
-          visuallyHiddenText: "Change scopes"
-        }
-      ]
-    }
-  },
-  rows: [
-    {
-      key: {
-        text: "Scope"
-      },
-      value: {
-        text: data['scopename1']
+    card: {
+      title: { text: "Scopes" },
+      actions: {
+        items: [{ href: "./scopes-list-m", text: "Change answers", visuallyHiddenText: "Change scopes" }]
       }
-    
-    }
-  ]
+    },
+    rows: [{ key: { text: "Scope" }, value: { text: data['scopename1'] | trim } }]
   }) }}
 
+{% elif scope1 and scope2 and not scope3 and not scope4 and not scope5 %}
 
-
-
-
-{{ govukSummaryList({
-  card: {
-    title: {
-      text: "Allowed clients"
-    },
-    actions: {
-      items: [
-        {
-          href: "./select-allowed-clients-m",
-          text: "Change answers",
-          visuallyHiddenText: "Change allowed clients"
-        }
-      ]
-    }
-  },
-  rows: [
-    {
-      key: {
-        text: "Client ID"
-      },
-      value: {
-        text: "123********"
+  {{ govukSummaryList({
+    card: {
+      title: { text: "Scopes" },
+      actions: {
+        items: [{ href: "./scopes-list1-m", text: "Change answers", visuallyHiddenText: "Change scopes" }]
       }
     },
-    {
-      key: {
-       text: "Client ID"
-      },
-      value: {
-       text: "456********"
-      }
-    },
-    {
-      key: {
-       text: "Client ID"
-      },
-      value: {
-        text: "789********"
-      }
-    },
-    {
-      key: {
-       text: "Client ID"
-      },
-      value: {
-       text: "334********"
-      }
-    },
-    {
-      key: {
-       text: "Client ID"
-      },
-      value: {
-        text: "414********"
-      }
-    }
-  ]
+    rows: [
+      { key: { text: "Scope" }, value: { text: data['scopename1'] | trim } },
+      { key: { text: "Scope" }, value: { text: data['scopename2'] | trim } }
+    ]
   }) }}
+
+{% elif scope1 and scope2 and scope3 and not scope4 and not scope5 %}
+
+  {{ govukSummaryList({
+    card: {
+      title: { text: "Scopes" },
+      actions: {
+        items: [{ href: "./scopes-list2-m", text: "Change answers", visuallyHiddenText: "Change scopes" }]
+      }
+    },
+    rows: [
+      { key: { text: "Scope" }, value: { text: data['scopename1'] | trim } },
+      { key: { text: "Scope" }, value: { text: data['scopename2'] | trim } },
+      { key: { text: "Scope" }, value: { text: data['scopename3'] | trim } }
+    ]
+  }) }}
+
+{% elif scope1 and scope2 and scope3 and scope4 and not scope5 %}
+
+  {{ govukSummaryList({
+    card: {
+      title: { text: "Scopes" },
+      actions: {
+        items: [{ href: "./scopes-list3-m", text: "Change answers", visuallyHiddenText: "Change scopes" }]
+      }
+    },
+    rows: [
+      { key: { text: "Scope" }, value: { text: data['scopename1'] | trim } },
+      { key: { text: "Scope" }, value: { text: data['scopename2'] | trim } },
+      { key: { text: "Scope" }, value: { text: data['scopename3'] | trim } },
+      { key: { text: "Scope" }, value: { text: data['scopename4'] | trim } }
+    ]
+  }) }}
+
+{% else %}
+
+  {{ govukSummaryList({
+    card: {
+      title: { text: "Scopes" },
+      actions: {
+        items: [{ href: "./scopes-list4-m", text: "Change answers", visuallyHiddenText: "Change scopes" }]
+      }
+    },
+    rows: [
+      { key: { text: "Scope" }, value: { text: data['scopename1'] | trim } },
+      { key: { text: "Scope" }, value: { text: data['scopename2'] | trim } },
+      { key: { text: "Scope" }, value: { text: data['scopename3'] | trim } },
+      { key: { text: "Scope" }, value: { text: data['scopename4'] | trim } },
+      { key: { text: "Scope" }, value: { text: data['scopename5'] | trim } }
+    ]
+  }) }}
+
+{% endif %}
+
+
+
+{% set selected = data['allowedclients'] | default([]) | list %}
+
+<div class="govuk-summary-card">
+  <div class="govuk-summary-card__title-wrapper">
+    <h2 class="govuk-summary-card__title">Allowed clients</h2>
+    <div class="govuk-summary-card__actions">
+      <a class="govuk-link" href="./select-allowed-clients-m">Change answers<span class="govuk-visually-hidden"> Change allowed clients (Allowed clients)</span></a>
+    </div>
+  </div>
+
+  <div class="govuk-summary-card__content">
+    <dl class="govuk-summary-list">
+
+      {% if "client123" in selected %}
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">Client ID</dt>
+        <dd class="govuk-summary-list__value">123********</dd>
+      </div>
+      {% endif %}
+
+      {% if "client456" in selected %}
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">Client ID</dt>
+        <dd class="govuk-summary-list__value">456********</dd>
+      </div>
+      {% endif %}
+
+      {% if "client789" in selected %}
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">Client ID</dt>
+        <dd class="govuk-summary-list__value">789********</dd>
+      </div>
+      {% endif %}
+
+      {% if "client334" in selected %}
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">Client ID</dt>
+        <dd class="govuk-summary-list__value">334********</dd>
+      </div>
+      {% endif %}
+
+      {% if "client414" in selected %}
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">Client ID</dt>
+        <dd class="govuk-summary-list__value">414********</dd>
+      </div>
+      {% endif %}
+
+      {% if "client780" in selected %}
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">Client ID</dt>
+        <dd class="govuk-summary-list__value">780********</dd>
+      </div>
+      {% endif %}
+
+      {% if "client347" in selected %}
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">Client ID</dt>
+        <dd class="govuk-summary-list__value">347********</dd>
+      </div>
+      {% endif %}
+
+      {% if "client877" in selected %}
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">Client ID</dt>
+        <dd class="govuk-summary-list__value">877********</dd>
+      </div>
+      {% endif %}
+
+      {% if "client109" in selected %}
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">Client ID</dt>
+        <dd class="govuk-summary-list__value">109********</dd>
+      </div>
+      {% endif %}
+
+      {% if "client321" in selected %}
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">Client ID</dt>
+        <dd class="govuk-summary-list__value">321********</dd>
+      </div>
+      {% endif %}
+
+    </dl>
+  </div>
+</div>
 
 {% else %}
 

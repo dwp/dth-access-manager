@@ -498,89 +498,92 @@ sending your request
 
 
 
+{% set selected = data['allowedclients'] | default([]) | list %}
+
 <div class="govuk-summary-card">
   <div class="govuk-summary-card__title-wrapper">
-  
-    <h2 class="govuk-summary-card__title">
-      Allowed clients
-    </h2>
-  
-  
-    
+    <h2 class="govuk-summary-card__title">Allowed clients</h2>
     <div class="govuk-summary-card__actions">
-      <a class="govuk-link" href="./select-allowed-clients-m">Change answers<span class="govuk-visually-hidden"> Change allowed clients (Allowed clients)</span></a>
+      <a class="govuk-link" href="./select-allowed-clients">Change answers<span class="govuk-visually-hidden"> Change allowed clients (Allowed clients)</span></a>
     </div>
-    
-  
   </div>
 
   <div class="govuk-summary-card__content">
     <dl class="govuk-summary-list">
-    
-      
+
+      {% if "client123" in selected %}
       <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
-          Client ID
-        </dt>
-        <dd class="govuk-summary-list__value">
-          123********
-        </dd>
-        
+        <dt class="govuk-summary-list__key">Client ID</dt>
+        <dd class="govuk-summary-list__value">123********</dd>
       </div>
-      
-    
-      
+      {% endif %}
+
+      {% if "client456" in selected %}
       <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
-          Client ID
-        </dt>
-        <dd class="govuk-summary-list__value">
-          456********
-        </dd>
-        
+        <dt class="govuk-summary-list__key">Client ID</dt>
+        <dd class="govuk-summary-list__value">456********</dd>
       </div>
-      
-    
-      
+      {% endif %}
+
+      {% if "client789" in selected %}
       <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
-          Client ID
-        </dt>
-        <dd class="govuk-summary-list__value">
-          789********
-        </dd>
-        
+        <dt class="govuk-summary-list__key">Client ID</dt>
+        <dd class="govuk-summary-list__value">789********</dd>
       </div>
-      
-    
-      
+      {% endif %}
+
+      {% if "client334" in selected %}
       <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
-          Client ID
-        </dt>
-        <dd class="govuk-summary-list__value">
-          334********
-        </dd>
-        
+        <dt class="govuk-summary-list__key">Client ID</dt>
+        <dd class="govuk-summary-list__value">334********</dd>
       </div>
-      
-    
-      
+      {% endif %}
+
+      {% if "client414" in selected %}
       <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
-          Client ID
-        </dt>
-        <dd class="govuk-summary-list__value">
-          414********
-        </dd>
-        
+        <dt class="govuk-summary-list__key">Client ID</dt>
+        <dd class="govuk-summary-list__value">414********</dd>
       </div>
-      
-    
+      {% endif %}
+
+      {% if "client780" in selected %}
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">Client ID</dt>
+        <dd class="govuk-summary-list__value">780********</dd>
+      </div>
+      {% endif %}
+
+      {% if "client347" in selected %}
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">Client ID</dt>
+        <dd class="govuk-summary-list__value">347********</dd>
+      </div>
+      {% endif %}
+
+      {% if "client877" in selected %}
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">Client ID</dt>
+        <dd class="govuk-summary-list__value">877********</dd>
+      </div>
+      {% endif %}
+
+      {% if "client109" in selected %}
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">Client ID</dt>
+        <dd class="govuk-summary-list__value">109********</dd>
+      </div>
+      {% endif %}
+
+      {% if "client321" in selected %}
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">Client ID</dt>
+        <dd class="govuk-summary-list__value">321********</dd>
+      </div>
+      {% endif %}
+
     </dl>
   </div>
 </div>
-
 
 
 
