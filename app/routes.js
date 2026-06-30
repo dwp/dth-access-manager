@@ -183,6 +183,23 @@ router.post('/scopes-list4', (req, res) => {
     }
 });
 
+
+
+router.post('/tech-prereq', function (req, res) {
+  const prereqs = req.session.data['prereq'] || [];
+
+  // Check if all 3 are selected
+  if (prereqs.length !== 3) {
+    // Show error on the same page
+    return res.render('/client-registration-test/technical-prereq', {
+      showErrorSummary: true
+    });
+  }
+
+  // If all are ticked, go to next page
+  res.redirect('/client-registration-test/select-ara-product');   // change to your actual next page
+});
+
 // Handle form submission
 router.post('/ara-product', (req, res) => {
     // Check if a radio button is selected
@@ -376,4 +393,75 @@ router.post('/scopes-list4-m', (req, res) => {
         // If no radio button is selected, redirect to error page
         res.redirect('/client-management-test/scopes-list2-m?error=true');
     }
+});
+
+
+
+
+
+
+
+
+router.get('/remove-scope', function (req, res) {
+  const index = req.query.index;
+
+  if (index) {
+    req.session.data['scopename' + index] = '';
+  }
+
+  res.redirect('/client-registration-test/select-allowed-clients');   // or wherever the list is shown
+});
+
+router.get('/remove-scope1', function (req, res) {
+  const index = req.query.index;
+
+  if (index) {
+    req.session.data['scopename1' + index] = '';
+  }
+
+  res.redirect('/client-registration-test/scopes-list');   // or wherever the list is shown
+});
+
+router.get('/remove-scope2', function (req, res) {
+  const index = req.query.index;
+
+  if (index) {
+    req.session.data['scopename2' + index] = '';
+  }
+
+  res.redirect('/client-registration-test/scopes-list1');   // or wherever the list is shown
+});
+
+
+router.get('/remove-scope3', function (req, res) {
+  const index = req.query.index;
+
+  if (index) {
+    req.session.data['scopename3' + index] = '';
+  }
+
+  res.redirect('/client-registration-test/scopes-list2');   // or wherever the list is shown
+});
+
+router.get('/remove-scope4', function (req, res) {
+  const index = req.query.index;
+
+  if (index) {
+    req.session.data['scopename4' + index] = '';
+  }
+
+  res.redirect('/client-registration-test/scopes-list3');   // or wherever the list is shown
+});
+
+
+router.post('/select-ara-product', function (req, res) {
+  const prereqs = req.session.data['prereq'] || [];
+
+  if (prereqs.length !== 3) {   // change 3 to the number of checkboxes
+    return res.render('/client-registration-test/technical-prereq', {
+      error: true   // this will trigger the errorMessage above
+    });
+  }
+
+  res.redirect('/next-page');
 });
