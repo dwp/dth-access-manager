@@ -11,7 +11,7 @@
     "@x-govuk/govuk-prototype-components": "6.0.0",
     "govuk-frontend": "6.5.1",
     "hmrc-frontend": "7.35.0",
-    "moment": "2.30.1",
+    "moment": "2.31.0",
     "govuk-prototype-kit": "13.20.5"
   }
 }
